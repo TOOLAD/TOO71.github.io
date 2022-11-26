@@ -258,18 +258,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
       community in the United States. This is because the ethnic group has been disproportionally affected by the
       coronavirus pandemic. The black community seems to be hottest spot of COVID-19. <a class="portfolio-link"
         href="#portfolioModal12" data-toggle="modal">(more...)</a>
-      <br><br>
-      <h4>DMV MAP</h4>
-      The map below shows the number of COVID-19 cases, death and population of the District of Columbia, Maryland and
-      Virginia (DMV metro in the USA).
     </div>
-    <br><br>
-    <!-- xyz 2 -->
-
-    <h2 class="text-center">COVID-19 in DC, Maryland and Virginia (DMV)</h2>
-    <div class="mb-5 heading-border"></div>
-    <div id="covidDMV" style="height: 500px"></div>
-    <br><br>
 
     <!--====================================================
                         PORTFOLIO
@@ -2779,104 +2768,6 @@ License URL: https://creativecommons.org/licenses/by/4.0/
             heatLegend.valueAxis.hideTooltip();
           })
         }
-
-
-        // DMV map
-
-        // Create map instance
-        var chart2 = am4core.create("covidDMV", am4maps.MapChart);
-
-        // Set map definition
-        chart2.geodata = am4geodata_usaLow;
-
-        // Set projection
-        chart2.projection = new am4maps.projections.AlbersUsa();
-
-        chart2.seriesContainer.draggable = false;
-        chart2.seriesContainer.resizable = false;
-        chart2.chartContainer.wheelable = false;
-
-
-
-        // Create map polygon series
-        var polygonSeriesDMV = chart2.series.push(new am4maps.MapPolygonSeries());
-        polygonSeriesDMV.include = ['US-DC', 'US-MD', 'US-VA']
-        //Set min/max fill color for each area
-        polygonSeriesDMV.heatRules.push({
-          property: "fill",
-          target: polygonSeriesDMV.mapPolygons.template,
-          min: am4core.color("#2196f3").brighten(1),
-          max: am4core.color("#2196f3").brighten(-0.4),
-          // logarithmic: false
-        });
-
-
-
-        // Make map load polygon data (state shapes and names) from GeoJSON
-        polygonSeriesDMV.useGeodata = true;
-        polygonSeriesDMV.data = data.filter(d => {
-          if (d.state == 'DC' || d.state == 'MD' || d.state == 'VA') {
-            return true
-          }
-          return false
-        }).map(d => {
-          return { id: `US-${d.state}`, value: d.positive, deaths: d.death, population: populationData[d.state], deathRate: (d.death / d.positive).toFixed(3) }
-        })
-
-
-        // Set up heat legend
-        let heatLegendDMV;
-        if ($(document).width() > 760) {
-          heatLegendDMV = chart2.createChild(am4maps.HeatLegend);
-          heatLegendDMV.series = polygonSeries;
-          heatLegendDMV.align = "right";
-          heatLegendDMV.valign = "bottom";
-          heatLegendDMV.height = am4core.percent(80);
-          heatLegendDMV.orientation = "vertical";
-          heatLegendDMV.valign = "middle";
-          heatLegendDMV.marginRight = am4core.percent(4);
-          heatLegendDMV.valueAxis.renderer.opposite = true;
-          heatLegendDMV.valueAxis.renderer.dx = - 25;
-          heatLegendDMV.valueAxis.strictMinMax = false;
-          heatLegendDMV.valueAxis.fontSize = 9;
-        }
-
-        // Configure series tooltip
-        var polygonTemplateDMV = polygonSeriesDMV.mapPolygons.template;
-        polygonTemplateDMV.tooltipText = "{name}\n Cases: {value}\n Deaths: {deaths}\n Population: {population}\n Fatality rate: {deathRate}";
-        polygonTemplateDMV.nonScalingStroke = true;
-        polygonTemplateDMV.strokeWidth = 0.5;
-
-        // Create hover state and set alternative fill color
-        var hsDMV = polygonTemplateDMV.states.create("hover");
-        hsDMV.properties.fill = am4core.color("#2196f3");
-
-
-        // heat legend behavior
-        polygonSeriesDMV.mapPolygons.template.events.on("over", function (event) {
-          handleHoverDMV(event.target);
-        })
-
-        polygonSeriesDMV.mapPolygons.template.events.on("hit", function (event) {
-          handleHoverDMV(event.target);
-        })
-
-        function handleHoverDMV(column) {
-          if ($(document).width() > 760) {
-            if (!isNaN(column.dataItem.value)) {
-              heatLegendDMV.valueAxis.showTooltipAt(column.dataItem.value)
-            }
-            else {
-              heatLegendDMV.valueAxis.hideTooltip();
-            }
-          }
-        }
-
-        polygonSeriesDMV.mapPolygons.template.events.on("out", function (event) {
-          if ($(document).width() > 760) {
-            heatLegendDMV.valueAxis.hideTooltip();
-          }
-        })
       }
     );
   </script>
