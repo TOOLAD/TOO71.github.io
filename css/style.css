@@ -824,10 +824,10 @@ heading {
 
 /* Extras */
 
-div.student-papers .portfolio-item img {
+/* div.student-papers .portfolio-item img {
   width: 400px;
   height: 281px;
-}
+} */
 
 div.join-gutter > div:nth-child(even) .portfolio-link {
   margin-right: 0
