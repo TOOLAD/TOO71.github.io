@@ -4117,11 +4117,10 @@ Technique for COVID-19 Predictive Modeling”, IEEE Access 2023 -->
       $.when(
         $.ajax("./data/covid.json"),
         $.ajax(
-          "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest"
+          "https://api.census.gov/data/2023/acs/acs1?get=NAME,B01003_001E&for=state:*"
         ),
         $.ajax("https://data.cdc.gov/resource/rh2h-3yt2.json")
       ).then(([data], [data2], [data3]) => {
-        data2 = data2.data;
         const shorts = {
           Alabama: "AL",
           Alaska: "AK",
@@ -4183,8 +4182,9 @@ Technique for COVID-19 Predictive Modeling”, IEEE Access 2023 -->
           Wisconsin: "WI",
           Wyoming: "WY",
         };
-        const populationData = data2.reduce((acc, d) => {
-          acc[shorts[d.State]] = parseInt(d.Population);
+        const populationData = data2.reduce((acc, d, i) => {
+          if (i === 0) return acc;
+          acc[shorts[d[0]]] = parseInt(d[1]);
           return acc;
         }, {});
 
