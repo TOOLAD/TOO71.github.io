@@ -2,43 +2,49 @@
    Shared Component Styles
    ============================================ */
 
+/* Publication items (shared across pages) */
 .publication-item {
-  padding: 1.2rem 0;
-  border-bottom: 1px solid #eee;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.publication-item:last-child {
-  border-bottom: none;
+.publication-item:hover {
+  background-color: #f5f6f8;
 }
 
 .publication-item a {
   font-weight: 600;
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
   font-size: 0.95rem;
-  color: #0066cc;
+  color: #2d5a8e;
+  line-height: 1.5;
 }
 
 .publication-item a:hover {
-  color: #0052a3;
+  color: #c9a84c;
 }
 
 .publication-item .meta {
   color: #888;
   font-size: 0.85rem;
-  margin-top: 0.3rem;
+  margin-top: 0.25rem;
   font-style: italic;
 }
 
 .publication-category {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .publication-category h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin: 1.5rem 0 1rem 0;
-  color: #0066cc;
+  color: #1e3a5f;
   font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eef0f3;
 }
 
 /* ============================================

@@ -1,10 +1,9 @@
-// Simple script for enhanced navigation
 document.addEventListener("DOMContentLoaded", function () {
   // Mark current page link as active
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach((link) => {
-    const href = link.getAttribute("href");
+  navLinks.forEach(function (link) {
+    var href = link.getAttribute("href");
     if (href === currentPage || (currentPage === "" && href === "index.html")) {
       link.classList.add("active");
     } else {
@@ -12,10 +11,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Mobile menu toggle
+  var menuToggle = document.querySelector(".menu-toggle");
+  var navMenu = document.querySelector("nav ul");
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", function () {
+      menuToggle.classList.toggle("active");
+      navMenu.classList.toggle("open");
+    });
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        menuToggle.classList.remove("active");
+        navMenu.classList.remove("open");
+      });
+    });
+  }
+
   // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
+      var href = this.getAttribute("href");
       if (href !== "#" && document.querySelector(href)) {
         e.preventDefault();
         document.querySelector(href).scrollIntoView({
@@ -25,42 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Add animation to cards on scroll
-  const observerOptions = {
+  // Fade-in animation on scroll
+  var observerOptions = {
     threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
+    rootMargin: "0px 0px -40px 0px",
   };
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.style.animation = "fadeInUp 0.6s ease-in-out forwards";
+        entry.target.classList.add("visible");
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observe all cards
   document
-    .querySelectorAll(".card, .publication-item, .stat-card")
-    .forEach((card) => {
-      card.style.opacity = "0";
-      observer.observe(card);
+    .querySelectorAll(".card, .publication-item, .stat, .student-card, .info-box, .grant-item, .fade-in")
+    .forEach(function (el) {
+      el.classList.add("fade-in");
+      observer.observe(el);
     });
 });
-
-// Add fade-in animation
-const style = document.createElement("style");
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);

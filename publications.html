@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publications - Dr. Timothy Oladunni</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/shared.css" />
   </head>
@@ -12,7 +15,12 @@
   <body>
     <nav>
       <div class="container">
-        <div class="logo">Dr. Timothy Oladunni</div>
+        <div class="logo">Dr. Timothy <span>Oladunni</span></div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Research</a></li>
@@ -24,24 +32,20 @@
       </div>
     </nav>
 
-    <section class="hero" style="padding: 40px 20px">
-      <div
-        class="container"
-        style="grid-template-columns: 1fr; text-align: center"
-      >
-        <div>
-          <h1>Publications & Research Output</h1>
-          <p>
-            30+ peer-reviewed publications across cardiovascular AI,
-            computational epidemiology, and machine learning
-          </p>
-        </div>
+    <section class="hero-page">
+      <div class="container">
+        <h1>Publications & Research Output</h1>
+        <p>
+          30+ peer-reviewed publications across cardiovascular AI,
+          computational epidemiology, and machine learning
+        </p>
       </div>
     </section>
 
     <section>
       <div class="container">
         <h2>Cardiovascular & ECG-Based AI</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a
@@ -88,6 +92,7 @@
         </div>
 
         <h2>Natural Language Processing & Health Sentiment Analysis</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a href="https://www.mdpi.com/1660-4601/20/10/5803"
@@ -135,6 +140,7 @@
         </div>
 
         <h2>Computational Epidemiology & COVID-19 Analysis</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a href="http://www.prml.org/" target="_blank"
@@ -170,6 +176,7 @@
         </div>
 
         <h2>Neurological Applications (Epilepsy & Fall Detection)</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a
@@ -197,6 +204,7 @@
         </div>
 
         <h2>Deep Learning & Signal Processing</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a href="https://arxiv.org/abs/2005.12401" target="_blank"
@@ -260,6 +268,7 @@
         </div>
 
         <h2>Climate & Energy Forecasting</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a
@@ -273,6 +282,7 @@
         </div>
 
         <h2>Real Estate Analytics & Hedonic Pricing</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a
@@ -375,6 +385,7 @@
         </div>
 
         <h2>Security & Cloud Computing</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a
@@ -390,6 +401,7 @@
         </div>
 
         <h2>Additional Submissions</h2>
+        <div class="section-divider"></div>
         <div class="publication-category">
           <div class="publication-item">
             <a
@@ -410,32 +422,17 @@
     <footer>
       <div class="container">
         <p>&copy; 2024 Dr. Timothy Oladunni. All rights reserved.</p>
-        <p>
-          <a href="index.html">Home</a> | <a href="research.html">Research</a> |
-          <a href="publications.html">Publications</a> |
-          <a href="nlp.html">NLP</a> | <a href="lab.html">Lab</a> |
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="nlp.html">NLP</a>
+          <a href="lab.html">Lab</a>
           <a href="professional.html">Professional</a>
-        </p>
+        </div>
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const currentPage =
-          window.location.pathname.split("/").pop() || "index.html";
-        const navLinks = document.querySelectorAll("nav a");
-        navLinks.forEach((link) => {
-          const href = link.getAttribute("href");
-          if (
-            href === currentPage ||
-            (currentPage === "" && href === "index.html")
-          ) {
-            link.classList.add("active");
-          } else {
-            link.classList.remove("active");
-          }
-        });
-      });
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

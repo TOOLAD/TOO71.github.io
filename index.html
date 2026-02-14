@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Dr. Timothy Oladunni - AI for Cardiovascular & Population Health
-    </title>
+    <title>Dr. Timothy Oladunni - AI for Cardiovascular & Population Health</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/shared.css" />
   </head>
@@ -14,7 +15,12 @@
   <body>
     <nav>
       <div class="container">
-        <div class="logo">Dr. Timothy Oladunni</div>
+        <div class="logo">Dr. Timothy <span>Oladunni</span></div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="research.html">Research</a></li>
@@ -38,31 +44,15 @@
             transparent to clinicians and public health leaders.
           </p>
           <div>
-            <button
-              class="btn"
-              onclick="window.location.href = 'research.html'"
-            >
-              Research
-            </button>
-            <button
-              class="btn btn-secondary"
-              onclick="window.location.href = 'publications.html'"
-            >
-              Publications
-            </button>
-            <button
-              class="btn btn-secondary"
-              onclick="window.location.href = 'lab.html'"
-            >
-              Lab
-            </button>
+            <a href="research.html" class="btn">Research</a>
+            <a href="publications.html" class="btn btn-secondary">Publications</a>
+            <a href="lab.html" class="btn btn-secondary">Lab</a>
           </div>
         </div>
         <div class="hero-image">
           <img
             src="assets/images/professional-pic.jpeg"
             alt="Dr. Timothy Oladunni"
-            style="width: 100%; max-width: 280px; border-radius: 8px"
           />
         </div>
       </div>
@@ -71,8 +61,9 @@
     <section>
       <div class="container">
         <h2>Research Focus</h2>
+        <div class="section-divider"></div>
         <div class="three-cols">
-          <div>
+          <div class="card">
             <h4>Multimodal AI & Signal Processing</h4>
             <p>
               Design and evaluate fusion architectures that combine time,
@@ -81,7 +72,7 @@
               information across modalities.
             </p>
           </div>
-          <div>
+          <div class="card">
             <h4>Robustness & Physiologic Invariance</h4>
             <p>
               Study when models should or should not change their predictions
@@ -90,7 +81,7 @@
               while remaining sensitive to pathological changes.
             </p>
           </div>
-          <div>
+          <div class="card">
             <h4>Explainability & Clinical Translation</h4>
             <p>
               Create interpretable models that communicate evidence in forms
@@ -103,9 +94,10 @@
       </div>
     </section>
 
-    <section>
+    <section class="alt-bg">
       <div class="container">
         <h2>Key Statistics</h2>
+        <div class="section-divider"></div>
         <div class="stats-grid">
           <div class="stat">
             <h3>30+</h3>
@@ -130,42 +122,37 @@
     <section>
       <div class="container section-content">
         <h2>Research Overview</h2>
-        <div style="max-width: 900px; margin: 0 auto">
-          <div style="margin-bottom: 2.5rem">
-            <h3 style="color: #0066cc; font-size: 1.2rem; margin-bottom: 1rem">
-              Research Statement
-            </h3>
-            <p>
-              I explore computer science fundamental concepts in developing
-              sustainable, efficient, and innovative solutions to real-world
-              problems. Combining theoretical analysis and computational
-              paradigms with deductive reasoning, my lab uses scientific
-              experimentation to understand patterns and discover knowledge. I
-              have broad research experience in Artificial Intelligence with
-              specific expertise in natural language processing, signal
-              processing, computer vision, data science, and pattern
-              recognition—with current focus on designing AI systems that can be
-              trusted in high-stakes cardiovascular and population-health
-              settings.
-            </p>
-          </div>
-          <div>
-            <h3 style="color: #0066cc; font-size: 1.2rem; margin-bottom: 1rem">
-              Teaching Philosophy
-            </h3>
-            <p>
-              My teaching philosophy is rooted in the belief that students learn
-              more when they actively participate. I focus on professional,
-              practical, and hands-on skills that stimulate critical thinking,
-              curiosity, and creativity. By connecting organizational dynamics
-              to student outcomes, I improve the learning environment and
-              inspire curriculum changes for a quality computer science program.
-              I strongly believe in computer science for all, and emphasize
-              active engagement, analytical reasoning, evidence-based
-              instructional practices, and ensuring equitable access to
-              high-quality computing education.
-            </p>
-          </div>
+        <div class="section-divider"></div>
+        <div>
+          <h3 class="text-accent mt-0">Research Statement</h3>
+          <p>
+            I explore computer science fundamental concepts in developing
+            sustainable, efficient, and innovative solutions to real-world
+            problems. Combining theoretical analysis and computational
+            paradigms with deductive reasoning, my lab uses scientific
+            experimentation to understand patterns and discover knowledge. I
+            have broad research experience in Artificial Intelligence with
+            specific expertise in natural language processing, signal
+            processing, computer vision, data science, and pattern
+            recognition—with current focus on designing AI systems that can be
+            trusted in high-stakes cardiovascular and population-health
+            settings.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-accent">Teaching Philosophy</h3>
+          <p>
+            My teaching philosophy is rooted in the belief that students learn
+            more when they actively participate. I focus on professional,
+            practical, and hands-on skills that stimulate critical thinking,
+            curiosity, and creativity. By connecting organizational dynamics
+            to student outcomes, I improve the learning environment and
+            inspire curriculum changes for a quality computer science program.
+            I strongly believe in computer science for all, and emphasize
+            active engagement, analytical reasoning, evidence-based
+            instructional practices, and ensuring equitable access to
+            high-quality computing education.
+          </p>
         </div>
       </div>
     </section>
@@ -173,12 +160,14 @@
     <footer>
       <div class="container">
         <p>&copy; 2024 Dr. Timothy Oladunni.</p>
-        <p>
-          <a href="index.html">Home</a> | <a href="research.html">Research</a> |
-          <a href="publications.html">Publications</a> |
-          <a href="nlp.html">NLP</a> | <a href="lab.html">Lab</a> |
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="nlp.html">NLP</a>
+          <a href="lab.html">Lab</a>
           <a href="professional.html">Professional</a>
-        </p>
+        </div>
       </div>
     </footer>
 

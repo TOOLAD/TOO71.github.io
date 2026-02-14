@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab - Dr. Timothy Oladunni</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/shared.css" />
   </head>
@@ -12,7 +15,12 @@
   <body>
     <nav>
       <div class="container">
-        <div class="logo">Dr. Timothy Oladunni</div>
+        <div class="logo">Dr. Timothy <span>Oladunni</span></div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Research</a></li>
@@ -24,42 +32,23 @@
       </div>
     </nav>
 
-    <section class="hero" style="padding: 40px 20px">
-      <div
-        class="container"
-        style="grid-template-columns: 1fr; text-align: center"
-      >
-        <div>
-          <h1>Pattern Recognition & Machine Learning Laboratory</h1>
-          <p>
-            Building trustworthy AI for healthcare through collaborative
-            research and student mentoring
-          </p>
-        </div>
+    <section class="hero-page">
+      <div class="container">
+        <h1>Pattern Recognition & Machine Learning Laboratory</h1>
+        <p>
+          Building trustworthy AI for healthcare through collaborative
+          research and student mentoring
+        </p>
       </div>
     </section>
 
     <section>
       <div class="container">
         <h2>Lab Mission & Vision</h2>
-        <div
-          style="
-            max-width: 1000px;
-            margin: 2rem auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-          "
-        >
-          <div
-            style="
-              padding: 1.5rem;
-              background: #f9f9f9;
-              border-radius: 8px;
-              border-left: 4px solid #667eea;
-            "
-          >
-            <h3 style="margin-top: 0">Lab Mission</h3>
+        <div class="section-divider"></div>
+        <div class="two-cols">
+          <div class="info-box">
+            <h3>Lab Mission</h3>
             <p>
               The mission of the Oladunni Lab is to create reliable and
               explainable AI systems that improve human health and decision
@@ -69,16 +58,8 @@
               forward-thinking contributors to the computing field.
             </p>
           </div>
-
-          <div
-            style="
-              padding: 1.5rem;
-              background: #f9f9f9;
-              border-radius: 8px;
-              border-left: 4px solid #667eea;
-            "
-          >
-            <h3 style="margin-top: 0">Lab Overview</h3>
+          <div class="info-box">
+            <h3>Lab Overview</h3>
             <p>
               The Oladunni Lab focuses on advanced research in artificial
               intelligence, machine learning, and computational modeling. We
@@ -94,76 +75,70 @@
       </div>
     </section>
 
-    <section style="background-color: #f0f0f0">
+    <section class="alt-bg">
       <div class="container">
         <h2>Student Opportunities</h2>
-        <div style="max-width: 1000px; margin: 2rem auto">
-          <div style="padding: 0 0 2rem 0; border-bottom: 1px solid #ddd">
-            <h3 style="margin-top: 0; margin-bottom: 1rem; font-size: 1.3rem">Join Our Lab</h3>
-            <p style="color: #555; line-height: 1.8; max-width: 800px">
-              The Oladunni Lab provides hands-on research experiences in machine learning, 
-              biomedical AI, and applied data science. Students work on real datasets, contribute to ongoing 
-              publications, and build practical skills that prepare them for graduate study and industry careers.
-            </p>
-          </div>
+        <div class="section-divider"></div>
+        <div class="section-content">
+          <h3 class="mt-0">Join Our Lab</h3>
+          <p>
+            The Oladunni Lab provides hands-on research experiences in machine learning,
+            biomedical AI, and applied data science. Students work on real datasets, contribute to ongoing
+            publications, and build practical skills that prepare them for graduate study and industry careers.
+          </p>
+        </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem">
-            <div>
-              <h4 style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #1a1a1a">What We Look For</h4>
-              <div style="display: flex; flex-direction: column; gap: 1.2rem">
-                <div style="padding-left: 1rem; border-left: 3px solid #0066cc">
-                  <div style="font-weight: 600; color: #333; margin-bottom: 0.3rem">Curiosity & Initiative</div>
-                  <div style="color: #666; font-size: 0.9rem">Genuine interest in AI, healthcare, or signal processing</div>
-                </div>
-                <div style="padding-left: 1rem; border-left: 3px solid #0066cc">
-                  <div style="font-weight: 600; color: #333; margin-bottom: 0.3rem">Technical Foundation</div>
-                  <div style="color: #666; font-size: 0.9rem">Solid programming skills in Python, experience with ML libraries</div>
-                </div>
-                <div style="padding-left: 1rem; border-left: 3px solid #0066cc">
-                  <div style="font-weight: 600; color: #333; margin-bottom: 0.3rem">Discipline & Reliability</div>
-                  <div style="color: #666; font-size: 0.9rem">Commitment to rigorous research and meeting deadlines</div>
-                </div>
-                <div style="padding-left: 1rem; border-left: 3px solid #0066cc">
-                  <div style="font-weight: 600; color: #333; margin-bottom: 0.3rem">Communication Skills</div>
-                  <div style="color: #666; font-size: 0.9rem">Ability to articulate ideas clearly in writing and presentations</div>
-                </div>
-              </div>
+        <div class="two-cols" style="max-width: 900px; margin: 2rem auto 0;">
+          <div>
+            <h4>What We Look For</h4>
+            <div class="criteria-item">
+              <div class="criteria-title">Curiosity & Initiative</div>
+              <p class="criteria-desc">Genuine interest in AI, healthcare, or signal processing</p>
             </div>
-
-            <div>
-              <h4 style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #1a1a1a">What You'll Gain</h4>
-              <div style="display: flex; flex-direction: column; gap: 1.2rem">
-                <div style="padding-left: 1rem; border-left: 3px solid #667eea">
-                  <div style="color: #555; font-size: 0.95rem">Mentorship from experienced researchers</div>
-                </div>
-                <div style="padding-left: 1rem; border-left: 3px solid #667eea">
-                  <div style="color: #555; font-size: 0.95rem">Hands-on experience with cutting-edge machine learning techniques</div>
-                </div>
-                <div style="padding-left: 1rem; border-left: 3px solid #667eea">
-                  <div style="color: #555; font-size: 0.95rem">Opportunity to co-author peer-reviewed publications</div>
-                </div>
-                <div style="padding-left: 1rem; border-left: 3px solid #667eea">
-                  <div style="color: #555; font-size: 0.95rem">Exposure to real medical datasets and research workflows</div>
-                </div>
-                <div style="padding-left: 1rem; border-left: 3px solid #667eea">
-                  <div style="color: #555; font-size: 0.95rem">Professional development in academic writing and presentation</div>
-                </div>
-              </div>
+            <div class="criteria-item">
+              <div class="criteria-title">Technical Foundation</div>
+              <p class="criteria-desc">Solid programming skills in Python, experience with ML libraries</p>
+            </div>
+            <div class="criteria-item">
+              <div class="criteria-title">Discipline & Reliability</div>
+              <p class="criteria-desc">Commitment to rigorous research and meeting deadlines</p>
+            </div>
+            <div class="criteria-item">
+              <div class="criteria-title">Communication Skills</div>
+              <p class="criteria-desc">Ability to articulate ideas clearly in writing and presentations</p>
             </div>
           </div>
 
-          <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd; text-align: center">
-            <p style="color: #555; font-size: 0.95rem">
-              <strong>Interested?</strong> Contact Dr. Oladunni with your resume, CV, and a statement of research interests.
-            </p>
+          <div>
+            <h4>What You'll Gain</h4>
+            <div class="criteria-item accent">
+              <p class="criteria-desc">Mentorship from experienced researchers</p>
+            </div>
+            <div class="criteria-item accent">
+              <p class="criteria-desc">Hands-on experience with cutting-edge machine learning techniques</p>
+            </div>
+            <div class="criteria-item accent">
+              <p class="criteria-desc">Opportunity to co-author peer-reviewed publications</p>
+            </div>
+            <div class="criteria-item accent">
+              <p class="criteria-desc">Exposure to real medical datasets and research workflows</p>
+            </div>
+            <div class="criteria-item accent">
+              <p class="criteria-desc">Professional development in academic writing and presentation</p>
+            </div>
           </div>
         </div>
+
+        <p class="text-center" style="margin-top: 2rem;">
+          <strong>Interested?</strong> Contact Dr. Oladunni with your resume, CV, and a statement of research interests.
+        </p>
       </div>
     </section>
 
     <section>
       <div class="container">
         <h2>Research Areas for Students</h2>
+        <div class="section-divider"></div>
         <div class="cards-grid">
           <div class="card">
             <h4>ECG-Based Disease Detection</h4>
@@ -244,88 +219,80 @@
       </div>
     </section>
 
-    <section style="background-color: #f0f0f0">
+    <section class="alt-bg">
       <div class="container">
         <h2>Student Projects Highlights</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; max-width: 1100px; margin-left: auto; margin-right: auto">
-          <!-- Michelle Guo -->
-          <a href="#studentModal1" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/michelle.png" alt="Michelle Guo" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Michelle Guo</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Student Performance Trends</p>
+        <div class="section-divider"></div>
+        <div class="cards-grid">
+          <a href="#studentModal1" data-toggle="modal" class="student-card">
+            <img src="assets/images/michelle.png" alt="Michelle Guo" />
+            <div class="student-card-body">
+              <h4>Michelle Guo</h4>
+              <p>Student Performance Trends</p>
             </div>
           </a>
 
-          <!-- Marcus Bailey -->
-          <a href="#studentModal2" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/marcus.png" alt="Marcus Bailey" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Marcus Bailey</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Social Media Sentiment Analysis Using AI: Twitter Dataset</p>
+          <a href="#studentModal2" data-toggle="modal" class="student-card">
+            <img src="assets/images/marcus.png" alt="Marcus Bailey" />
+            <div class="student-card-body">
+              <h4>Marcus Bailey</h4>
+              <p>Social Media Sentiment Analysis Using AI: Twitter Dataset</p>
             </div>
           </a>
 
-          <!-- Olaseni & Hamza -->
-          <a href="#studentModal3" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/olaseni.jpg" alt="Olaseni & Hamza" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Olaseni Adenji & Hamza Hawkins</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Accent Classification from Short English Speech</p>
+          <a href="#studentModal3" data-toggle="modal" class="student-card">
+            <img src="assets/images/olaseni.jpg" alt="Olaseni & Hamza" />
+            <div class="student-card-body">
+              <h4>Olaseni Adenji & Hamza Hawkins</h4>
+              <p>Accent Classification from Short English Speech</p>
             </div>
           </a>
 
-          <!-- Wondwosen Demisse -->
-          <a href="#studentModal4" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/wondwosen.png" alt="Wondwosen Demisse" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Wondwosen Demisse</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Traffic Sign Recognition for Self-Driving Car</p>
+          <a href="#studentModal4" data-toggle="modal" class="student-card">
+            <img src="assets/images/wondwosen.png" alt="Wondwosen Demisse" />
+            <div class="student-card-body">
+              <h4>Wondwosen Demisse</h4>
+              <p>Traffic Sign Recognition for Self-Driving Car</p>
             </div>
           </a>
 
-          <!-- Kihoon Jang -->
-          <a href="#studentModal5" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/kihoon.png" alt="Kihoon Jang" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Kihoon Jang</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Deep Learning in Vector Based Churn Prediction for Idle Games</p>
+          <a href="#studentModal5" data-toggle="modal" class="student-card">
+            <img src="assets/images/kihoon.png" alt="Kihoon Jang" />
+            <div class="student-card-body">
+              <h4>Kihoon Jang</h4>
+              <p>Deep Learning in Vector Based Churn Prediction for Idle Games</p>
             </div>
           </a>
 
-          <!-- Sewit Seyoum -->
-          <a href="#studentModal6" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/sewit.png" alt="Sewit Seyoum" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Sewit Seyoum</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Predicting Stock Prices Using Machine Learning</p>
+          <a href="#studentModal6" data-toggle="modal" class="student-card">
+            <img src="assets/images/sewit.png" alt="Sewit Seyoum" />
+            <div class="student-card-body">
+              <h4>Sewit Seyoum</h4>
+              <p>Predicting Stock Prices Using Machine Learning</p>
             </div>
           </a>
 
-          <!-- Breast Cancer Group Project -->
-          <a href="#studentModal7" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/melaku.png" alt="Breast Cancer Research" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Research Group</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Breast Cancer Differentiation (Melaku, Kaleab, Surafel, Tena, Bruk)</p>
+          <a href="#studentModal7" data-toggle="modal" class="student-card">
+            <img src="assets/images/melaku.png" alt="Breast Cancer Research" />
+            <div class="student-card-body">
+              <h4>Research Group</h4>
+              <p>Breast Cancer Differentiation (Melaku, Kaleab, Surafel, Tena, Bruk)</p>
             </div>
           </a>
 
-          <!-- Marzieh Savadkoohi -->
-          <a href="#studentModal8" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/marzieh.png" alt="Marzieh Savadkoohi" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Marzieh Savadkoohi</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Investigation of Balance Impairment Using Deep Learning</p>
+          <a href="#studentModal8" data-toggle="modal" class="student-card">
+            <img src="assets/images/marzieh.png" alt="Marzieh Savadkoohi" />
+            <div class="student-card-body">
+              <h4>Marzieh Savadkoohi</h4>
+              <p>Investigation of Balance Impairment Using Deep Learning</p>
             </div>
           </a>
 
-          <!-- Vincent Tanoe -->
-          <a href="#studentModal9" data-toggle="modal" style="text-decoration: none; cursor: pointer; display: block; border-radius: 6px; overflow: hidden; background: white; border-left: 3px solid #0066cc; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,102,204,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <img src="assets/images/vincent.png" alt="Vincent Tanoe" style="width: 100%; height: 250px; object-fit: cover; display: block">
-            <div style="padding: 1.2rem">
-              <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #1a1a1a">Vincent Tanoe</h4>
-              <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6">Banking Industry Stocks Analysis Using Econometric and Deep Learning</p>
+          <a href="#studentModal9" data-toggle="modal" class="student-card">
+            <img src="assets/images/vincent.png" alt="Vincent Tanoe" />
+            <div class="student-card-body">
+              <h4>Vincent Tanoe</h4>
+              <p>Banking Industry Stocks Analysis Using Econometric and Deep Learning</p>
             </div>
           </a>
         </div>
@@ -335,6 +302,7 @@
     <section>
       <div class="container">
         <h2>Lab Values & Working Philosophy</h2>
+        <div class="section-divider"></div>
         <div class="cards-grid">
           <div class="card">
             <h4>Rigor & Excellence</h4>
@@ -393,47 +361,6 @@
     </section>
 
     <!-- Student Project Modals -->
-    <style>
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      .modal.show {
-        display: flex;
-      }
-
-      .modal-dialog {
-        background-color: white;
-        margin: auto;
-        padding: 2rem;
-        border-radius: 8px;
-        max-width: 600px;
-        width: 90%;
-        max-height: 80vh;
-        overflow-y: auto;
-      }
-
-      .modal-close {
-        float: right;
-        font-size: 2rem;
-        font-weight: bold;
-        cursor: pointer;
-        color: #999;
-      }
-
-      .modal-close:hover {
-        color: #333;
-      }
-    </style>
-
-    <!-- Michelle Guo Modal -->
     <div id="studentModal1" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal1')">&times;</span>
@@ -442,7 +369,6 @@
       </div>
     </div>
 
-    <!-- Marcus Bailey Modal -->
     <div id="studentModal2" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal2')">&times;</span>
@@ -451,7 +377,6 @@
       </div>
     </div>
 
-    <!-- Olaseni & Hamza Modal -->
     <div id="studentModal3" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal3')">&times;</span>
@@ -460,7 +385,6 @@
       </div>
     </div>
 
-    <!-- Wondwosen Demisse Modal -->
     <div id="studentModal4" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal4')">&times;</span>
@@ -469,7 +393,6 @@
       </div>
     </div>
 
-    <!-- Kihoon Jang Modal -->
     <div id="studentModal5" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal5')">&times;</span>
@@ -478,7 +401,6 @@
       </div>
     </div>
 
-    <!-- Sewit Seyoum Modal -->
     <div id="studentModal6" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal6')">&times;</span>
@@ -487,7 +409,6 @@
       </div>
     </div>
 
-    <!-- Breast Cancer Group Modal -->
     <div id="studentModal7" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal7')">&times;</span>
@@ -496,7 +417,6 @@
       </div>
     </div>
 
-    <!-- Marzieh Savadkoohi Modal -->
     <div id="studentModal8" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal8')">&times;</span>
@@ -505,7 +425,6 @@
       </div>
     </div>
 
-    <!-- Vincent Tanoe Modal -->
     <div id="studentModal9" class="modal">
       <div class="modal-dialog">
         <span class="modal-close" onclick="closeModal('studentModal9')">&times;</span>
@@ -517,10 +436,10 @@
 
     <script>
       // Handle modal functionality
-      document.querySelectorAll('a[data-toggle="modal"]').forEach(link => {
+      document.querySelectorAll('a[data-toggle="modal"]').forEach(function(link) {
         link.addEventListener('click', function(e) {
           e.preventDefault();
-          const modalId = this.getAttribute('href').substring(1);
+          var modalId = this.getAttribute('href').substring(1);
           document.getElementById(modalId).classList.add('show');
           document.body.style.overflow = 'hidden';
         });
@@ -543,32 +462,17 @@
     <footer>
       <div class="container">
         <p>&copy; 2024 Dr. Timothy Oladunni. All rights reserved.</p>
-        <p>
-          <a href="index.html">Home</a> | <a href="research.html">Research</a> |
-          <a href="publications.html">Publications</a> |
-          <a href="nlp.html">NLP</a> | <a href="lab.html">Lab</a> |
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="nlp.html">NLP</a>
+          <a href="lab.html">Lab</a>
           <a href="professional.html">Professional</a>
-        </p>
+        </div>
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const currentPage =
-          window.location.pathname.split("/").pop() || "index.html";
-        const navLinks = document.querySelectorAll("nav a");
-        navLinks.forEach((link) => {
-          const href = link.getAttribute("href");
-          if (
-            href === currentPage ||
-            (currentPage === "" && href === "index.html")
-          ) {
-            link.classList.add("active");
-          } else {
-            link.classList.remove("active");
-          }
-        });
-      });
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
