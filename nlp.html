@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NLP & Health AI - Dr. Timothy Oladunni</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/shared.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="container">
+        <div class="logo">Dr. Timothy Oladunni</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="nlp.html" class="active">NLP & Health AI</a></li>
+          <li><a href="lab.html">Lab</a></li>
+          <li><a href="professional.html">Professional</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero" style="padding: 40px 20px">
+      <div
+        class="container"
+        style="grid-template-columns: 1fr; text-align: center"
+      >
+        <div>
+          <h1>NLP & Population Health Intelligence</h1>
+          <p>
+            Using natural language processing and sentiment analysis to
+            understand public health trends and disease outbreaks from social
+            media and clinical texts
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>NLP Projects Overview</h2>
+        <div style="max-width: 900px; margin: 2rem auto; line-height: 1.8">
+          <p>
+            Natural language processing and text mining are increasingly
+            important tools for understanding public health concerns, tracking
+            disease sentiment, and predicting population health trends. My lab
+            combines deep learning, transformer models, and interpretable NLP
+            techniques to extract meaningful insights from unstructured
+            health-related data.
+          </p>
+          <p>
+            Our work bridges computational linguistics and epidemiology,
+            enabling early detection of health concerns and a quantifiable
+            measure of public sentiment around vaccines, disease outbreaks, and
+            health interventions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Relevant Publications</h2>
+        <div style="max-width: 900px; margin: 2rem auto">
+          <div class="publication-item">
+            <a href="https://www.mdpi.com/1660-4601/20/10/5803" target="_blank"
+              ><strong
+                >COVID-19 Vaccine Hesitancy: A Global Public Health and Risk
+                Modelling Framework Using an Environmental Deep Neural Network,
+                Sentiment Classification with Text Mining and Emotional
+                Reactions from COVID-19 Vaccination Tweets</strong
+              ></a
+            >
+            <div class="meta">MDPI, 2023</div>
+          </div>
+
+          <div class="publication-item">
+            <a
+              href="https://ieeexplore.ieee.org/abstract/document/10036414"
+              target="_blank"
+              >A Machine Learning – Sentiment Analysis on Monkeypox Outbreak: An
+              Extensive Dataset to Show the Polarity of Public Opinion from
+              Twitter Tweets</a
+            >
+            <div class="meta">IEEE Access, 2023</div>
+          </div>
+
+          <div class="publication-item">
+            <a
+              href="https://ieeexplore.ieee.org/document/10111114"
+              target="_blank"
+              >Text Mining and Emotion Classification on Monkeypox Twitter
+              Dataset: A Deep Learning–Natural Language Processing (NLP)
+              Approach</a
+            >
+            <div class="meta">IEEE Access, 2023</div>
+          </div>
+
+          <div class="publication-item">
+            <a
+              href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9443617/"
+              target="_blank"
+              >Covid-19 Vaccine Hesitancy: Text Mining, Sentiment Analysis and
+              Machine Learning on COVID-19 Vaccination Twitter Dataset</a
+            >
+            <div class="meta">
+              Journal of Expert Systems with Applications, 2022
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Dr. Timothy Oladunni. All rights reserved.</p>
+        <p>
+          <a href="index.html">Home</a> | <a href="research.html">Research</a> |
+          <a href="publications.html">Publications</a> |
+          <a href="nlp.html">NLP</a> | <a href="lab.html">Lab</a> |
+          <a href="professional.html">Professional</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPage =
+          window.location.pathname.split("/").pop() || "index.html";
+        const navLinks = document.querySelectorAll("nav a");
+        navLinks.forEach((link) => {
+          const href = link.getAttribute("href");
+          if (
+            href === currentPage ||
+            (currentPage === "" && href === "index.html")
+          ) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research - Dr. Timothy Oladunni</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/shared.css" />
+    <style>
+      .research-framework {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 4rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .research-framework:last-child {
+        border-bottom: none;
+      }
+
+      .research-framework.reverse {
+        grid-template-columns: 1fr 1fr;
+        direction: rtl;
+      }
+
+      .research-framework.reverse > * {
+        direction: ltr;
+      }
+
+      .research-framework img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        display: block;
+      }
+
+      .research-text h3 {
+        font-size: 1.4rem;
+        margin: 0 0 1rem 0;
+        color: #1a1a1a;
+      }
+
+      .research-text p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .research-framework {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .research-framework.reverse {
+          direction: ltr;
+        }
+
+        .research-text h3 {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="container">
+        <div class="logo">Dr. Timothy Oladunni</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html" class="active">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="nlp.html">NLP & Health AI</a></li>
+          <li><a href="lab.html">Lab</a></li>
+          <li><a href="professional.html">Professional</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero" style="padding: 50px 30px">
+      <div
+        class="container"
+        style="grid-template-columns: 1fr; text-align: center"
+      >
+        <div>
+          <h1>Research Frameworks & Systems</h1>
+          <p style="color: #666">
+            Theoretical foundations and practical architectures for trustworthy
+            AI in healthcare
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Theoretical Frameworks</h2>
+
+        <div class="research-framework">
+          <div>
+            <img
+              src="assets/images/cfd-theory-800.png"
+              alt="Complementary Feature Domain Theory"
+            />
+          </div>
+          <div class="research-text">
+            <h3>Complementary Feature Domain (CFD) Theory</h3>
+            <p>
+              CFD theory formalizes how time-, frequency-, and time-frequency
+              ECG representations carry
+              <strong>complementary rather than redundant</strong> diagnostic
+              information. This theory reveals that these three domains capture
+              different physiological patterns and that multimodal models
+              perform best when they preserve and balance this complementarity.
+            </p>
+            <p>
+              Our work shows that fusion architectures that explicitly respect
+              domain-specific information improve accuracy, robustness to noise,
+              and data efficiency compared to simple feature stacking.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-framework reverse">
+          <div>
+            <img
+              src="assets/images/pit2-800.png"
+              alt="Physiologic Invariance Theory"
+            />
+          </div>
+          <div class="research-text">
+            <h3>Physiologic Invariance Theory (PIT)</h3>
+            <p>
+              <strong>When should a model change its mind?</strong> PIT answers
+              this fundamental question in trustworthy AI by defining robustness
+              in terms of physiologic drift—the natural variability in rhythm,
+              amplitude, and morphology that should not flip a model's
+              prediction.
+            </p>
+            <p>
+              We develop metrics and training strategies that keep latent
+              representations stable under benign perturbations while remaining
+              sensitive to truly pathological changes. This framework ensures AI
+              systems are robust in real clinical environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-framework">
+          <div>
+            <img
+              src="assets/images/multimodal-ecg-systems-800.png"
+              alt="Multimodal ECG Systems"
+            />
+          </div>
+          <div class="research-text">
+            <h3>Multimodal ECG Systems</h3>
+            <p>
+              Hybrid deep learning systems that integrate time-series signals,
+              frequency spectra, and time-frequency images from the same ECG.
+              Using 1D-CNNs for temporal patterns, 2D-CNNs for spectral
+              analysis, Transformers for long-range dependencies, and principled
+              fusion strategies to combine insights from each modality.
+            </p>
+            <p>
+              These systems are designed to be deployable on
+              resource-constrained devices and scalable to large clinical
+              cohorts, making them practical for real-world healthcare
+              environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-framework reverse">
+          <div>
+            <img
+              src="assets/images/explainable-ai-trustworthiness-800.png"
+              alt="Explainable AI Trustworthiness Framework"
+            />
+          </div>
+          <div class="research-text">
+            <h3>Explainable AI Trustworthiness (EAT)</h3>
+            <p>
+              The EAT framework integrates saliency maps, stability analysis,
+              and clinician-aligned explanations to rigorously evaluate whether
+              model predictions are medically plausible. Rather than optimizing
+              for black-box accuracy alone, EAT emphasizes interpretability as a
+              first-class design objective.
+            </p>
+            <p>
+              We study how explanations change under noise and domain shifts,
+              design visualization tools that highlight which parts of the ECG
+              models truly rely on, and ensure clinicians can interrogate and
+              refine model decisions in practice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: #f8f9fa">
+      <div class="container section-content">
+        <h2>Research Applications</h2>
+        <div class="three-cols">
+          <div>
+            <h4>Cardiovascular Disease</h4>
+            <p>
+              ECG-based prediction of hypertrophic cardiomyopathy, arrhythmias,
+              and other cardiac abnormalities with high sensitivity and
+              specificity for clinical decision support.
+            </p>
+          </div>
+          <div>
+            <h4>COVID-19 Risk Stratification</h4>
+            <p>
+              Machine learning combining ECG signals, clinical features, and
+              population data for COVID-19 severity prediction and early warning
+              systems.
+            </p>
+          </div>
+          <div>
+            <h4>Epileptic Seizure Prediction</h4>
+            <p>
+              EEG-based deep learning for seizure prediction and real-time
+              detection to support clinical monitoring and patient safety
+              interventions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Dr. Timothy Oladunni.</p>
+        <p>
+          <a href="index.html">Home</a> | <a href="research.html">Research</a> |
+          <a href="publications.html">Publications</a> |
+          <a href="nlp.html">NLP</a> | <a href="lab.html">Lab</a> |
+          <a href="professional.html">Professional</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

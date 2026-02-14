@@ -1,0 +1,58 @@
+/* ============================================
+   Shared Component Styles
+   ============================================ */
+
+.publication-item {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.publication-item:last-child {
+  border-bottom: none;
+}
+
+.publication-item a {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #0066cc;
+}
+
+.publication-item a:hover {
+  color: #0052a3;
+}
+
+.publication-item .meta {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+.publication-category {
+  margin-bottom: 2rem;
+}
+
+.publication-category h3 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 1rem 0;
+  color: #0066cc;
+  font-weight: 600;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  nav {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  section {
+    page-break-inside: avoid;
+  }
+}
