@@ -228,11 +228,17 @@ nav a.active::after {
 
 .hero .container {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 4rem;
+  grid-template-columns: 1.3fr auto 0.7fr;
+  gap: 3rem;
   align-items: center;
   position: relative;
   z-index: 1;
+}
+
+.hero-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-content h1 {
@@ -255,6 +261,12 @@ nav a.active::after {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hero-ai-emblem {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
 }
 
 .hero-image img {
@@ -913,6 +925,15 @@ footer a:hover {
 .text-accent { color: var(--color-accent); }
 .mt-0 { margin-top: 0; }
 .mb-0 { margin-bottom: 0; }
+
+@keyframes spin-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-clockwise {
+  animation: spin-clockwise 12s linear infinite;
+}
 
 /* ============================================
    Animations
