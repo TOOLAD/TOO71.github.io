@@ -809,6 +809,20 @@ section h3 {
    Grant Items
    ============================================ */
 
+.grant-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.grant-logos img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
 .grant-item {
   margin-bottom: 1.25rem;
   padding: 1.5rem;
