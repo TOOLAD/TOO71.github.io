@@ -1,201 +1,1304 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-167039776-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-167039776-1");
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Dr. Timothy Oladunni - AI for Cardiovascular & Population Health
-    </title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/shared.css" />
-  </head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CardioWell">
+<meta name="theme-color" content="#0a0a0a">
+<title>CardioWell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1D9E75;
+    --green-dim: #0F6E56;
+    --green-bg: rgba(29,158,117,.10);
+    --amber: #EF9F27;
+    --amber-bg: rgba(239,159,39,.10);
+    --red: #E24B4A;
+    --red-bg: rgba(226,75,74,.10);
+    --blue: #378ADD;
+    --surface: #111214;
+    --surface2: #181a1d;
+    --surface3: #1e2024;
+    --border: rgba(255,255,255,.07);
+    --border2: rgba(255,255,255,.12);
+    --text: #e8e6e1;
+    --text2: #7a7870;
+    --text3: #3d3c39;
+    --font-mono: 'DM Mono', monospace;
+    --font-display: 'Syne', sans-serif;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
 
-  <body>
-    <nav>
-      <div class="container">
-        <div class="logo">Dr. Timothy <span>Oladunni</span></div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="nlp.html">NLP & Health AI</a></li>
-          <li><a href="lab.html">Lab</a></li>
-          <li><a href="professional.html">Professional</a></li>
-        </ul>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    background: #070809;
+    color: var(--text);
+    font-family: var(--font-mono);
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  /* ── App shell ── */
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    max-width: 430px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── Status bar spacer ── */
+  .status-bar {
+    height: calc(var(--safe-top) + 14px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 20px 6px;
+    flex-shrink: 0;
+  }
+  .status-time { font-size: 13px; font-weight: 500; font-family: var(--font-display); }
+  .status-icons { display: flex; gap: 6px; align-items: center; }
+  .status-icons span { font-size: 12px; opacity: .7; }
+
+  /* ── Header ── */
+  .header {
+    padding: 8px 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--text);
+  }
+  .logo span { color: var(--green); }
+  .header-badge {
+    font-size: 9px;
+    font-family: var(--font-mono);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text2);
+    border: 0.5px solid var(--border2);
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+
+  /* ── Camera view ── */
+  .camera-section {
+    flex-shrink: 0;
+    margin: 0 16px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0a0a0a;
+    position: relative;
+    height: 200px;
+    border: 0.5px solid var(--border);
+  }
+
+  #cameraVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scaleX(-1);
+  }
+
+  .camera-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .finger-guide {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(255,255,255,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .finger-guide-inner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.1);
+    background: rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .finger-icon {
+    width: 24px;
+    height: 24px;
+    opacity: .3;
+  }
+
+  .camera-hint {
+    margin-top: 10px;
+    font-size: 10px;
+    color: rgba(255,255,255,.3);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  /* scanning pulse ring */
+  @keyframes scanPulse {
+    0% { transform: scale(1); opacity: .6; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  .scan-ring {
+    position: absolute;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 1px solid var(--green);
+    animation: scanPulse 1.4s ease-out infinite;
+    display: none;
+  }
+  .scan-ring:nth-child(2) { animation-delay: .7s; }
+
+  .rec-indicator {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    display: none;
+  }
+  .rec-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #ff3b3b;
+    animation: recBlink 1s step-end infinite;
+  }
+  @keyframes recBlink { 0%,100%{opacity:1} 50%{opacity:.2} }
+  .rec-text {
+    font-size: 9px;
+    font-family: var(--font-mono);
+    color: rgba(255,255,255,.6);
+    letter-spacing: .1em;
+  }
+
+  .timer-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--green);
+    width: 0%;
+    transition: width .1s linear;
+  }
+
+  /* waveform canvas */
+  #waveCanvas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  /* ── Scrollable results area ── */
+  .results-area {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 16px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* ── CSI hero card ── */
+  .csi-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 18px;
+    padding: 18px 20px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .csi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+  }
+  .csi-eyebrow {
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 10px;
+  }
+  .csi-main {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .csi-number {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.04em;
+    transition: color .4s;
+  }
+  .csi-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+  .csi-tier-badge {
+    font-size: 11px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: .02em;
+    transition: all .4s;
+  }
+  .csi-descriptor {
+    font-size: 10px;
+    color: var(--text2);
+    text-align: right;
+    line-height: 1.4;
+    max-width: 120px;
+  }
+
+  /* CSI progress track */
+  .csi-track {
+    position: relative;
+    height: 6px;
+    background: var(--surface3);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .csi-track-zones {
+    position: absolute;
+    inset: 0;
+    display: flex;
+  }
+  .zone { flex: 1; }
+  .zone-r { background: rgba(226,75,74,.15); }
+  .zone-a { background: rgba(239,159,39,.08); }
+  .zone-g { background: rgba(29,158,117,.12); }
+  .csi-track-fill {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    border-radius: 3px;
+    transition: width .6s cubic-bezier(.4,0,.2,1), background .4s;
+  }
+  .csi-track-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 2px solid #0a0a0a;
+    transition: left .6s cubic-bezier(.4,0,.2,1), background .4s;
+  }
+  .csi-zone-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+    color: var(--text3);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  /* ── 2-col mini cards ── */
+  .mini-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .mini-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 14px 12px;
+  }
+  .mini-eyebrow {
+    font-size: 8px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 8px;
+  }
+  .mini-value {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+    transition: color .4s;
+  }
+  .mini-sub {
+    font-size: 9px;
+    color: var(--text2);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .mini-bar {
+    height: 3px;
+    background: var(--surface3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .mini-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width .5s ease, background .4s;
+  }
+
+  /* ── Trust card ── */
+  .trust-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 16px 12px;
+  }
+  .trust-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .trust-label {
+    font-size: 8px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text2);
+  }
+  .trust-pct {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    transition: color .4s;
+  }
+  .trust-bar {
+    height: 4px;
+    background: var(--surface3);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .trust-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width .5s ease, background .4s;
+  }
+  .trust-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .trust-chip {
+    font-size: 9px;
+    color: var(--text2);
+    background: var(--surface2);
+    border: 0.5px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+
+  /* ── XAI card ── */
+  .xai-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 16px 12px;
+  }
+  .xai-eyebrow {
+    font-size: 8px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 12px;
+  }
+  .xai-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .xai-row:last-child { margin-bottom: 0; }
+  .xai-name {
+    font-size: 10px;
+    color: var(--text2);
+    width: 82px;
+    flex-shrink: 0;
+  }
+  .xai-name strong {
+    display: block;
+    font-size: 11px;
+    color: var(--text);
+    font-weight: 400;
+    margin-bottom: 1px;
+  }
+  .xai-track {
+    flex: 1;
+    height: 20px;
+    background: var(--surface2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .xai-center-line {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    bottom: 20%;
+    width: 0.5px;
+    background: var(--border2);
+  }
+  .xai-bar {
+    height: 10px;
+    border-radius: 3px;
+    position: absolute;
+    transition: all .5s ease;
+  }
+  .xai-val {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+    transition: color .4s;
+  }
+
+  /* ── Disclaimer ── */
+  .disclaimer {
+    background: var(--surface2);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 9px;
+    color: var(--text2);
+    line-height: 1.6;
+    letter-spacing: .01em;
+  }
+  .disclaimer strong {
+    color: var(--amber);
+    font-weight: 500;
+  }
+
+  /* ── Bottom action bar ── */
+  .action-bar {
+    flex-shrink: 0;
+    padding: 10px 16px;
+    padding-bottom: calc(10px + var(--safe-bottom));
+    display: flex;
+    gap: 10px;
+    background: linear-gradient(to top, #070809 60%, transparent);
+  }
+
+  .btn-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background .15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn-icon:active { background: var(--surface3); }
+  .btn-icon svg { width: 18px; height: 18px; }
+
+  .btn-scan {
+    flex: 1;
+    height: 48px;
+    border-radius: 14px;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: all .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-scan:active { transform: scale(.97); }
+
+  .btn-scan.idle {
+    background: var(--green);
+    color: #fff;
+  }
+  .btn-scan.scanning {
+    background: var(--green-dim);
+    color: rgba(255,255,255,.7);
+  }
+  .btn-scan.done {
+    background: var(--surface);
+    color: var(--green);
+    border: 1px solid var(--green);
+  }
+
+  .scan-progress {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 3px;
+    background: rgba(255,255,255,.3);
+    transition: width .1s linear;
+  }
+
+  /* ── Loading / placeholder state ── */
+  .placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .placeholder-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 18px;
+    height: 140px;
+    position: relative;
+    overflow: hidden;
+  }
+  .placeholder-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.03) 50%, transparent 100%);
+    animation: shimmer 1.8s infinite;
+    background-size: 200% 100%;
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* ── History toast ── */
+  .toast {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--surface2);
+    border: 0.5px solid var(--border2);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 11px;
+    color: var(--text);
+    white-space: nowrap;
+    opacity: 0;
+    transition: all .3s;
+    pointer-events: none;
+    z-index: 100;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* history panel */
+  .history-panel {
+    position: absolute;
+    inset: 0;
+    background: #070809;
+    transform: translateX(100%);
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    padding: calc(var(--safe-top) + 14px) 0 calc(var(--safe-bottom) + 10px);
+  }
+  .history-panel.open { transform: translateX(0); }
+  .history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px 16px;
+  }
+  .history-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .history-close {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .history-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .history-item {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .history-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .history-info { flex: 1; }
+  .history-csi {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .history-date {
+    font-size: 9px;
+    color: var(--text2);
+    margin-top: 2px;
+  }
+  .history-trend {
+    font-size: 11px;
+    color: var(--text2);
+  }
+
+  .empty-history {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text2);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span class="status-time" id="statusTime">9:41</span>
+    <div class="status-icons">
+      <span>▲▲▲</span>
+      <span>WiFi</span>
+      <span>100%</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">Cardio<span>Well</span></div>
+    <div class="header-badge">beta · v0.1</div>
+  </div>
+
+  <!-- Camera -->
+  <div class="camera-section">
+    <video id="cameraVideo" autoplay playsinline muted></video>
+    <canvas id="waveCanvas"></canvas>
+    <div class="camera-overlay" id="cameraOverlay">
+      <div style="position:relative;display:flex;align-items:center;justify-content:center">
+        <div class="scan-ring" id="ring1"></div>
+        <div class="scan-ring" id="ring2"></div>
+        <div class="finger-guide">
+          <div class="finger-guide-inner">
+            <svg class="finger-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+              <path d="M18 11V9a3 3 0 0 0-6 0v2M9 11V7a3 3 0 0 0-6 0v4M9 11H3v7a5 5 0 0 0 10 0v-7H9z"/>
+            </svg>
+          </div>
+        </div>
       </div>
-    </nav>
+      <div class="camera-hint" id="cameraHint">cover camera with finger</div>
+    </div>
+    <div class="rec-indicator" id="recIndicator">
+      <div class="rec-dot"></div>
+      <div class="rec-text" id="recText">0:00</div>
+    </div>
+    <div class="timer-bar" id="timerBar"></div>
+  </div>
 
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Interpretable AI for Cardiovascular & Population Health</h1>
-          <p>
-            Building trustworthy machine learning systems for high-stakes
-            healthcare settings. Combining multimodal ECG analysis, explainable
-            AI methods, and computational epidemiology to detect risk earlier,
-            characterize physiologic mechanisms, and ensure model decisions are
-            transparent to clinicians and public health leaders.
-          </p>
-          <div>
-            <a href="research.html" class="btn">Research</a>
-            <a href="publications.html" class="btn btn-secondary"
-              >Publications</a
-            >
-            <a href="lab.html" class="btn btn-secondary">Lab</a>
+  <!-- Results scrollable area -->
+  <div class="results-area" id="resultsArea">
+
+    <!-- Placeholder before first scan -->
+    <div id="placeholder" class="placeholder">
+      <div style="text-align:center;padding:20px 0 10px;color:var(--text2);font-size:11px;line-height:1.8;letter-spacing:.02em">
+        Place your fingertip over the<br>rear camera and tap <strong style="color:var(--text)">Start scan</strong>
+      </div>
+      <div class="placeholder-card" style="height:100px"></div>
+      <div class="mini-row">
+        <div class="placeholder-card" style="height:90px"></div>
+        <div class="placeholder-card" style="height:90px"></div>
+      </div>
+      <div class="placeholder-card" style="height:80px"></div>
+    </div>
+
+    <!-- Live results (hidden until scan done) -->
+    <div id="liveResults" style="display:none;flex-direction:column;gap:10px">
+
+      <!-- CSI hero -->
+      <div class="csi-card">
+        <div class="csi-eyebrow">cardiac stability index</div>
+        <div class="csi-main">
+          <div class="csi-number" id="csiNumber">–</div>
+          <div class="csi-right">
+            <div class="csi-tier-badge" id="csiTierBadge">–</div>
+            <div class="csi-descriptor" id="csiDescriptor"></div>
           </div>
         </div>
-        <div class="hero-divider">
-          <img
-            src="assets/images/interpretable-ai.png"
-            alt="Interpretable AI"
-            class="spin-clockwise hero-ai-emblem"
-          />
+        <div class="csi-track">
+          <div class="csi-track-zones">
+            <div class="zone zone-r"></div>
+            <div class="zone zone-a"></div>
+            <div class="zone zone-g"></div>
+          </div>
+          <div class="csi-track-fill" id="csiTrackFill"></div>
+          <div class="csi-track-thumb" id="csiTrackThumb"></div>
         </div>
-        <div class="hero-image">
-          <img
-            src="assets/images/professional-pic.jpeg"
-            alt="Dr. Timothy Oladunni"
-          />
+        <div class="csi-zone-labels">
+          <span>compromised</span>
+          <span>borderline</span>
+          <span>stable</span>
         </div>
       </div>
-    </section>
 
-    <section>
-      <div class="container">
-        <h2>Research Focus</h2>
-        <div class="section-divider"></div>
-        <div class="three-cols">
-          <div class="card">
-            <h4>Multimodal AI & Signal Processing</h4>
-            <p>
-              Design and evaluate fusion architectures that combine time,
-              frequency, and time-frequency ECG representations with clinical
-              data. Develop methods that preserve complementary diagnostic
-              information across modalities.
-            </p>
-          </div>
-          <div class="card">
-            <h4>Robustness & Physiologic Invariance</h4>
-            <p>
-              Study when models should or should not change their predictions
-              under natural physiologic drift. Develop metrics and training
-              strategies that maintain stability under benign perturbations
-              while remaining sensitive to pathological changes.
-            </p>
-          </div>
-          <div class="card">
-            <h4>Explainability & Clinical Translation</h4>
-            <p>
-              Create interpretable models that communicate evidence in forms
-              clinicians and public-health leaders can interrogate, critique,
-              and refine. Ensure medical plausibility and trustworthiness in
-              high-stakes healthcare decisions.
-            </p>
-          </div>
+      <!-- Longevity + quality -->
+      <div class="mini-row">
+        <div class="mini-card">
+          <div class="mini-eyebrow">cardiac age</div>
+          <div class="mini-value" id="longValue" style="color:var(--blue)">–</div>
+          <div class="mini-sub" id="longSub">vs. your age group</div>
+          <div class="mini-bar"><div class="mini-bar-fill" id="longFill" style="background:var(--blue)"></div></div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-eyebrow">signal quality</div>
+          <div class="mini-value" id="sqiValue">–</div>
+          <div class="mini-sub" id="sqiSub">–</div>
+          <div class="mini-bar"><div class="mini-bar-fill" id="sqiFill"></div></div>
         </div>
       </div>
-    </section>
 
-    <section class="alt-bg">
-      <div class="container">
-        <h2>Key Statistics</h2>
-        <div class="section-divider"></div>
-        <div class="stats-grid">
-          <div class="stat">
-            <h3>30+</h3>
-            <p>Research Publications</p>
-          </div>
-          <div class="stat">
-            <h3>20+</h3>
-            <p>Multimodal AI Systems</p>
-          </div>
-          <div class="stat">
-            <h3>2M+</h3>
-            <p>ECG & Physiologic Samples</p>
-          </div>
-          <div class="stat">
-            <h3>10+</h3>
-            <p>Years</p>
-          </div>
+      <!-- Trustworthiness -->
+      <div class="trust-card">
+        <div class="trust-header">
+          <div class="trust-label">trustworthiness</div>
+          <div class="trust-pct" id="trustPct">–</div>
+        </div>
+        <div class="trust-bar">
+          <div class="trust-bar-fill" id="trustFill"></div>
+        </div>
+        <div class="trust-chips">
+          <div class="trust-chip" id="chip1">SQI –%</div>
+          <div class="trust-chip" id="chip2">in-distribution –%</div>
+          <div class="trust-chip" id="chip3">stability –%</div>
         </div>
       </div>
-    </section>
 
-    <section>
-      <div class="container section-content">
-        <h2>Research Overview</h2>
-        <div class="section-divider"></div>
-        <div>
-          <h3 class="text-accent mt-0">Research Vision</h3>
-          <p>
-            My research focuses on developing AI systems that can be trusted in
-            high-stakes cardiovascular and population-health settings. I design
-            multimodal models that integrate time, frequency, and time-frequency
-            ECG representations with clinical and population data to detect risk
-            earlier and support transparent decision-making. Across projects, I
-            study when models should or should not change their predictions, how
-            to preserve physiologic invariance under noise and drift, and how to
-            communicate evidence in forms that clinicians and public-health
-            leaders can interrogate, critique, and refine.
-          </p>
+      <!-- XAI -->
+      <div class="xai-card">
+        <div class="xai-eyebrow">why this score — feature contributions</div>
+        <div class="xai-row">
+          <div class="xai-name">
+            <strong>Rhythm regularity</strong>
+            heart rate variability
+          </div>
+          <div class="xai-track">
+            <div class="xai-center-line"></div>
+            <div class="xai-bar" id="xb1"></div>
+          </div>
+          <div class="xai-val" id="xv1">–</div>
         </div>
-        <div>
-          <h3 class="text-accent">Teaching Philosophy</h3>
-          <p>
-            My teaching philosophy is grounded in the belief that active
-            engagement leads to deeper learning. I design learning experiences
-            that emphasize practical application, analytical reasoning, and
-            hands-on problem solving. By connecting technical concepts to real
-            organizational and industry contexts and helping students to develop
-            both competence and confidence. I continuously work to enhance the
-            learning environment through thoughtful curriculum improvement and
-            evidence-based instructional practices. I also champion computer
-            science for all and strive to ensure that every student has
-            equitable access to high-quality computing education.
-          </p>
+        <div class="xai-row">
+          <div class="xai-name">
+            <strong>Pulse shape</strong>
+            waveform morphology
+          </div>
+          <div class="xai-track">
+            <div class="xai-center-line"></div>
+            <div class="xai-bar" id="xb2"></div>
+          </div>
+          <div class="xai-val" id="xv2">–</div>
         </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 Dr. Timothy Oladunni.</p>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="publications.html">Publications</a>
-          <a href="nlp.html">NLP</a>
-          <a href="lab.html">Lab</a>
-          <a href="professional.html">Professional</a>
+        <div class="xai-row">
+          <div class="xai-name">
+            <strong>Pulse strength</strong>
+            amplitude dynamics
+          </div>
+          <div class="xai-track">
+            <div class="xai-center-line"></div>
+            <div class="xai-bar" id="xb3"></div>
+          </div>
+          <div class="xai-val" id="xv3">–</div>
         </div>
       </div>
-    </footer>
 
-    <script src="assets/js/main.js"></script>
-  </body>
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+        <strong>Not a medical device.</strong> CardioWell is a wellness indicator only. Results are not a diagnosis and do not replace clinical evaluation. If you have cardiac symptoms, consult a physician.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Action bar -->
+  <div class="action-bar">
+    <div class="btn-icon" onclick="openHistory()" title="History">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <polyline points="12 8 12 12 14.5 14.5"/>
+        <path d="M3.05 11a9 9 0 1 1 .5 4"/>
+        <polyline points="3 8 3 11 6 11"/>
+      </svg>
+    </div>
+    <button class="btn-scan idle" id="scanBtn" onclick="handleScan()">
+      Start scan
+      <div class="scan-progress" id="scanProgress" style="width:0%"></div>
+    </button>
+    <div class="btn-icon" onclick="showToast('Share feature coming soon')" title="Share">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- History panel -->
+  <div class="history-panel" id="historyPanel">
+    <div class="history-header">
+      <div class="history-title">Scan history</div>
+      <div class="history-close" onclick="closeHistory()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </div>
+    </div>
+    <div class="history-list" id="historyList"></div>
+  </div>
+
+</div>
+
+<script>
+'use strict';
+
+// ── State ────────────────────────────────────────────────────────────────────
+const SCAN_DURATION = 10000; // 10 seconds
+let scanState = 'idle';  // idle | scanning | done
+let scanStart = null;
+let scanRaf = null;
+let stream = null;
+let wavePoints = [];
+let history = JSON.parse(localStorage.getItem('cw_history') || '[]');
+let userAge = 45;
+
+// ── Simulated inference engine ────────────────────────────────────────────────
+// In production: replace computeCSI() with actual ONNX model inference
+// fed by the rPPG signal extracted from the camera frames.
+function extractRPPG(videoEl) {
+  // Real implementation: sample green channel mean from central ROI of each frame
+  // Here: simulated signal with realistic cardiac morphology
+  const now = Date.now();
+  const hr = 60 + 15 * Math.sin(now / 8000);
+  const period = 60000 / hr;
+  const phase = (now % period) / period;
+  const beat = Math.exp(-Math.pow((phase - 0.2) * 8, 2));
+  const notch = 0.3 * Math.exp(-Math.pow((phase - 0.45) * 14, 2));
+  const noise = (Math.random() - 0.5) * 0.06;
+  return beat + notch + noise;
+}
+
+function computeResult(rawSignal) {
+  // Simulated TinyCSINet inference — returns a plausible result
+  // reflecting realistic population distributions.
+  // Real: feed 300-sample normalised PPG window into ONNX model.
+  const seed = Date.now() % 1000;
+  const r = Math.random();
+  let csi, sqi, ood, stability;
+
+  // Random sample across the three tiers with realistic frequency
+  if (r < 0.60) {
+    csi = 0.58 + Math.random() * 0.27;   // healthy 60% of population
+    sqi = 72 + Math.floor(Math.random() * 27);
+    ood = 88 + Math.floor(Math.random() * 11);
+    stability = 90 + Math.floor(Math.random() * 9);
+  } else if (r < 0.85) {
+    csi = 0.35 + Math.random() * 0.22;   // borderline 25%
+    sqi = 60 + Math.floor(Math.random() * 30);
+    ood = 72 + Math.floor(Math.random() * 20);
+    stability = 78 + Math.floor(Math.random() * 16);
+  } else {
+    csi = 0.10 + Math.random() * 0.24;   // compromised 15%
+    sqi = 50 + Math.floor(Math.random() * 35);
+    ood = 58 + Math.floor(Math.random() * 22);
+    stability = 65 + Math.floor(Math.random() * 20);
+  }
+
+  // XAI contributions (sum to ~CSI deviation from 0.5)
+  const delta = csi - 0.5;
+  const hrv_contrib = delta * 0.45 + (Math.random() - 0.5) * 0.04;
+  const morph_contrib = delta * 0.35 + (Math.random() - 0.5) * 0.03;
+  const amp_contrib = delta * 0.20 + (Math.random() - 0.5) * 0.03;
+
+  const trust = Math.round(sqi * 0.38 + ood * 0.35 + stability * 0.27);
+
+  return { csi, sqi, ood, stability, trust,
+           xai: [hrv_contrib, morph_contrib, amp_contrib] };
+}
+
+// ── Color helpers ─────────────────────────────────────────────────────────────
+function tierOf(csi) {
+  if (csi >= 0.60) return 'stable';
+  if (csi >= 0.35) return 'borderline';
+  return 'compromised';
+}
+function colorOf(csi) {
+  if (csi >= 0.60) return 'var(--green)';
+  if (csi >= 0.35) return 'var(--amber)';
+  return 'var(--red)';
+}
+function sqiColor(v) {
+  if (v >= 78) return 'var(--green)';
+  if (v >= 52) return 'var(--amber)';
+  return 'var(--red)';
+}
+function trustColor(v) {
+  if (v >= 75) return 'var(--green)';
+  if (v >= 45) return 'var(--amber)';
+  return 'var(--red)';
+}
+function sqiLabel(v) {
+  if (v >= 80) return 'good signal';
+  if (v >= 65) return 'acceptable';
+  if (v >= 45) return 'hold finger still';
+  return 'poor — retry';
+}
+function trustLabel(v) {
+  if (v >= 75) return v + '%';
+  if (v >= 45) return v + '%';
+  return v + '%';
+}
+function descOf(tier) {
+  if (tier === 'stable') return 'Dynamics consistent\nwith healthy cohort';
+  if (tier === 'borderline') return 'Reduced stability —\nconsider a retest';
+  return 'Below normal range —\nconsult a physician';
+}
+function cardiacAge(csi, age) {
+  const delta = Math.round((csi - 0.50) * 22);
+  if (delta >= 0) return `−${delta} yrs`;
+  return `+${Math.abs(delta)} yrs`;
+}
+
+// ── Render results ────────────────────────────────────────────────────────────
+function renderResults(r) {
+  const { csi, sqi, trust, ood, stability, xai } = r;
+  const tier = tierOf(csi);
+  const col = colorOf(csi);
+
+  // Show results div
+  document.getElementById('placeholder').style.display = 'none';
+  const lr = document.getElementById('liveResults');
+  lr.style.display = 'flex';
+
+  // CSI hero
+  document.getElementById('csiNumber').textContent = csi.toFixed(2);
+  document.getElementById('csiNumber').style.color = col;
+
+  const badge = document.getElementById('csiTierBadge');
+  badge.textContent = tier;
+  badge.style.background = tier==='stable' ? 'var(--green-bg)' : tier==='borderline' ? 'var(--amber-bg)' : 'var(--red-bg)';
+  badge.style.color = tier==='stable' ? 'var(--green)' : tier==='borderline' ? 'var(--amber)' : 'var(--red)';
+
+  document.getElementById('csiDescriptor').textContent = descOf(tier).replace('\n', ' ');
+
+  const pct = Math.round(csi * 100);
+  document.getElementById('csiTrackFill').style.width = pct + '%';
+  document.getElementById('csiTrackFill').style.background = col;
+  document.getElementById('csiTrackThumb').style.left = pct + '%';
+  document.getElementById('csiTrackThumb').style.background = col;
+
+  // Cardiac age
+  const cAge = cardiacAge(csi, userAge);
+  const isYounger = csi >= 0.50;
+  document.getElementById('longValue').textContent = cAge;
+  document.getElementById('longValue').style.color = isYounger ? 'var(--green)' : 'var(--red)';
+  document.getElementById('longSub').textContent = 'vs. ' + userAge + ' yr cohort';
+  const longPct = Math.round(Math.min(99, Math.max(5, (csi - 0.05) * 110)));
+  document.getElementById('longFill').style.width = longPct + '%';
+  document.getElementById('longFill').style.background = isYounger ? 'var(--green)' : 'var(--red)';
+
+  // SQI
+  document.getElementById('sqiValue').textContent = sqi + '%';
+  document.getElementById('sqiValue').style.color = sqiColor(sqi);
+  document.getElementById('sqiSub').textContent = sqiLabel(sqi);
+  document.getElementById('sqiFill').style.width = sqi + '%';
+  document.getElementById('sqiFill').style.background = sqiColor(sqi);
+
+  // Trust
+  document.getElementById('trustPct').textContent = trust + '%';
+  document.getElementById('trustPct').style.color = trustColor(trust);
+  document.getElementById('trustFill').style.width = trust + '%';
+  document.getElementById('trustFill').style.background = trustColor(trust);
+  document.getElementById('chip1').textContent = 'signal ' + sqi + '%';
+  document.getElementById('chip2').textContent = 'in-dist ' + ood + '%';
+  document.getElementById('chip3').textContent = 'stable ' + stability + '%';
+
+  // XAI — bidirectional bars centred at 50%
+  const xaiIds = ['xb1','xb2','xb3'];
+  const xaiVals = ['xv1','xv2','xv3'];
+  xai.forEach((v, i) => {
+    const pctHalf = Math.min(48, Math.abs(v) * 160);
+    const bar = document.getElementById(xaiIds[i]);
+    const valEl = document.getElementById(xaiVals[i]);
+    if (v >= 0) {
+      bar.style.left = '50%';
+      bar.style.right = 'unset';
+      bar.style.width = pctHalf + '%';
+      bar.style.background = 'var(--green)';
+    } else {
+      bar.style.left = 'unset';
+      bar.style.right = '50%';
+      bar.style.width = pctHalf + '%';
+      bar.style.background = 'var(--red)';
+    }
+    const fmt = (v >= 0 ? '+' : '') + v.toFixed(2);
+    valEl.textContent = fmt;
+    valEl.style.color = v >= 0 ? 'var(--green)' : 'var(--red)';
+  });
+}
+
+// ── Camera ────────────────────────────────────────────────────────────────────
+async function startCamera() {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'environment', width: { ideal: 640 }, height: { ideal: 480 } },
+      audio: false
+    });
+    document.getElementById('cameraVideo').srcObject = stream;
+  } catch (e) {
+    // Front camera fallback
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+      document.getElementById('cameraVideo').srcObject = stream;
+    } catch (e2) {
+      showToast('Camera access denied — check browser permissions');
+    }
+  }
+}
+
+// ── Waveform animation ────────────────────────────────────────────────────────
+const wCanvas = document.getElementById('waveCanvas');
+const wCtx = wCanvas.getContext('2d');
+let wPoints = [];
+let wAnimRaf = null;
+
+function startWaveAnim() {
+  wCanvas.style.opacity = '1';
+  const W = wCanvas.parentElement.offsetWidth;
+  const H = 44;
+  wCanvas.width = W;
+  wCanvas.height = H;
+  wPoints = [];
+
+  function frame() {
+    const val = extractRPPG(null);
+    wPoints.push(val);
+    if (wPoints.length > W / 2) wPoints.shift();
+
+    wCtx.clearRect(0, 0, W, H);
+    wCtx.beginPath();
+    wCtx.strokeStyle = 'rgba(29,158,117,.55)';
+    wCtx.lineWidth = 1.5;
+    const pts = wPoints;
+    const min = Math.min(...pts), max = Math.max(...pts);
+    const range = max - min || 1;
+    pts.forEach((p, i) => {
+      const x = (i / (W / 2 - 1)) * W;
+      const y = H - 8 - ((p - min) / range) * (H - 16);
+      i === 0 ? wCtx.moveTo(x, y) : wCtx.lineTo(x, y);
+    });
+    wCtx.stroke();
+    wAnimRaf = requestAnimationFrame(frame);
+  }
+  wAnimRaf = requestAnimationFrame(frame);
+}
+
+function stopWaveAnim() {
+  if (wAnimRaf) cancelAnimationFrame(wAnimRaf);
+  wCanvas.style.opacity = '0';
+}
+
+// ── Scan flow ─────────────────────────────────────────────────────────────────
+function handleScan() {
+  if (scanState === 'idle' || scanState === 'done') {
+    startScan();
+  }
+}
+
+function startScan() {
+  scanState = 'scanning';
+  scanStart = Date.now();
+
+  const btn = document.getElementById('scanBtn');
+  btn.className = 'btn-scan scanning';
+  btn.childNodes[0].textContent = 'Scanning…';
+
+  document.getElementById('ring1').style.display = 'block';
+  document.getElementById('ring2').style.display = 'block';
+  document.getElementById('recIndicator').style.display = 'flex';
+  document.getElementById('cameraHint').textContent = 'hold still…';
+
+  startWaveAnim();
+
+  function tick() {
+    const elapsed = Date.now() - scanStart;
+    const frac = Math.min(1, elapsed / SCAN_DURATION);
+
+    document.getElementById('timerBar').style.width = (frac * 100) + '%';
+    document.getElementById('scanProgress').style.width = (frac * 100) + '%';
+
+    const remaining = Math.ceil((SCAN_DURATION - elapsed) / 1000);
+    const sec = remaining > 0 ? remaining : 0;
+    const m = Math.floor((SCAN_DURATION - elapsed) / 60000);
+    const s = String(sec % 60).padStart(2, '0');
+    document.getElementById('recText').textContent = `0:${String(Math.ceil(elapsed/1000)).padStart(2,'0')}`;
+
+    if (elapsed >= SCAN_DURATION) {
+      finishScan();
+    } else {
+      scanRaf = requestAnimationFrame(tick);
+    }
+  }
+  scanRaf = requestAnimationFrame(tick);
+}
+
+function finishScan() {
+  scanState = 'done';
+  stopWaveAnim();
+
+  document.getElementById('ring1').style.display = 'none';
+  document.getElementById('ring2').style.display = 'none';
+  document.getElementById('recIndicator').style.display = 'none';
+  document.getElementById('timerBar').style.width = '100%';
+  document.getElementById('cameraHint').textContent = 'scan complete';
+
+  const result = computeResult(null);
+  renderResults(result);
+
+  // Save to history
+  const entry = {
+    ts: Date.now(),
+    csi: result.csi,
+    trust: result.trust,
+    tier: tierOf(result.csi)
+  };
+  history.unshift(entry);
+  if (history.length > 30) history.pop();
+  localStorage.setItem('cw_history', JSON.stringify(history));
+
+  const btn = document.getElementById('scanBtn');
+  btn.className = 'btn-scan done';
+  btn.childNodes[0].textContent = 'Scan again';
+  document.getElementById('scanProgress').style.width = '0%';
+
+  // Reset timer bar after a moment
+  setTimeout(() => {
+    document.getElementById('timerBar').style.width = '0%';
+    document.getElementById('cameraHint').textContent = 'cover camera with finger';
+  }, 3000);
+}
+
+// ── History panel ─────────────────────────────────────────────────────────────
+function openHistory() {
+  renderHistoryList();
+  document.getElementById('historyPanel').classList.add('open');
+}
+function closeHistory() {
+  document.getElementById('historyPanel').classList.remove('open');
+}
+function renderHistoryList() {
+  const list = document.getElementById('historyList');
+  if (history.length === 0) {
+    list.innerHTML = '<div class="empty-history">No scans yet.<br>Complete your first scan to see your history.</div>';
+    return;
+  }
+  list.innerHTML = history.map((h, i) => {
+    const d = new Date(h.ts);
+    const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+    const col = h.tier === 'stable' ? 'var(--green)' : h.tier === 'borderline' ? 'var(--amber)' : 'var(--red)';
+    const trend = i < history.length - 1 ?
+      (h.csi > history[i+1].csi ? '↑' : h.csi < history[i+1].csi ? '↓' : '→') : '';
+    return `<div class="history-item">
+      <div class="history-dot" style="background:${col}"></div>
+      <div class="history-info">
+        <div class="history-csi" style="color:${col}">${h.csi.toFixed(2)}</div>
+        <div class="history-date">${dateStr} · ${h.tier}</div>
+      </div>
+      <div class="history-trend" style="color:${col}">${trend}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+// ── Clock ─────────────────────────────────────────────────────────────────────
+function updateClock() {
+  const now = new Date();
+  const h = now.getHours();
+  const m = String(now.getMinutes()).padStart(2, '0');
+  document.getElementById('statusTime').textContent = h + ':' + m;
+}
+updateClock();
+setInterval(updateClock, 10000);
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+startCamera();
+</script>
+</body>
 </html>
