@@ -9,7 +9,8 @@
   --color-accent-light: #ddc06a;
   --color-text: #2c2c2c;
   --color-text-secondary: #5a5a5a;
-  --color-text-muted: #888;
+  --color-text-muted: #666;
+  --color-accent-text: #7d6012;
   --color-bg: #ffffff;
   --color-bg-alt: #f5f6f8;
   --color-bg-dark: #0f1923;
@@ -2826,3 +2827,327 @@ footer .footer-links a {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
+
+/* ORBIL-AI: aims, preliminary chart, plan, gantt */
+.aim-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.aim-card {
+  padding: 1.3rem 1.4rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+.aim-card header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.aim-card h3 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.aim-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.aim-card > p {
+  margin: 0 0 0.6rem;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.aim-points {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.aim-points li {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.prelim-chart {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.pc-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.pc-label {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.pc-track {
+  position: relative;
+  height: 26px;
+  background: var(--color-bg);
+  border-radius: 4px;
+  border: 1px solid var(--color-border-light);
+}
+
+.pc-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: #9aaabf;
+  border-radius: 3px;
+}
+
+.pc-bar.pc-hi {
+  background: var(--color-primary);
+}
+
+.pc-val {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.plan-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
+}
+
+.plan-grid li {
+  padding: 1rem 1.1rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.plan-grid h3 {
+  margin: 0.55rem 0 0.3rem;
+  font-size: 0.95rem;
+}
+
+.plan-grid p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.g-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+}
+
+.g-legend i {
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  margin-right: 0.4rem;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.gantt {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.2rem 0.6rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.g-title {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.g-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.28rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.g-row:last-child {
+  border-bottom: none;
+}
+
+.g-label {
+  font-size: 0.83rem;
+  line-height: 1.35;
+  color: var(--color-text-secondary);
+}
+
+.g-track {
+  position: relative;
+  height: 14px;
+  background: repeating-linear-gradient(to right, transparent 0, transparent calc(25% - 1px), var(--color-border-light) calc(25% - 1px), var(--color-border-light) 25%);
+}
+
+.g-bar {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 3px;
+}
+
+.g-a1 { background: #2d5a8e; }
+.g-a2 { background: #c9a84c; }
+.g-a3 { background: #2f8a52; }
+
+.g-axis {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.g-ticks {
+  height: 18px;
+  background: none;
+}
+
+.g-ticks span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.g-ticks span:first-child {
+  transform: none;
+}
+
+.g-ticks span:last-child {
+  transform: translateX(-100%);
+}
+
+@media (max-width: 700px) {
+  .pc-row,
+  .g-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+  .g-axis .g-label {
+    display: none;
+  }
+}
+
+.pc-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pc-cell .pc-track {
+  flex: 1;
+}
+
+.pc-cell .pc-val {
+  position: static;
+  transform: none;
+  min-width: 2.5rem;
+  color: var(--color-text);
+}
+
+.pc-head span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.plan-grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+@media (min-width: 1101px) {
+  .plan-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .plan-grid li:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* ============================================
+   Accessibility: contrast and link affordance (WCAG 2.1 AA)
+   ============================================ */
+
+/* Gold text on light backgrounds uses a darker gold for contrast */
+.text-accent,
+.member-group,
+.member-card .member-link,
+.service-year,
+main .card-kicker,
+.featured-project .card-kicker {
+  color: var(--color-accent-text) !important;
+}
+
+main a:hover {
+  color: var(--color-accent-text);
+}
+
+/* Gold remains on dark backgrounds */
+.hero a:hover,
+.hero-page a:hover,
+.profile-hero a:hover,
+.project-hero a:hover {
+  color: var(--color-accent-light);
+}
+
+/* Links inside running text are underlined, not distinguished by color alone */
+main p a:not(.btn):not(.pub-title),
+main .framework-block li a,
+main .aim-points a,
+main .fact-value a,
+main .recognition-desc a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+main p a:not(.btn):hover {
+  text-decoration-thickness: 2px;
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+.pub-note a{ text-decoration: underline; }

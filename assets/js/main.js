@@ -35,16 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Smooth scroll for anchor links
+  // Smooth scroll for in-page links; also moves keyboard focus to the target
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
       var href = this.getAttribute("href");
-      if (href !== "#" && document.querySelector(href)) {
-        e.preventDefault();
-        document.querySelector(href).scrollIntoView({
-          behavior: "smooth",
-        });
-      }
+      if (href === "#" || this.hasAttribute("data-toggle")) return;
+      var target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+      if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+      if (history.replaceState) history.replaceState(null, "", href);
     });
   });
 

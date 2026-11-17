@@ -17,12 +17,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dr. Timothy Oladunni | Pattern Recognition &amp; Trustworthy Machine Learning</title>
-    <meta name="description" content="Dr. Timothy Oladunni, Assistant Professor of Computer Science at Morgan State University, studies the foundations of pattern recognition, machine learning, information theory, and trustworthy AI, with cardiovascular health as a principal application." />
+    <meta name="description" content="Dr. Timothy Oladunni, Morgan State University: foundations of pattern recognition, machine learning, information theory, and trustworthy AI, applied to cardiovascular health." />
     <link rel="canonical" href="https://timothyoladunni.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dr. Timothy Oladunni" />
     <meta property="og:title" content="Dr. Timothy Oladunni | Pattern Recognition &amp; Trustworthy Machine Learning" />
-    <meta property="og:description" content="Dr. Timothy Oladunni, Assistant Professor of Computer Science at Morgan State University, studies the foundations of pattern recognition, machine learning, information theory, and trustworthy AI, with cardiovascular health as a principal application." />
+    <meta property="og:description" content="Dr. Timothy Oladunni, Morgan State University: foundations of pattern recognition, machine learning, information theory, and trustworthy AI, applied to cardiovascular health." />
     <meta property="og:url" content="https://timothyoladunni.com/" />
     <meta property="og:image" content="https://timothyoladunni.com/assets/images/professional-pic.jpeg" />
     <meta name="twitter:card" content="summary" />
@@ -37,27 +37,55 @@
     <link rel="stylesheet" href="assets/css/shared.css" />
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Timothy Oladunni",
-        "honorificPrefix": "Dr.",
-        "jobTitle": "Assistant Professor of Computer Science",
-        "affiliation": {
-          "@type": "CollegeOrUniversity",
-          "name": "Morgan State University"
-        },
-        "url": "https://timothyoladunni.com/",
-        "image": "https://timothyoladunni.com/assets/images/professional-pic.jpeg",
-        "sameAs": ["https://orcid.org/0000-0002-2693-5440"],
-        "knowsAbout": [
-          "Pattern recognition",
-          "Machine learning",
-          "Information theory",
-          "Trustworthy artificial intelligence",
-          "Biomedical signal processing"
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://timothyoladunni.com/#website",
+      "url": "https://timothyoladunni.com/",
+      "name": "Dr. Timothy Oladunni",
+      "publisher": {
+        "@id": "https://timothyoladunni.com/#person"
       }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://timothyoladunni.com/#person",
+      "name": "Timothy Oladunni",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Assistant Professor of Computer Science",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "Morgan State University",
+        "url": "https://www.morgan.edu/"
+      },
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Department of Computer Science, School of Computer, Mathematical and Natural Sciences, Morgan State University",
+        "url": "https://www.morgan.edu/computer-science"
+      },
+      "url": "https://timothyoladunni.com/",
+      "image": "https://timothyoladunni.com/assets/images/professional-pic.jpeg",
+      "description": "Computer scientist working on the foundations of pattern recognition and trustworthy machine learning, with applications in biomedical signal analysis. Principal Investigator of the NIH-funded ORBIL-AI project (1R16LM015384-01).",
+      "sameAs": [
+        "https://orcid.org/0000-0002-2693-5440",
+        "https://dblp.org/pid/194/5560.html",
+        "https://www.morgan.edu/computer-science/faculty-and-staff/timothy-oladunni",
+        "https://github.com/TOO71"
+      ],
+      "knowsAbout": [
+        "Pattern recognition",
+        "Machine learning",
+        "Information theory",
+        "Trustworthy artificial intelligence",
+        "Multimodal deep learning",
+        "Biomedical signal processing",
+        "Electrocardiogram (ECG) analysis"
+      ]
+    }
+  ]
+}
     </script>
   </head>
 
@@ -240,7 +268,7 @@
             <p>Peer-reviewed conference papers</p>
           </div>
           <div class="stat">
-            <h3>12</h3>
+            <h3>8</h3>
             <p>Preprints (2025&ndash;2026)</p>
           </div>
           <div class="stat">
@@ -249,9 +277,10 @@
           </div>
         </div>
         <p class="stats-note">
-          Counts reflect the <a href="publications.html">Publications</a> page;
-          the preprint count includes 4 manuscripts now under review.
-          Preprints have not completed peer review.
+          Counts reflect the <a href="publications.html">Publications</a> page.
+          A further 4 manuscripts are under review (with preprints on
+          arXiv) and are not included above. Preprints have not completed peer
+          review.
         </p>
       </div>
     </section>

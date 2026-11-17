@@ -1,0 +1,21 @@
+# Dr. Timothy Oladunni
+
+> Dr. Timothy Oladunni is an Assistant Professor of Computer Science at Morgan State University (Department of Computer Science, School of Computer, Mathematical and Natural Sciences), Baltimore, Maryland. His research addresses the foundations of pattern recognition and trustworthy machine learning, including multimodal learning, information-theoretic representation learning, and biomedical signal analysis such as electrocardiogram (ECG) classification. He is the Principal Investigator of ORBIL-AI, an NIH National Library of Medicine R16 SuRE project (award 1R16LM015384-01, September 2026 to July 2030), and was a 2025 ASCEND Faculty Research Fellow at Yale University. He directs the Pattern Recognition & Machine Learning Laboratory.
+
+Peer-reviewed work, preprints and manuscripts under review are labeled separately on this site. Theoretical frameworks described on the research page are research proposals under investigation unless a peer-reviewed publication is cited.
+
+## Main pages
+
+- [Home](https://timothyoladunni.com/): overview, research focus, news
+- [Research](https://timothyoladunni.com/research.html): research program and nine theoretical frameworks, with the status of each
+- [ORBIL-AI](https://timothyoladunni.com/orbil-ai.html): NIH-funded project on orthogonality-regularized, information-theoretic learning for biomedical data
+- [Publications](https://timothyoladunni.com/publications.html): journal articles, conference papers, preprints and manuscripts under review
+- [Lab](https://timothyoladunni.com/lab.html): Pattern Recognition & Machine Learning Laboratory, mission and members
+- [Profile](https://timothyoladunni.com/professional.html): biography, grants, recognition, talks and service
+
+## Other profiles
+
+- [ORCID](https://orcid.org/0000-0002-2693-5440)
+- [DBLP](https://dblp.org/pid/194/5560.html)
+- [Morgan State University faculty page](https://www.morgan.edu/computer-science/faculty-and-staff/timothy-oladunni)
+- [NIH award announcement, Morgan State University](https://www.morgan.edu/news/nih-awards-morgan-grant-to-advance-biomedical-ai-research)

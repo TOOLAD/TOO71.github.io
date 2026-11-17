@@ -17,12 +17,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ORBIL-AI: Orthogonality-Regularized Biomedical Information-theoretic Learning | Dr. Timothy Oladunni</title>
-    <meta name="description" content="ORBIL-AI is an NIH-funded research project (National Library of Medicine, R16 SuRE, award 1R16LM015384-01) at Morgan State University investigating how machine-learning systems represent shared and distinct information across multiple biomedical observations." />
+    <meta name="description" content="ORBIL-AI, an NIH/NLM R16 SuRE project (1R16LM015384-01) at Morgan State University, studies redundancy and complementarity in multimodal representation learning." />
     <link rel="canonical" href="https://timothyoladunni.com/orbil-ai.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dr. Timothy Oladunni" />
     <meta property="og:title" content="ORBIL-AI: Orthogonality-Regularized Biomedical Information-theoretic Learning | Dr. Timothy Oladunni" />
-    <meta property="og:description" content="ORBIL-AI is an NIH-funded research project (National Library of Medicine, R16 SuRE, award 1R16LM015384-01) at Morgan State University investigating how machine-learning systems represent shared and distinct information across multiple biomedical observations." />
+    <meta property="og:description" content="ORBIL-AI, an NIH/NLM R16 SuRE project (1R16LM015384-01) at Morgan State University, studies redundancy and complementarity in multimodal representation learning." />
     <meta property="og:url" content="https://timothyoladunni.com/orbil-ai.html" />
     <meta property="og:image" content="https://timothyoladunni.com/assets/images/professional-pic.jpeg" />
     <meta name="twitter:card" content="summary" />
@@ -107,7 +107,7 @@
           <div><dt>Mechanism</dt><dd>R16 Support for Research Excellence (SuRE)</dd></div>
           <div><dt>Award number</dt><dd>1R16LM015384-01</dd></div>
           <div><dt>Principal Investigator</dt><dd>Dr. Timothy Oladunni</dd></div>
-          <div><dt>Institution</dt><dd>Morgan State University</dd></div>
+          <div><dt>Institution</dt><dd>Department of Computer Science, School of Computer, Mathematical and Natural Sciences, Morgan State University</dd></div>
           <div><dt>Project period</dt><dd>September 10, 2026 &ndash; July 31, 2030</dd></div>
         </dl>
       </div>
@@ -118,11 +118,13 @@
         <p class="aside-label">On this page</p>
         <ul class="project-nav">
           <li><a href="#overview">Overview</a></li>
-          <li><a href="#objectives">Objectives</a></li>
+          <li><a href="#aims">Aims</a></li>
+          <li><a href="#preliminary">Preliminary evidence</a></li>
+          <li><a href="#plan">Research &amp; training plan</a></li>
           <li><a href="#significance">Significance</a></li>
           <li><a href="#team">Team</a></li>
+          <li><a href="#timeline">Timeline &amp; progress</a></li>
           <li><a href="#outputs">Outputs</a></li>
-          <li><a href="#progress">Progress</a></li>
           <li><a href="#acknowledgment">Acknowledgment</a></li>
         </ul>
         <p class="aside-label">Related</p>
@@ -140,33 +142,37 @@
           <div class="overview-grid">
             <div class="project-prose">
               <p>
-                Many biomedical problems provide several observations of the
-                same underlying process: different signals, different sensors,
-                or different mathematical representations of one signal.
-                Machine-learning models that combine these observations are often
-                assumed to benefit from every additional source. In practice,
-                sources can carry largely overlapping information, so that adding
-                them increases model size and computational cost without a
-                corresponding gain in what the model learns.
+                ORBIL-AI investigates a fundamental problem in multimodal machine
+                learning: <strong>redundant information across learned
+                representations</strong>. When a model combines several views of
+                the same signal, such as time-domain, frequency-domain, and
+                time&ndash;frequency representations of an electrocardiogram
+                (ECG), standard fusion methods optimize only the prediction task
+                and assume that each stream will contribute something new. In
+                practice, separate encoders can learn overlapping features of the
+                same events, so that adding streams need not add information.
               </p>
               <p>
-                ORBIL-AI studies this as a question about representation
-                learning: how a learning system represents the information that
-                is <em>shared</em> across observations, and the information that
-                is <em>distinct</em> to each. The project examines
-                orthogonality-regularized, information-theoretic learning, in
-                which information-theoretic quantities describe how much
-                information representations share, and orthogonality
-                constraints encourage learned representations to separate
-                shared from distinct information.
+                The project builds on the published Complementary Feature Domains
+                for Optimal ECG Multimodal Deep Learning Performance (CFD-MED)
+                work, published as
+                <a href="https://ieeexplore.ieee.org/document/11146762" target="_blank" rel="noopener">&ldquo;Rethinking Multimodality&rdquo;
+                (IEEE Access, 2025)</a>,
+                and asks whether <em>explicitly</em> encouraging complementary,
+                near-orthogonal representations improves predictive performance,
+                probability calibration, interpretability, and generalization.
+                It does so by adding two kinds of constraint to the learning
+                objective: information-theoretic penalties on redundancy between
+                streams (normalized mutual information and maximum canonical
+                correlation) and a geometric penalty that pushes the latent
+                representations toward orthogonality.
               </p>
               <p>
-                The scientific aim is to develop and test principles that
-                explain when combining sources helps, and how combination
-                affects a model&rsquo;s performance and reliability. Biomedical
-                signals, beginning with multimodal electrocardiogram (ECG)
-                representations, provide the setting in which these principles
-                are studied.
+                The questions are about representation learning and information
+                theory; ECG classification is the setting in which they are
+                tested. The Research Strategy notes that the principles are not
+                specific to ECG; within this project they are studied with ECG
+                data.
               </p>
             </div>
             <figure class="concept-figure">
@@ -185,53 +191,140 @@
               <text x="250" y="232" text-anchor="middle" font-size="13" fill="#5a5a5a">Observation B</text>
             </svg>
               <figcaption>
-                Schematic of the central question: how learned representations
-                separate information shared across observations from
-                information distinct to each.
+                Schematic: redundant streams overlap heavily; complementary
+                streams contribute information the others do not.
               </figcaption>
             </figure>
           </div>
           <p class="project-note">
             ORBIL-AI is a research project investigating fundamental scientific
-            questions. It is not a clinical product, a validated technology, or
-            a research center.
+            questions. It is not a clinical product, a validated technology, or a
+            research center, and its methods have not been clinically validated.
           </p>
         </section>
 
-        <section class="pblock" id="objectives">
-          <h2>Research Objectives</h2>
-          <div class="aims-pending">
-            <span class="status status-submitted">Pending</span>
+        <section class="pblock" id="aims">
+          <h2>Project Aims</h2>
+          <p class="lead-in">
+            The three aims below are summarized from the project&rsquo;s
+            Research Strategy. All describe planned work.
+          </p>
+          <div class="aim-list">
+            <article class="aim-card">
+              <header><span class="aim-badge">Aim 1</span><h3>Develop and validate ORBIL-AI&rsquo;s core methodology</h3></header>
+              <p>
+                Develop a multimodal ECG representation-learning framework with
+                three specialized encoders: a 1D-CNN for the time-domain
+                waveform, a Transformer for the frequency spectrum, and a 2D-CNN
+                for time&ndash;frequency scalograms. Investigate a composite
+                learning objective that adds three regularizers to the task loss:
+                normalized mutual information, maximum canonical correlation, and
+                latent-space orthogonality. Evaluate each component through
+                systematic, hypothesis-driven ablation studies.
+              </p>
+              <ul class="aim-points">
+                <li>Ablations compare a baseline, each regularizer alone (MI, CCA, orthogonality), and the full model.</li>
+                <li>Regularizer weights tuned by a coarse grid followed by Bayesian optimization with early stopping.</li>
+                <li>Models, training scripts, and evaluation pipelines to be versioned and released publicly.</li>
+              </ul>
+            </article>
+            <article class="aim-card">
+              <header><span class="aim-badge">Aim 2</span><h3>Evaluate ORBIL-AI&rsquo;s robustness and trustworthiness</h3></header>
+              <p>
+                Evaluate generalization across publicly available ECG datasets,
+                including device- and site-held-out testing. Assess predictive
+                performance, probability calibration, explanation fidelity, and
+                robustness to signal disturbances.
+              </p>
+              <ul class="aim-points">
+                <li>Calibration: Expected Calibration Error (ECE), Negative Log-Likelihood (NLL), and reliability diagrams.</li>
+                <li>Explanation fidelity: Saliency Alignment Index (SAI) and Attribution Matching Index (AMI), measured against expert-annotated ECG landmarks.</li>
+                <li>Stress tests from baseline wander to lead dropout, with documented failure modes compiled in a public &ldquo;failure atlas.&rdquo;</li>
+              </ul>
+            </article>
+            <article class="aim-card">
+              <header><span class="aim-badge">Aim 3</span><h3>Capacity building and student pipeline at Morgan State University</h3></header>
+              <p>
+                Develop a structured undergraduate and master&rsquo;s student
+                research program with paid research positions, collaborative
+                research teams (&ldquo;pods&rdquo;), reproducible machine-learning
+                workflows, mentorship, and curriculum development, and support
+                student participation in publications and conference
+                presentations.
+              </p>
+              <ul class="aim-points">
+                <li>Paid fellowships for at least two students per year, with emphasis on multi-year retention.</li>
+                <li>Pods for data curation, model development and ablations, and evaluation.</li>
+                <li>Training in reproducible workflows (DVC, MLflow); weekly mentoring meetings and quarterly skills workshops.</li>
+                <li>A new course module, &ldquo;Multimodal AI for Biomedical Signals,&rdquo; developed with the School of Computer, Mathematical, and Natural Sciences.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="pblock" id="preliminary">
+          <h2>Preliminary Evidence</h2>
+          <p class="lead-in">
+            The Research Strategy reports the following preliminary ECG
+            classification results (macro-F1 on a held-out set). They come from
+            the earlier CFD-MED work that motivated the project; they are not
+            ORBIL-AI project outcomes.
+          </p>
+          <div class="prelim-chart" role="table" aria-label="Preliminary macro-F1 results">
+            <div class="pc-row pc-head" role="row"><span role="columnheader">Model</span><span role="columnheader">Macro-F1 (scale 0 to 1)</span></div>
+            <div class="pc-row" role="row">
+              <span class="pc-label" role="rowheader">Single-stream 1D-CNN (time)</span>
+              <span class="pc-cell" role="cell"><span class="pc-track"><span class="pc-bar" style="width:94%"></span></span><span class="pc-val">0.94</span></span>
+            </div>
+            <div class="pc-row" role="row">
+              <span class="pc-label" role="rowheader">Two-stream fusion (time + time&ndash;frequency)</span>
+              <span class="pc-cell" role="cell"><span class="pc-track"><span class="pc-bar pc-hi" style="width:96%"></span></span><span class="pc-val">0.96</span></span>
+            </div>
+            <div class="pc-row" role="row">
+              <span class="pc-label" role="rowheader">Three-stream fusion (time + frequency + time&ndash;frequency)</span>
+              <span class="pc-cell" role="cell"><span class="pc-track"><span class="pc-bar" style="width:94%"></span></span><span class="pc-val">0.94</span></span>
+            </div>
+          </div>
+          <div class="project-prose" style="margin-top: 1.25rem">
             <p>
-              <strong>Specific Aims.</strong> The formal Specific Aims, as
-              approved by NIH, will be posted here once confirmed against the
-              funded application and the NIH RePORTER abstract.
+              Adding a third stream did not improve on the two-stream model. The
+              Research Strategy reports that this coincided with higher
+              redundancy between streams and lower latent orthogonality, and
+              that saliency maps from the two-stream model aligned more
+              consistently with ECG landmarks. These descriptive observations
+              motivate studying representation complementarity directly, rather
+              than assuming that additional feature streams improve performance.
+              They are not tests of statistical significance.
             </p>
           </div>
-          <p class="lead-in">
-            Project goals as described in the
-            <a href="https://www.morgan.edu/news/nih-awards-morgan-grant-to-advance-biomedical-ai-research" target="_blank" rel="noopener">Morgan State University announcement</a>
-            (October 29, 2026):
-          </p>
-          <ol class="goal-grid">
-            <li><span class="goal-num" aria-hidden="true">1</span><p>Study how learning systems separate information shared across multiple biomedical observations from the information each source contributes uniquely.</p></li>
-            <li><span class="goal-num" aria-hidden="true">2</span><p>Develop and test principles that explain when combining sources helps, and how combination affects model performance and reliability.</p></li>
-            <li><span class="goal-num" aria-hidden="true">3</span><p>Move from characterizing complementarity to approaches that help learning systems learn complementary information more effectively.</p></li>
-            <li><span class="goal-num" aria-hidden="true">4</span><p>Provide opportunities for students to take part in fundamental research at the intersection of computer science and biomedical science.</p></li>
-          </ol>
+        </section>
+
+        <section class="pblock" id="plan">
+          <h2>Research &amp; Training Plan</h2>
+          <p class="lead-in">All activities below are <strong>proposed</strong>; none is reported as complete.</p>
+          <ul class="plan-grid">
+            <li><span class="status status-submitted">Planned</span><h3>Information-theoretic and geometric regularization</h3><p>Penalties on mutual information and canonical correlation between streams, combined with a latent orthogonality constraint.</p></li>
+            <li><span class="status status-submitted">Planned</span><h3>Hypothesis-driven ablations</h3><p>Isolating the contribution of each regularizer against a baseline and the full model.</p></li>
+            <li><span class="status status-submitted">Planned</span><h3>Out-of-distribution testing</h3><p>Device- and site-held-out partitions of public ECG datasets.</p></li>
+            <li><span class="status status-submitted">Planned</span><h3>Calibration and explanation fidelity</h3><p>ECE, NLL, and reliability diagrams; SAI and AMI against annotated ECG landmarks.</p></li>
+            <li><span class="status status-submitted">Planned</span><h3>Robustness and failure analysis</h3><p>Stress tests for noise, baseline wander, and lead dropout, with a public failure atlas.</p></li>
+            <li><span class="status status-submitted">Planned</span><h3>Reproducible workflows and open source</h3><p>Versioned data and code (DVC, MLflow) and a public software release.</p></li>
+            <li><span class="status status-submitted">Planned</span><h3>Student training and curriculum</h3><p>Paid fellowships, research pods, mentorship, workshops, and a new course module.</p></li>
+          </ul>
         </section>
 
         <section class="pblock" id="significance">
           <h2>Scientific Significance</h2>
           <div class="project-prose">
             <p>
-              Questions of redundancy, complementarity, and information
-              preservation are central to pattern recognition and
-              representation learning, yet multimodal models are usually
-              designed by heuristic combination of inputs. ORBIL-AI addresses
-              these questions directly, seeking principles that describe how
-              biomedical information is represented and integrated in learning
-              systems, rather than improvements to a single model or dataset.
+              Redundancy and complementarity between representations are central
+              questions in pattern recognition and representation learning, yet
+              multimodal models are usually designed by heuristic combination of
+              inputs. ORBIL-AI treats complementarity as an explicit training
+              objective and evaluates its effects on calibration and explanation
+              fidelity as well as accuracy, aiming at principles of how
+              information is represented and integrated in learning systems
+              rather than improvements to a single model or dataset.
             </p>
           </div>
           <div class="evidence-grid">
@@ -239,24 +332,22 @@
               <span class="status status-peer">Prior findings</span>
               <h3>What earlier work established</h3>
               <p>
-                Peer-reviewed work preceding the award (IEEE Access, 2025) found
-                that, in multimodal ECG classification, fusing time and
-                time&ndash;frequency representations improved on a
-                single-domain baseline, while adding a frequency-domain
-                representation produced no further gain, consistent with
-                redundancy. This motivated the
-                <a href="research.html#cfd">Complementary Feature Domain (CFD)</a>
-                perspective on which the project builds.
+                Peer-reviewed work preceding the award
+                (<a href="https://ieeexplore.ieee.org/document/11146762" target="_blank" rel="noopener">IEEE Access, 2025</a>)
+                found that fusing time and time&ndash;frequency representations
+                improved on a single-domain baseline, while adding a
+                frequency-domain stream produced no further gain, consistent with
+                redundancy.
               </p>
             </div>
             <div class="evidence-card ev-hypothesis">
               <span class="status status-preprint">Working hypotheses</span>
               <h3>What the project will test</h3>
               <p>
-                That separating shared from distinct information in learned
-                representations, through orthogonality constraints and
-                information-theoretic criteria, may improve generalizability,
-                interpretability, and calibration. These hypotheses have not yet
+                That explicitly penalizing redundancy and encouraging
+                near-orthogonal latent representations improves predictive
+                performance, calibration, interpretability, and
+                out-of-distribution generalization. These hypotheses have not yet
                 been tested within the project.
               </p>
             </div>
@@ -264,10 +355,10 @@
               <span class="status status-ongoing">Open questions</span>
               <h3>What remains unknown</h3>
               <p>
-                Whether patterns observed for ECG representations hold for other
-                biomedical observations, how to measure complementarity reliably
-                in high-dimensional learned representations, and when enforcing
-                separation improves rather than limits what a model learns.
+                How reliably redundancy can be estimated in high-dimensional
+                learned representations, how the three regularizers interact, and
+                when enforcing separation improves rather than limits what a model
+                learns.
               </p>
             </div>
           </div>
@@ -281,7 +372,7 @@
               <div>
                 <h3>Dr. Timothy Oladunni</h3>
                 <p class="team-role">Principal Investigator</p>
-                <p>Assistant Professor of Computer Science, Morgan State University &middot; <a href="professional.html">Profile</a></p>
+                <p>Assistant Professor, Department of Computer Science, School of Computer, Mathematical and Natural Sciences, Morgan State University &middot; <a href="professional.html">Profile</a></p>
               </div>
             </li>
             <li>
@@ -309,6 +400,138 @@
           </p>
         </section>
 
+        <section class="pblock" id="timeline">
+          <h2>Timeline &amp; Progress</h2>
+          <h3 class="subhead mt-0">Progress to date</h3>
+          <ol class="ptimeline">
+            <li class="done">
+              <div class="pt-head"><span class="timeline-date">April 2025</span><span class="status status-peer">Completed</span></div>
+              <p>Preliminary findings on redundancy and complementarity in multimodal ECG, and the Complementary Feature Domains (CFD) perspective, presented at the Yale University Computer Science Colloquium (before the award).</p>
+            </li>
+            <li class="done">
+              <div class="pt-head"><span class="timeline-date">2025</span><span class="status status-peer">Completed</span></div>
+              <p>Visiting faculty research fellowship at Yale University in cardiovascular science and computational AI in medicine (before the award).</p>
+            </li>
+            <li class="done">
+              <div class="pt-head"><span class="timeline-date">September 10, 2026</span><span class="status status-peer">Completed</span></div>
+              <p>Project period began.</p>
+            </li>
+            <li class="done">
+              <div class="pt-head"><span class="timeline-date">October 29, 2026</span><span class="status status-peer">Completed</span></div>
+              <p>Award announced by Morgan State University.</p>
+            </li>
+            <li class="now">
+              <div class="pt-head"><span class="timeline-date">Fall 2026</span><span class="status status-ongoing">In progress</span></div>
+              <p>Undergraduate research on whether models that combine time, frequency, and time&ndash;frequency ECG representations learn complementary or redundant information, following a research plan specified in advance.</p>
+            </li>
+          </ol>
+
+          <h3 class="subhead">Planned four-year timeline</h3>
+          <p class="small-note">
+            Adapted from Figure 3 of the Research Strategy. Months are counted
+            from the project start (September 2026) and bar positions are
+            approximate. Milestones at months 24, 36, and 48.
+          </p>
+          <div class="g-legend" aria-hidden="true">
+            <span><i class="g-a1"></i>Aim 1: methodology</span>
+            <span><i class="g-a2"></i>Aim 2: evaluation &amp; dissemination</span>
+            <span><i class="g-a3"></i>Aim 3: capacity &amp; training</span>
+          </div>
+          <div class="gantt">
+            <p class="g-title">Months 0&ndash;24: setup, Aim 1 development, Aim 2 evaluation</p>
+            <div class="g-row g-axis" aria-hidden="true"><span class="g-label"></span><span class="g-track g-ticks"><span style="left:0.0%">0</span><span style="left:25.0%">6</span><span style="left:50.0%">12</span><span style="left:75.0%">18</span><span style="left:100.0%">24</span></span></div>
+              <div class="g-row">
+                <span class="g-label">Recruit student fellows</span>
+                <span class="g-track"><span class="g-bar g-a3" style="left:0.0%;width:8.3%"></span></span>
+                <span class="visually-hidden">Approximately months 0 to 2</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Environment and repositories (DVC, MLflow)</span>
+                <span class="g-track"><span class="g-bar g-a3" style="left:0.0%;width:10.4%"></span></span>
+                <span class="visually-hidden">Approximately months 0 to 2.5</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Onboarding and responsible conduct of research</span>
+                <span class="g-track"><span class="g-bar g-a3" style="left:5.4%;width:12.1%"></span></span>
+                <span class="visually-hidden">Approximately months 1.3 to 4.2</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Data curation</span>
+                <span class="g-track"><span class="g-bar g-a1" style="left:8.3%;width:24.2%"></span></span>
+                <span class="visually-hidden">Approximately months 2 to 7.8</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Encoders (time, frequency, time&ndash;frequency)</span>
+                <span class="g-track"><span class="g-bar g-a1" style="left:15.8%;width:25.8%"></span></span>
+                <span class="visually-hidden">Approximately months 3.8 to 10</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">ORBIL composite loss</span>
+                <span class="g-track"><span class="g-bar g-a1" style="left:20.8%;width:18.8%"></span></span>
+                <span class="visually-hidden">Approximately months 5 to 9.5</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Ablations (baseline to full model)</span>
+                <span class="g-track"><span class="g-bar g-a1" style="left:31.2%;width:37.5%"></span></span>
+                <span class="visually-hidden">Approximately months 7.5 to 16.5</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Hyperparameter tuning</span>
+                <span class="g-track"><span class="g-bar g-a1" style="left:41.7%;width:16.7%"></span></span>
+                <span class="visually-hidden">Approximately months 10 to 14</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Out-of-distribution splits (device and site)</span>
+                <span class="g-track"><span class="g-bar g-a2" style="left:58.3%;width:15.4%"></span></span>
+                <span class="visually-hidden">Approximately months 14 to 17.7</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Calibration (ECE, NLL)</span>
+                <span class="g-track"><span class="g-bar g-a2" style="left:62.5%;width:25.0%"></span></span>
+                <span class="visually-hidden">Approximately months 15 to 21</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Explanation fidelity (SAI, AMI)</span>
+                <span class="g-track"><span class="g-bar g-a2" style="left:73.8%;width:20.0%"></span></span>
+                <span class="visually-hidden">Approximately months 17.7 to 22.5</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Manuscript drafting and submission</span>
+                <span class="g-track"><span class="g-bar g-a2" style="left:79.2%;width:20.8%"></span></span>
+                <span class="visually-hidden">Approximately months 19 to 24</span>
+              </div>
+          </div>
+          <div class="gantt">
+            <p class="g-title">Months 24&ndash;48: Aim 3 capacity building and dissemination</p>
+            <div class="g-row g-axis" aria-hidden="true"><span class="g-label"></span><span class="g-track g-ticks"><span style="left:0.0%">24</span><span style="left:25.0%">30</span><span style="left:50.0%">36</span><span style="left:75.0%">42</span><span style="left:100.0%">48</span></span></div>
+              <div class="g-row">
+                <span class="g-label">Student pipeline and research pods (ongoing)</span>
+                <span class="g-track"><span class="g-bar g-a3" style="left:0.0%;width:100.0%"></span></span>
+                <span class="visually-hidden">Approximately months 0 to 24</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">MLOps training (DVC, MLflow)</span>
+                <span class="g-track"><span class="g-bar g-a3" style="left:27.1%;width:39.6%"></span></span>
+                <span class="visually-hidden">Approximately months 6.5 to 16</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Curricular integration and mentorship</span>
+                <span class="g-track"><span class="g-bar g-a3" style="left:30.4%;width:36.2%"></span></span>
+                <span class="visually-hidden">Approximately months 7.3 to 16</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Open-source releases</span>
+                <span class="g-track"><span class="g-bar g-a1" style="left:54.2%;width:45.8%"></span></span>
+                <span class="visually-hidden">Approximately months 13 to 24</span>
+              </div>
+              <div class="g-row">
+                <span class="g-label">Follow-on proposal</span>
+                <span class="g-track"><span class="g-bar g-a2" style="left:72.9%;width:27.1%"></span></span>
+                <span class="visually-hidden">Approximately months 17.5 to 24</span>
+              </div>
+          </div>
+        </section>
+
         <section class="pblock" id="outputs">
           <h2>Publications &amp; Research Outputs</h2>
           <p class="lead-in">
@@ -323,8 +546,8 @@
             <tbody>
               <tr><th scope="row">Peer-reviewed publications</th><td>None yet</td></tr>
               <tr><th scope="row">Preprints</th><td>None yet</td></tr>
-              <tr><th scope="row">Software</th><td>Not yet released</td></tr>
-              <tr><th scope="row">Datasets</th><td>Not yet released</td></tr>
+              <tr><th scope="row">Software</th><td>Planned: public release of models, training scripts, and evaluation pipelines</td></tr>
+              <tr><th scope="row">Datasets and resources</th><td>Planned: public failure atlas from robustness testing</td></tr>
               <tr><th scope="row">Presentations &amp; other outputs</th><td>None yet</td></tr>
             </tbody>
           </table>
@@ -336,6 +559,7 @@
               <a class="pub-title" href="https://ieeexplore.ieee.org/document/11146762" target="_blank" rel="noopener">Rethinking Multimodality: Optimizing Multimodal Deep Learning for Biomedical Signal Classification</a>
               <span class="pub-authors">T. Oladunni, A. Wong</span>
               <span class="pub-venue"><em>IEEE Access</em>, 2025. Peer-reviewed.</span>
+              <span class="pub-note">The CFD-MED work on which ORBIL-AI builds (Complementary Feature Domains for Optimal ECG Multimodal Deep Learning Performance).</span>
             </li>
             <li>
               <a class="pub-title" href="https://ieeexplore.ieee.org/abstract/document/11239065" target="_blank" rel="noopener">Explainable Deep Neural Network for Multimodal ECG Signals: Intermediate Versus Late Fusion</a>
@@ -349,40 +573,14 @@
           </ol>
         </section>
 
-        <section class="pblock" id="progress">
-          <h2>Project Progress</h2>
-          <ol class="ptimeline">
-            <li class="done">
-              <div class="pt-head"><span class="timeline-date">April 2025</span><span class="status status-peer">Completed</span></div>
-              <p>Preliminary findings on redundancy and complementarity in multimodal ECG presented at the Yale University Computer Science Colloquium (before the award).</p>
-            </li>
-            <li class="done">
-              <div class="pt-head"><span class="timeline-date">September 10, 2026</span><span class="status status-peer">Completed</span></div>
-              <p>Project period began.</p>
-            </li>
-            <li class="done">
-              <div class="pt-head"><span class="timeline-date">October 29, 2026</span><span class="status status-peer">Completed</span></div>
-              <p>Award announced by Morgan State University.</p>
-            </li>
-            <li class="now">
-              <div class="pt-head"><span class="timeline-date">Fall 2026</span><span class="status status-ongoing">In progress</span></div>
-              <p>Student research on whether models that combine time, frequency, and time&ndash;frequency ECG representations learn complementary or redundant information, using the public PTB-XL and Mendeley ECG datasets and a research plan specified in advance.</p>
-            </li>
-            <li class="planned">
-              <div class="pt-head"><span class="timeline-date">2026&ndash;2030</span><span class="status status-submitted">Planned</span></div>
-              <p>Milestones for each Specific Aim will be listed here once the aims are posted.</p>
-            </li>
-          </ol>
-        </section>
-
         <section class="pblock" id="acknowledgment">
           <h2>Funding Acknowledgment</h2>
           <div class="ack-panel">
             <p>
               Research reported on this page is supported by the National
               Library of Medicine of the National Institutes of Health under
-              Award Number R16LM015384, as part of an award totaling
-              approximately $520,000 over four years.
+              Award Number R16LM015384 (1R16LM015384-01), as part of an award
+              totaling approximately $520,000 over four years, with an initial award of $130,134.
             </p>
             <!-- Stevens Amendment: add the percentage and dollar amount of total project costs financed with federal funds and with non-federal sources, as confirmed by the Office of Sponsored Programs. -->
             <p>
