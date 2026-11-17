@@ -3158,3 +3158,7 @@ main p a:not(.btn):hover {
 
 .profile-title a{color:var(--color-accent-light) !important;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;}
 .profile-title a:hover,.profile-title a:focus{color:#fff !important;}
+
+.stats-grid.stats-5{grid-template-columns:repeat(5,1fr);}
+@media (max-width:1100px){.stats-grid.stats-5{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:600px){.stats-grid.stats-5{grid-template-columns:1fr;}}

@@ -422,14 +422,14 @@
             </header>
             <div class="fw-body">
               <div class="fw-text">
-                <div class="framework-block"><h4>Core idea</h4><p>AVCT proposes a formal coupling between vascular mechanics and the geometry of the cardiac attractor, as a basis for calibrated cuffless blood pressure estimation, operationalized with Takens delay embedding and attractor morphology features. The preprint gives two theorems, a proposition, and a corollary.</p></div>
-                <div class="framework-block"><h4>Reported evidence</h4><p>A 2026 preprint reports leave-one-subject-out evaluation on 46 subjects from retrospective intensive-care (BIDMC, n = 9) and surgical (VitalDB, n = 37) recordings, comprising 29,684 windows, with single-point calibration: systolic MAE 2.05 mmHg and diastolic MAE 1.67 mmHg, within the AAMI/IEEE mean-error criterion. A PPG-only ablation using nine attractor features suitable for smartphone computation performed within 0.05 mmHg of the ECG + PPG model. The work has not yet completed peer review.</p></div>
-                <div class="framework-block"><h4>Hypotheses &amp; open questions</h4><p>Performance on PPG acquired by smartphone cameras, in ambulatory settings, and across skin tones has not yet been established; related work on contact-to-camera PPG recoverability (<a href="#cst">CST</a>) suggests that some attractor properties may not transfer to camera signals. The method is a research result, not a validated medical device.</p></div>
+                <div class="framework-block"><h4>Core idea</h4><p>AVCT proposes a formal coupling between vascular mechanics and the geometry of the cardiac attractor, as a basis for calibrated cuffless blood pressure estimation, operationalized with Takens delay embedding and attractor morphology features. The preprint develops this coupling formally to generate testable hypotheses.</p></div>
+                <div class="framework-block"><h4>Reported evidence</h4><p>The current version of the preprint (v3, October 2026) reports two <strong>retrospective</strong> evaluations of a calibrated estimator using leave-one-subject-out cross-validation on existing datasets. (1) 46 intensive-care and surgical subjects (BIDMC and VitalDB) with repeated reference measurements: systolic/diastolic MAE 2.05/1.67 mmHg for the ECG + PPG model and 2.02/1.63 mmHg for the PPG-attractor-only model. (2) 217 ambulatory subjects from the public PPG-BP dataset, with one cuff reference per subject, which tests cross-subject calibrated estimation rather than tracking within a person: 1.98/0.96 mmHg. These errors fall within commonly cited AAMI/ISO and BHS thresholds, but, as the preprint states, this does not establish compliance with device-validation standards. No smartphone-acquired PPG was evaluated; the title names the intended application. The work has not yet completed peer review.</p></div>
+                <div class="framework-block"><h4>Hypotheses &amp; open questions</h4><p>Prospective validation with smartphone-acquired PPG and repeated reference blood pressure measurements is planned. Performance on smartphone-camera PPG, for tracking within a person over time, and across skin tones has not yet been established; related work on contact-to-camera PPG recoverability (<a href="#cst">CST</a>) suggests that some attractor properties may not transfer to camera signals. The method is a research result, not a validated medical device.</p></div>
               </div>
               <aside class="fw-side">
                 <figure class="fw-figure">
 <img alt="Scatter and Bland-Altman plots of estimated versus reference systolic and diastolic blood pressure" loading="lazy" src="assets/images/avct-bp-calibration.png" width="760" height="550"/>
-<figcaption>Calibrated leave-one-subject-out analysis. See the preprint for the evaluation cohort and reported results.</figcaption>
+<figcaption>Calibrated leave-one-subject-out analysis on retrospective data. See the preprint for cohorts and results.</figcaption>
 </figure>
                 <div class="framework-block"><h4>Outputs</h4><ul><li><a href="https://arxiv.org/abs/2605.10871" rel="noopener" target="_blank">Oladunni &amp; Ganiyu-Adewumi, “Attractor-Vascular Coupling Theory,” arXiv:2605.10871, 2026</a></li>
 </ul></div>
@@ -483,9 +483,10 @@
             <p>
               A proposed method for calibrated blood pressure estimation from
               attractor features of PPG (AVCT); it is not an experimentally
-              validated capability for everyday use. Results to date come from retrospective intensive-care
-              and surgical recordings and are reported in a preprint;
-              smartphone and ambulatory validation are future work. A related 2026 preprint studies context-augmented, session-calibrated blood pressure tracking from PPG (<a href="https://arxiv.org/abs/2610.29091" target="_blank" rel="noopener">arXiv:2610.29091</a>).
+              validated capability for everyday use. Results to date come from retrospective evaluation on existing
+              intensive-care, surgical, and ambulatory datasets and are reported
+              in a preprint; no smartphone-acquired PPG has yet been evaluated,
+              and prospective smartphone validation is future work. A related 2026 preprint studies context-augmented, session-calibrated blood pressure tracking from PPG (<a href="https://arxiv.org/abs/2610.29091" target="_blank" rel="noopener">arXiv:2610.29091</a>).
             </p>
           </div>
           <div class="card">
