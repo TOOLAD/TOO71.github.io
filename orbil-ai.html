@@ -113,284 +113,310 @@
       </div>
     </section>
 
-    <div class="project-toc-wrap">
-      <div class="container">
-        <div class="project-toc" role="navigation" aria-label="On this page">
-          <a href="#overview">Overview</a>
-          <a href="#objectives">Objectives</a>
-          <a href="#significance">Significance</a>
-          <a href="#team">Team</a>
-          <a href="#outputs">Outputs</a>
-          <a href="#progress">Progress</a>
-          <a href="#acknowledgment">Funding Acknowledgment</a>
-        </div>
+    <div class="container project-layout">
+      <aside class="project-aside" aria-label="On this page">
+        <p class="aside-label">On this page</p>
+        <ul class="project-nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#objectives">Objectives</a></li>
+          <li><a href="#significance">Significance</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#outputs">Outputs</a></li>
+          <li><a href="#progress">Progress</a></li>
+          <li><a href="#acknowledgment">Acknowledgment</a></li>
+        </ul>
+        <p class="aside-label">Related</p>
+        <ul class="project-nav related">
+          <li><a href="research.html#cfd">CFD framework</a></li>
+          <li><a href="lab.html#projects">Lab projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="https://www.morgan.edu/news/nih-awards-morgan-grant-to-advance-biomedical-ai-research" target="_blank" rel="noopener">Award announcement</a></li>
+        </ul>
+      </aside>
+
+      <div class="project-main">
+        <section class="pblock" id="overview">
+          <h2>Project Overview</h2>
+          <div class="overview-grid">
+            <div class="project-prose">
+              <p>
+                Many biomedical problems provide several observations of the
+                same underlying process: different signals, different sensors,
+                or different mathematical representations of one signal.
+                Machine-learning models that combine these observations are often
+                assumed to benefit from every additional source. In practice,
+                sources can carry largely overlapping information, so that adding
+                them increases model size and computational cost without a
+                corresponding gain in what the model learns.
+              </p>
+              <p>
+                ORBIL-AI studies this as a question about representation
+                learning: how a learning system represents the information that
+                is <em>shared</em> across observations, and the information that
+                is <em>distinct</em> to each. The project examines
+                orthogonality-regularized, information-theoretic learning, in
+                which information-theoretic quantities describe how much
+                information representations share, and orthogonality
+                constraints encourage learned representations to separate
+                shared from distinct information.
+              </p>
+              <p>
+                The scientific aim is to develop and test principles that
+                explain when combining sources helps, and how combination
+                affects a model&rsquo;s performance and reliability. Biomedical
+                signals, beginning with multimodal electrocardiogram (ECG)
+                representations, provide the setting in which these principles
+                are studied.
+              </p>
+            </div>
+            <figure class="concept-figure">
+            <svg viewBox="0 0 360 250" role="img" aria-labelledby="venn-title venn-desc" class="concept-svg">
+              <title id="venn-title">Shared and distinct information</title>
+              <desc id="venn-desc">Two overlapping circles labeled Observation A and Observation B. The overlap is labeled shared information; each non-overlapping part is labeled distinct information.</desc>
+              <circle cx="135" cy="118" r="88" fill="#1e3a5f" fill-opacity="0.12" stroke="#1e3a5f" stroke-width="2"/>
+              <circle cx="225" cy="118" r="88" fill="#c9a84c" fill-opacity="0.16" stroke="#b08d2f" stroke-width="2"/>
+              <text x="92" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">Distinct</text>
+              <text x="92" y="130" text-anchor="middle" font-size="12" fill="#1e3a5f">to A</text>
+              <text x="180" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#2c2c2c">Shared</text>
+              <text x="180" y="130" text-anchor="middle" font-size="12" fill="#2c2c2c">by A and B</text>
+              <text x="268" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#7a5a0c">Distinct</text>
+              <text x="268" y="130" text-anchor="middle" font-size="12" fill="#7a5a0c">to B</text>
+              <text x="110" y="232" text-anchor="middle" font-size="13" fill="#5a5a5a">Observation A</text>
+              <text x="250" y="232" text-anchor="middle" font-size="13" fill="#5a5a5a">Observation B</text>
+            </svg>
+              <figcaption>
+                Schematic of the central question: how learned representations
+                separate information shared across observations from
+                information distinct to each.
+              </figcaption>
+            </figure>
+          </div>
+          <p class="project-note">
+            ORBIL-AI is a research project investigating fundamental scientific
+            questions. It is not a clinical product, a validated technology, or
+            a research center.
+          </p>
+        </section>
+
+        <section class="pblock" id="objectives">
+          <h2>Research Objectives</h2>
+          <div class="aims-pending">
+            <span class="status status-submitted">Pending</span>
+            <p>
+              <strong>Specific Aims.</strong> The formal Specific Aims, as
+              approved by NIH, will be posted here once confirmed against the
+              funded application and the NIH RePORTER abstract.
+            </p>
+          </div>
+          <p class="lead-in">
+            Project goals as described in the
+            <a href="https://www.morgan.edu/news/nih-awards-morgan-grant-to-advance-biomedical-ai-research" target="_blank" rel="noopener">Morgan State University announcement</a>
+            (October 29, 2026):
+          </p>
+          <ol class="goal-grid">
+            <li><span class="goal-num" aria-hidden="true">1</span><p>Study how learning systems separate information shared across multiple biomedical observations from the information each source contributes uniquely.</p></li>
+            <li><span class="goal-num" aria-hidden="true">2</span><p>Develop and test principles that explain when combining sources helps, and how combination affects model performance and reliability.</p></li>
+            <li><span class="goal-num" aria-hidden="true">3</span><p>Move from characterizing complementarity to approaches that help learning systems learn complementary information more effectively.</p></li>
+            <li><span class="goal-num" aria-hidden="true">4</span><p>Provide opportunities for students to take part in fundamental research at the intersection of computer science and biomedical science.</p></li>
+          </ol>
+        </section>
+
+        <section class="pblock" id="significance">
+          <h2>Scientific Significance</h2>
+          <div class="project-prose">
+            <p>
+              Questions of redundancy, complementarity, and information
+              preservation are central to pattern recognition and
+              representation learning, yet multimodal models are usually
+              designed by heuristic combination of inputs. ORBIL-AI addresses
+              these questions directly, seeking principles that describe how
+              biomedical information is represented and integrated in learning
+              systems, rather than improvements to a single model or dataset.
+            </p>
+          </div>
+          <div class="evidence-grid">
+            <div class="evidence-card ev-established">
+              <span class="status status-peer">Prior findings</span>
+              <h3>What earlier work established</h3>
+              <p>
+                Peer-reviewed work preceding the award (IEEE Access, 2025) found
+                that, in multimodal ECG classification, fusing time and
+                time&ndash;frequency representations improved on a
+                single-domain baseline, while adding a frequency-domain
+                representation produced no further gain, consistent with
+                redundancy. This motivated the
+                <a href="research.html#cfd">Complementary Feature Domain (CFD)</a>
+                perspective on which the project builds.
+              </p>
+            </div>
+            <div class="evidence-card ev-hypothesis">
+              <span class="status status-preprint">Working hypotheses</span>
+              <h3>What the project will test</h3>
+              <p>
+                That separating shared from distinct information in learned
+                representations, through orthogonality constraints and
+                information-theoretic criteria, may improve generalizability,
+                interpretability, and calibration. These hypotheses have not yet
+                been tested within the project.
+              </p>
+            </div>
+            <div class="evidence-card ev-open">
+              <span class="status status-ongoing">Open questions</span>
+              <h3>What remains unknown</h3>
+              <p>
+                Whether patterns observed for ECG representations hold for other
+                biomedical observations, how to measure complementarity reliably
+                in high-dimensional learned representations, and when enforcing
+                separation improves rather than limits what a model learns.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="pblock" id="team">
+          <h2>Research Team</h2>
+          <ul class="team-rows">
+            <li>
+              <img src="assets/images/professional-pic.jpeg" alt="" />
+              <div>
+                <h3>Dr. Timothy Oladunni</h3>
+                <p class="team-role">Principal Investigator</p>
+                <p>Assistant Professor of Computer Science, Morgan State University &middot; <a href="professional.html">Profile</a></p>
+              </div>
+            </li>
+            <li>
+              <img src="assets/images/obaloluwa.jpg" alt="" />
+              <div>
+                <h3>Obaloluwa Arulogun</h3>
+                <p class="team-role">Undergraduate Researcher</p>
+                <p>Computer Science, Morgan State University &middot; <a href="lab.html#members">Lab profile</a></p>
+              </div>
+            </li>
+            <li>
+              <img src="assets/images/aditya.jpg" alt="" />
+              <div>
+                <h3>Aditya Raj Poudel</h3>
+                <p class="team-role">Undergraduate Researcher</p>
+                <p>Computer Science, Morgan State University &middot; <a href="lab.html#members">Lab profile</a></p>
+              </div>
+            </li>
+          </ul>
+          <p class="small-note">
+            Students participate through the
+            <a href="lab.html">Pattern Recognition &amp; Machine Learning Laboratory</a>.
+            No external collaborating institutions are currently listed for this
+            project.
+          </p>
+        </section>
+
+        <section class="pblock" id="outputs">
+          <h2>Publications &amp; Research Outputs</h2>
+          <p class="lead-in">
+            Outputs supported by this award will be listed here as they become
+            available. The project began on September 10, 2026.
+          </p>
+          <table class="output-table">
+            <caption class="visually-hidden">Status of project outputs</caption>
+            <thead>
+              <tr><th scope="col">Output type</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Peer-reviewed publications</th><td>None yet</td></tr>
+              <tr><th scope="row">Preprints</th><td>None yet</td></tr>
+              <tr><th scope="row">Software</th><td>Not yet released</td></tr>
+              <tr><th scope="row">Datasets</th><td>Not yet released</td></tr>
+              <tr><th scope="row">Presentations &amp; other outputs</th><td>None yet</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="subhead">Background: prior work that preceded the award</h3>
+          <p class="small-note">Not supported by this award; listed because the project builds on it.</p>
+          <ol class="pub-list">
+            <li>
+              <a class="pub-title" href="https://ieeexplore.ieee.org/document/11146762" target="_blank" rel="noopener">Rethinking Multimodality: Optimizing Multimodal Deep Learning for Biomedical Signal Classification</a>
+              <span class="pub-authors">T. Oladunni, A. Wong</span>
+              <span class="pub-venue"><em>IEEE Access</em>, 2025. Peer-reviewed.</span>
+            </li>
+            <li>
+              <a class="pub-title" href="https://ieeexplore.ieee.org/abstract/document/11239065" target="_blank" rel="noopener">Explainable Deep Neural Network for Multimodal ECG Signals: Intermediate Versus Late Fusion</a>
+              <span class="pub-authors">T. Oladunni, E. Aneni</span>
+              <span class="pub-venue"><em>IEEE Access</em>, 2025. Peer-reviewed.</span>
+            </li>
+            <li>
+              <span class="pub-title">More Isn&rsquo;t Always Better: Investigating Redundancy and Complementarity in Multimodal ECG Deep Learning</span>
+              <span class="pub-venue">Computer Science Colloquium, Yale University, April 2025. Talk.</span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="pblock" id="progress">
+          <h2>Project Progress</h2>
+          <ol class="ptimeline">
+            <li class="done">
+              <div class="pt-head"><span class="timeline-date">April 2025</span><span class="status status-peer">Completed</span></div>
+              <p>Preliminary findings on redundancy and complementarity in multimodal ECG presented at the Yale University Computer Science Colloquium (before the award).</p>
+            </li>
+            <li class="done">
+              <div class="pt-head"><span class="timeline-date">September 10, 2026</span><span class="status status-peer">Completed</span></div>
+              <p>Project period began.</p>
+            </li>
+            <li class="done">
+              <div class="pt-head"><span class="timeline-date">October 29, 2026</span><span class="status status-peer">Completed</span></div>
+              <p>Award announced by Morgan State University.</p>
+            </li>
+            <li class="now">
+              <div class="pt-head"><span class="timeline-date">Fall 2026</span><span class="status status-ongoing">In progress</span></div>
+              <p>Student research on whether models that combine time, frequency, and time&ndash;frequency ECG representations learn complementary or redundant information, using the public PTB-XL and Mendeley ECG datasets and a research plan specified in advance.</p>
+            </li>
+            <li class="planned">
+              <div class="pt-head"><span class="timeline-date">2026&ndash;2030</span><span class="status status-submitted">Planned</span></div>
+              <p>Milestones for each Specific Aim will be listed here once the aims are posted.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="pblock" id="acknowledgment">
+          <h2>Funding Acknowledgment</h2>
+          <div class="ack-panel">
+            <p>
+              Research reported on this page is supported by the National
+              Library of Medicine of the National Institutes of Health under
+              Award Number R16LM015384, as part of an award totaling
+              approximately $520,000 over four years.
+            </p>
+            <!-- Stevens Amendment: add the percentage and dollar amount of total project costs financed with federal funds and with non-federal sources, as confirmed by the Office of Sponsored Programs. -->
+            <p>
+              The content is solely the responsibility of the author and does
+              not necessarily represent the official views of the National
+              Institutes of Health.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
 
-    <section id="overview">
-      <div class="container">
-        <h2>Project Overview</h2>
-        <div class="section-divider"></div>
-        <div class="project-prose">
-          <p>
-            Many biomedical problems provide several observations of the same
-            underlying process: different signals, different sensors, or
-            different mathematical representations of one signal. Machine-learning
-            models that combine these observations are often assumed to benefit
-            from every additional source. In practice, sources can carry largely
-            overlapping information, so that adding them increases model size and
-            computational cost without a corresponding gain in what the model
-            learns.
-          </p>
-          <p>
-            ORBIL-AI studies this problem as a question about representation
-            learning: how a learning system represents the information that is
-            <em>shared</em> across observations, and the information that is
-            <em>distinct</em> to each. The project examines
-            orthogonality-regularized, information-theoretic learning, in which
-            information-theoretic quantities describe how much information
-            representations share, and orthogonality constraints encourage
-            learned representations to separate shared from distinct
-            information.
-          </p>
-          <p>
-            The scientific aim is to develop and test principles that explain
-            when combining sources helps, and how combination affects a
-            model&rsquo;s performance and reliability. Biomedical signals,
-            beginning with multimodal electrocardiogram (ECG) representations,
-            provide the setting in which these principles are studied.
-          </p>
-          <p class="project-note">
-            ORBIL-AI is a research project investigating fundamental scientific
-            questions. It is not a clinical product, a validated technology, or a
-            research center.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="alt-bg" id="objectives">
-      <div class="container">
-        <h2>Research Objectives</h2>
-        <div class="section-divider"></div>
-        <div class="info-box muted pending-box">
-          <h3>Specific Aims</h3>
-          <p>
-            The project&rsquo;s formal Specific Aims, as approved by NIH, will be
-            posted here once they are confirmed against the funded application
-            and the public NIH RePORTER abstract.
-          </p>
-        </div>
-        <h3 class="subhead">Project goals as publicly announced</h3>
-        <p class="pub-section-intro">
-          As described in the
-          <a href="https://www.morgan.edu/news/nih-awards-morgan-grant-to-advance-biomedical-ai-research" target="_blank" rel="noopener">Morgan State University announcement</a>
-          of the award (October 29, 2026), the project will:
-        </p>
-        <ol class="goal-list">
-          <li>Study how learning systems separate information shared across multiple biomedical observations from the information that each source contributes uniquely.</li>
-          <li>Develop and test principles that explain when combining sources helps, and how combination affects model performance and reliability.</li>
-          <li>Move from characterizing complementarity to approaches that help learning systems learn complementary information more effectively.</li>
-          <li>Provide opportunities for students to take part in fundamental research at the intersection of computer science and biomedical science.</li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="significance">
-      <div class="container">
-        <h2>Scientific Significance</h2>
-        <div class="section-divider"></div>
-        <div class="project-prose">
-          <p>
-            Questions of redundancy, complementarity, and information
-            preservation are central to pattern recognition and representation
-            learning, yet multimodal models are usually designed by heuristic
-            combination of inputs. ORBIL-AI addresses these questions directly,
-            seeking principles that describe how biomedical information is
-            represented and integrated in learning systems, rather than
-            improvements to a single model or dataset.
-          </p>
-        </div>
-        <div class="three-cols evidence-cols">
-          <div class="card">
-            <p class="card-kicker">Prior findings</p>
-            <h3 class="card-title">What earlier work established</h3>
-            <p>
-              Peer-reviewed work preceding the award (IEEE Access, 2025) found
-              that, in multimodal ECG classification, fusing time and
-              time&ndash;frequency representations improved on a single-domain
-              baseline, while adding a frequency-domain representation produced
-              no further gain, consistent with redundancy. This motivated the
-              <a href="research.html#cfd">Complementary Feature Domain (CFD)</a>
-              perspective on which the project builds.
-            </p>
-          </div>
-          <div class="card">
-            <p class="card-kicker">Working hypotheses</p>
-            <h3 class="card-title">What the project will test</h3>
-            <p>
-              That separating shared from distinct information in learned
-              representations, through orthogonality constraints and
-              information-theoretic criteria, may improve generalizability,
-              interpretability, and calibration. These are hypotheses; they
-              have not yet been tested within the project.
-            </p>
-          </div>
-          <div class="card">
-            <p class="card-kicker">Open questions</p>
-            <h3 class="card-title">What remains unknown</h3>
-            <p>
-              Whether patterns observed for ECG representations hold for other
-              biomedical observations, how to measure complementarity reliably
-              in high-dimensional learned representations, and under what
-              conditions enforcing separation improves rather than limits what a
-              model learns.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="alt-bg" id="team">
-      <div class="container">
-        <h2>Research Team</h2>
-        <div class="section-divider"></div>
-        <div class="team-list">
-          <div class="team-item">
-            <h3>Dr. Timothy Oladunni</h3>
-            <p class="team-role">Principal Investigator</p>
-            <p>Assistant Professor of Computer Science, Morgan State University. <a href="professional.html">Profile</a></p>
-          </div>
-          <div class="team-item">
-            <h3>Obaloluwa Arulogun</h3>
-            <p class="team-role">Undergraduate Researcher</p>
-            <p>Computer Science, Morgan State University. <a href="lab.html#members">Lab profile</a></p>
-          </div>
-          <div class="team-item">
-            <h3>Aditya Raj Poudel</h3>
-            <p class="team-role">Undergraduate Researcher</p>
-            <p>Computer Science, Morgan State University. <a href="lab.html#members">Lab profile</a></p>
-          </div>
-        </div>
-        <p class="pub-section-intro" style="margin-top: 1.25rem">
-          Students participate through the
-          <a href="lab.html">Pattern Recognition &amp; Machine Learning Laboratory</a>.
-          No external collaborating institutions are currently listed for this
-          project.
-        </p>
-      </div>
-    </section>
-
-    <section id="outputs">
-      <div class="container">
-        <h2>Publications &amp; Research Outputs</h2>
-        <div class="section-divider"></div>
-        <p class="pub-section-intro">
-          The project began on September 10, 2026. Outputs supported by this
-          award will be listed here as they become available. Work completed
-          before the award is listed separately as background.
-        </p>
-        <div class="outputs-grid">
-          <div class="output-box">
-            <h3>Peer-reviewed publications</h3>
-            <p class="output-empty">None yet.</p>
-          </div>
-          <div class="output-box">
-            <h3>Preprints</h3>
-            <p class="output-empty">None yet.</p>
-          </div>
-          <div class="output-box">
-            <h3>Software</h3>
-            <p class="output-empty">None released yet.</p>
-          </div>
-          <div class="output-box">
-            <h3>Datasets</h3>
-            <p class="output-empty">None released yet.</p>
-          </div>
-          <div class="output-box">
-            <h3>Presentations &amp; other outputs</h3>
-            <p class="output-empty">None yet.</p>
-          </div>
-        </div>
-
-        <h3 class="subhead">Background: prior work that preceded the award</h3>
-        <p class="pub-section-intro">Not supported by this award; listed because the project builds on it.</p>
-        <ol class="pub-list">
-          <li>
-            <a class="pub-title" href="https://ieeexplore.ieee.org/document/11146762" target="_blank" rel="noopener">Rethinking Multimodality: Optimizing Multimodal Deep Learning for Biomedical Signal Classification</a>
-            <span class="pub-authors">T. Oladunni, A. Wong</span>
-            <span class="pub-venue"><em>IEEE Access</em>, 2025. Peer-reviewed.</span>
-          </li>
-          <li>
-            <a class="pub-title" href="https://ieeexplore.ieee.org/abstract/document/11239065" target="_blank" rel="noopener">Explainable Deep Neural Network for Multimodal ECG Signals: Intermediate Versus Late Fusion</a>
-            <span class="pub-authors">T. Oladunni, E. Aneni</span>
-            <span class="pub-venue"><em>IEEE Access</em>, 2025. Peer-reviewed.</span>
-          </li>
-          <li>
-            <span class="pub-title">More Isn&rsquo;t Always Better: Investigating Redundancy and Complementarity in Multimodal ECG Deep Learning</span>
-            <span class="pub-venue">Computer Science Colloquium, Yale University, April 2025. Talk.</span>
-          </li>
-        </ol>
-        <p class="pub-section-intro" style="margin-top: 1rem">See the <a href="publications.html">Publications</a> page for the complete list.</p>
-      </div>
-    </section>
-
-    <section class="alt-bg" id="progress">
-      <div class="container">
-        <h2>Project Progress</h2>
-        <div class="section-divider"></div>
-        <div class="progress-cols">
-          <div>
-            <h3 class="subhead mt-0"><span class="status status-peer">Completed</span></h3>
-            <ul class="timeline">
-              <li><span class="timeline-date">April 2025</span> Preliminary findings on redundancy and complementarity in multimodal ECG presented at the Yale University Computer Science Colloquium (before the award).</li>
-              <li><span class="timeline-date">September 10, 2026</span> Project period began.</li>
-              <li><span class="timeline-date">October 29, 2026</span> Award announced by Morgan State University.</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="subhead mt-0"><span class="status status-ongoing">In progress</span></h3>
-            <ul class="timeline">
-              <li><span class="timeline-date">Fall 2026</span> Student research on whether models that combine time, frequency, and time&ndash;frequency ECG representations learn complementary or redundant information, using the public PTB-XL and Mendeley ECG datasets and a research plan specified in advance.</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="subhead mt-0"><span class="status status-submitted">Planned</span></h3>
-            <ul class="timeline">
-              <li><span class="timeline-date">2026&ndash;2030</span> Milestones for each Specific Aim will be listed here once the aims are posted.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="acknowledgment">
-      <div class="container">
-        <h2>Funding Acknowledgment</h2>
-        <div class="section-divider"></div>
-        <div class="info-box ack-box">
-          <p>
-            Research reported on this page is supported by the National Library
-            of Medicine of the National Institutes of Health under Award Number
-            R16LM015384, as part of an award totaling approximately $520,000 over
-            four years.
-          </p>
-          <!-- Stevens Amendment: add the percentage and dollar amount of total project costs financed with federal funds and with non-federal sources, as confirmed by the Office of Sponsored Programs. -->
-          <p>
-            The content is solely the responsibility of the author and does not
-            necessarily represent the official views of the National Institutes
-            of Health.
-          </p>
-        </div>
-        <p class="pub-section-intro" style="margin-top: 1.25rem">
-          Related pages:
-          <a href="research.html#funded-projects">Research</a> &middot;
-          <a href="lab.html#projects">Lab projects</a> &middot;
-          <a href="publications.html">Publications</a>
-        </p>
-      </div>
-    </section>
-
+    <script>
+      // Highlight the current section in the side menu
+      (function () {
+        var links = document.querySelectorAll('.project-nav:not(.related) a');
+        var map = {};
+        links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+        if (!('IntersectionObserver' in window)) return;
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              links.forEach(function (a) { a.classList.remove('current'); a.removeAttribute('aria-current'); });
+              var a = map[e.target.id];
+              if (a) { a.classList.add('current'); a.setAttribute('aria-current', 'location'); }
+            }
+          });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+        Object.keys(map).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) obs.observe(el);
+        });
+      })();
+    </script>
     </main>
 
     <footer>
