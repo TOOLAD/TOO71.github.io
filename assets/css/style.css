@@ -1109,3 +1109,117 @@ footer a:hover {
   section { page-break-inside: avoid; }
   .btn { display: none; }
 }
+
+/* ============================================
+   Lab Members
+   ============================================ */
+
+.member-group {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  text-align: center;
+  margin: 2.25rem 0 0;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 260px));
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.75rem 1.25rem 1.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.member-card img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.member-card h4 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.member-card .member-role {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary-light);
+}
+
+.member-card .member-focus {
+  margin: 0 0 1rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  flex-grow: 1;
+}
+
+.member-card .member-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.alumni-item {
+  display: block;
+  padding: 0.85rem 1rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.alumni-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+  border-left-color: var(--color-accent);
+}
+
+.alumni-item strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+.alumni-item span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+}
