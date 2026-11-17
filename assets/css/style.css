@@ -3156,5 +3156,5 @@ main p a:not(.btn):hover {
 .profile-links a{color:#fff !important;text-decoration:underline;text-underline-offset:3px;}
 .profile-links a:hover{color:var(--color-accent) !important;}
 
-.profile-title a{color:#fff !important;text-decoration:underline;text-decoration-color:var(--color-accent);text-underline-offset:3px;}
-.profile-title a:hover{color:var(--color-accent) !important;}
+.profile-title a{color:var(--color-accent-light) !important;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;}
+.profile-title a:hover,.profile-title a:focus{color:#fff !important;}
