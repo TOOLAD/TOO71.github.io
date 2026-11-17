@@ -16,7 +16,16 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile - Dr. Timothy Oladunni</title>
+    <title>Profile | Dr. Timothy Oladunni</title>
+    <meta name="description" content="Profile of Dr. Timothy Oladunni: Assistant Professor of Computer Science at Morgan State University, 2025 ASCEND Faculty Research Fellow at Yale University, and PI of the NIH R16 SuRE ORBIL-AI project." />
+    <link rel="canonical" href="https://timothyoladunni.com/professional.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dr. Timothy Oladunni" />
+    <meta property="og:title" content="Profile | Dr. Timothy Oladunni" />
+    <meta property="og:description" content="Profile of Dr. Timothy Oladunni: Assistant Professor of Computer Science at Morgan State University, 2025 ASCEND Faculty Research Fellow at Yale University, and PI of the NIH R16 SuRE ORBIL-AI project." />
+    <meta property="og:url" content="https://timothyoladunni.com/professional.html" />
+    <meta property="og:image" content="https://timothyoladunni.com/assets/images/professional-pic.jpeg" />
+    <meta name="twitter:card" content="summary" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,24 +35,27 @@
   </head>
 
   <body>
-    <nav>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main">
       <div class="container">
-        <div class="logo">Dr. Timothy <span>Oladunni</span></div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
+        <a class="logo" href="index.html">Dr. Timothy <span>Oladunni</span></a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <ul>
+        <ul id="site-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
-          <li><a href="nlp.html">NLP & Health AI</a></li>
+          <li><a href="nlp.html">NLP &amp; Health AI</a></li>
           <li><a href="lab.html">Lab</a></li>
-          <li><a href="professional.html" class="active">Professional</a></li>
+          <li><a href="professional.html" class="active" aria-current="page">Profile</a></li>
         </ul>
       </div>
     </nav>
+
+    <main id="main">
 
     <section class="profile-hero">
       <div class="container profile-grid">
@@ -57,7 +69,9 @@
           <h1>Dr. Timothy Oladunni</h1>
           <p class="profile-title">
             Assistant Professor of Computer Science, Morgan State University<br />
-            2025 Faculty Research Fellow, Yale University
+            2025 ASCEND Faculty Research Fellow, Yale University<br />
+            Visiting Assistant Professor, Department of Computer Science, Yale
+            University (January&ndash;May 2025)
           </p>
           <p class="profile-bio">
             Dr. Timothy Oladunni is an Assistant Professor of Computer Science
@@ -100,7 +114,7 @@
         <div class="facts-grid">
           <div class="fact">
             <span class="fact-label">Current Funding</span>
-            <span class="fact-value">NIH ORBIL-AI Project (PI)</span>
+            <span class="fact-value">PI, NIH R16 SuRE: ORBIL-AI</span>
           </div>
           <div class="fact">
             <span class="fact-label">Lab</span>
@@ -112,7 +126,7 @@
           </div>
           <div class="fact">
             <span class="fact-label">Fellowship</span>
-            <span class="fact-value">Yale Faculty Research Fellow (2025)</span>
+            <span class="fact-value">2025 ASCEND Faculty Research Fellow, Yale</span>
           </div>
         </div>
       </div>
@@ -123,14 +137,14 @@
         <h2>Grants & Funding</h2>
         <div class="section-divider"></div>
         <p class="section-subtitle text-center" style="margin-left: auto; margin-right: auto;">
-          Research funding from national agencies (NIH, NSF, NSA) supporting innovative AI and
+          Research funding from federal agencies (NIH, NSF, NSA) for machine learning and
           healthcare research.
         </p>
 
         <h3 class="text-accent mt-0">Funded Grants</h3>
 
         <div class="grant-item">
-          <h4>NIH SuRE (R16): ORBIL-AI, Orthogonality-Regularized, Information-Theoretic Biomedical Machine Learning</h4>
+          <h4>NIH R16 SuRE: ORBIL-AI, Orthogonality-Regularized, Information-Theoretic Biomedical Machine Learning</h4>
           <p class="grant-meta">
             <strong>Role:</strong> Principal Investigator |
             <strong>Sponsor:</strong> National Library of Medicine, NIH |
@@ -193,8 +207,8 @@
         <div class="section-divider"></div>
         <ul class="recognition-list">
           <li>
-            <a href="https://faculty.yale.edu/initiatives/ascend-initiative/faculty-research-fellowships/faculty-research-fellows" target="_blank" rel="noopener">Yale Faculty Research Fellowship (2025) &amp; Visiting Assistant Professor</a>
-            <p class="recognition-desc">Selected as a 2025 Faculty Research Fellow through Yale's ASCEND Initiative and served as a Visiting Assistant Professor in Yale's Department of Computer Science, supporting advanced research in computational health, multimodal AI, and physiologic modeling. The fellowship strengthened cross-institutional collaboration and informed subsequent theoretical developments in representation stability and multimodal learning.</p>
+            <a href="https://faculty.yale.edu/initiatives/ascend-initiative/faculty-research-fellowships/faculty-research-fellows" target="_blank" rel="noopener">2025 ASCEND Faculty Research Fellow &amp; Visiting Assistant Professor, Yale University</a>
+            <p class="recognition-desc">Selected as a 2025 Faculty Research Fellow through Yale's ASCEND Initiative and served as a Visiting Assistant Professor in Yale's Department of Computer Science (January&ndash;May 2025), supporting advanced research in computational health, multimodal AI, and physiologic modeling. The fellowship strengthened cross-institutional collaboration and informed subsequent theoretical developments in representation stability and multimodal learning.</p>
           </li>
           <li>
             <a href="https://www.computer.org/publications/tech-news/research/exponential-smoothing-forecast" target="_blank" rel="noopener">IEEE Computer Society: Black History Month Feature</a>
@@ -213,6 +227,10 @@
         <h2>Talks &amp; Presentations</h2>
         <div class="section-divider"></div>
         <ul class="recognition-list">
+          <li>
+            <a href="https://engineering.yale.edu/news-and-events/events/more-isnt-always-better-investigating-redundancy-and-complementarity-multimodal-ecg-deep-learning" target="_blank" rel="noopener">Yale School of Engineering &amp; Applied Science (2025)</a>
+            <p class="recognition-desc">Talk: &ldquo;More Isn&rsquo;t Always Better: Investigating Redundancy and Complementarity in Multimodal ECG Deep Learning.&rdquo;</p>
+          </li>
           <li>
             <a href="https://covidinfocommons.datascience.columbia.edu/events/february-2021-covid-19-research-webinar-lightning-talks-and-qa" target="_blank" rel="noopener">COVID Information Commons, Columbia University (February 2021)</a>
             <p class="recognition-desc">Lightning talk at a COVID-19 research webinar on pandemic analysis and prediction.</p>
@@ -272,16 +290,22 @@
       </div>
     </section>
 
+    </main>
+
     <footer>
       <div class="container">
-        <p>&copy; 2026 Dr. Timothy Oladunni. All rights reserved.</p>
+        <div>
+          <p>&copy; 2026 Dr. Timothy Oladunni</p>
+          <p class="footer-affil">Department of Computer Science, Morgan State University, Baltimore, Maryland</p>
+        </div>
         <div class="footer-links">
           <a href="index.html">Home</a>
           <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
-          <a href="nlp.html">NLP</a>
+          <a href="nlp.html">NLP &amp; Health AI</a>
           <a href="lab.html">Lab</a>
-          <a href="professional.html">Professional</a>
+          <a href="professional.html">Profile</a>
+          <a href="sitemap.html">Site Map</a>
         </div>
       </div>
     </footer>

@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Mark current page link as active
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const navLinks = document.querySelectorAll("nav a");
+  const navLinks = document.querySelectorAll("nav ul a");
   navLinks.forEach(function (link) {
     var href = link.getAttribute("href");
     if (href === currentPage || (currentPage === "" && href === "index.html")) {
       link.classList.add("active");
+      link.setAttribute("aria-current", "page");
     } else {
       link.classList.remove("active");
+      link.removeAttribute("aria-current");
     }
   });
 
@@ -17,13 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
   if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", function () {
       menuToggle.classList.toggle("active");
-      navMenu.classList.toggle("open");
+      var isOpen = navMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
     // Close menu when a link is clicked
     navMenu.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         menuToggle.classList.remove("active");
         navMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
       });
     });
   }

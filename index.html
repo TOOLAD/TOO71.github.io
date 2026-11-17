@@ -16,9 +16,16 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Dr. Timothy Oladunni - Pattern Recognition &amp; Trustworthy Machine Learning
-    </title>
+    <title>Dr. Timothy Oladunni | Pattern Recognition &amp; Trustworthy Machine Learning</title>
+    <meta name="description" content="Dr. Timothy Oladunni, Assistant Professor of Computer Science at Morgan State University, studies the foundations of pattern recognition, machine learning, information theory, and trustworthy AI, with cardiovascular health as a principal application." />
+    <link rel="canonical" href="https://timothyoladunni.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dr. Timothy Oladunni" />
+    <meta property="og:title" content="Dr. Timothy Oladunni | Pattern Recognition &amp; Trustworthy Machine Learning" />
+    <meta property="og:description" content="Dr. Timothy Oladunni, Assistant Professor of Computer Science at Morgan State University, studies the foundations of pattern recognition, machine learning, information theory, and trustworthy AI, with cardiovascular health as a principal application." />
+    <meta property="og:url" content="https://timothyoladunni.com/" />
+    <meta property="og:image" content="https://timothyoladunni.com/assets/images/professional-pic.jpeg" />
+    <meta name="twitter:card" content="summary" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,27 +35,54 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/shared.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Timothy Oladunni",
+        "honorificPrefix": "Dr.",
+        "jobTitle": "Assistant Professor of Computer Science",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Morgan State University"
+        },
+        "url": "https://timothyoladunni.com/",
+        "image": "https://timothyoladunni.com/assets/images/professional-pic.jpeg",
+        "sameAs": ["https://orcid.org/0000-0002-2693-5440"],
+        "knowsAbout": [
+          "Pattern recognition",
+          "Machine learning",
+          "Information theory",
+          "Trustworthy artificial intelligence",
+          "Biomedical signal processing"
+        ]
+      }
+    </script>
   </head>
 
   <body>
-    <nav>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main">
       <div class="container">
-        <div class="logo">Dr. Timothy <span>Oladunni</span></div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
+        <a class="logo" href="index.html">Dr. Timothy <span>Oladunni</span></a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+        <ul id="site-menu">
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
-          <li><a href="nlp.html">NLP & Health AI</a></li>
+          <li><a href="nlp.html">NLP &amp; Health AI</a></li>
           <li><a href="lab.html">Lab</a></li>
-          <li><a href="professional.html">Professional</a></li>
+          <li><a href="professional.html">Profile</a></li>
         </ul>
       </div>
     </nav>
+
+    <main id="main">
 
     <section class="hero">
       <div class="container">
@@ -56,34 +90,37 @@
           <h1>Foundations of Pattern Recognition &amp; Trustworthy Machine Learning</h1>
           <p>
             I study the mathematical and computational foundations of pattern
-            recognition, machine learning, and biomedical information analysis:
-            how intelligent systems extract, preserve, and integrate
-            information from complex physiological data. My work spans
-            representation learning, information theory, feature
-            complementarity, and trustworthy AI, grounded in nine theoretical
-            frameworks for cardiovascular health. Applications include
-            cardiovascular monitoring, cuffless blood pressure estimation, and
-            equitable wearable health technologies.
+            recognition and machine learning: how learning systems extract,
+            preserve, and integrate information from complex data. My work
+            addresses representation learning, information theory, feature
+            complementarity, and the robustness and interpretability of learned
+            models. Cardiovascular health is the principal application domain,
+            where these questions are studied with ECG and photoplethysmography
+            (PPG) signals.
           </p>
+          <ul class="hero-credentials">
+            <li>Assistant Professor of Computer Science, Morgan State University</li>
+            <li>2025 ASCEND Faculty Research Fellow, Yale University</li>
+            <li>Principal Investigator, NIH R16 SuRE: ORBIL-AI</li>
+          </ul>
           <div>
             <a href="research.html" class="btn">Research</a>
-            <a href="publications.html" class="btn btn-secondary"
-              >Publications</a
-            >
+            <a href="publications.html" class="btn btn-secondary">Publications</a>
             <a href="lab.html" class="btn btn-secondary">Lab</a>
           </div>
         </div>
         <div class="hero-divider">
           <img
             src="assets/images/interpretable-ai.png"
-            alt="Interpretable AI"
+            alt=""
+            aria-hidden="true"
             class="spin-clockwise hero-ai-emblem"
           />
         </div>
         <div class="hero-image">
           <img
             src="assets/images/professional-pic.jpeg"
-            alt="Dr. Timothy Oladunni"
+            alt="Portrait of Dr. Timothy Oladunni"
           />
         </div>
       </div>
@@ -94,7 +131,7 @@
         <h2>Latest News</h2>
         <div class="section-divider"></div>
         <div class="grant-item">
-          <h4>
+          <h3 class="news-title">
             <a
               href="https://www.morgan.edu/news/nih-awards-morgan-grant-to-advance-biomedical-ai-research"
               target="_blank"
@@ -102,17 +139,17 @@
               >NIH Awards Morgan State $520,000 Grant to Advance Biomedical
               Artificial Intelligence Research</a
             >
-          </h4>
+          </h3>
           <p class="grant-meta">October 29, 2026 &middot; Morgan State University News</p>
           <p class="grant-desc">
-            Dr. Oladunni is Principal Investigator on a four-year NIH Support for
-            Research Excellence (SuRE) R16 award from the National Library of
-            Medicine.
+            Dr. Oladunni is Principal Investigator of ORBIL-AI, a four-year NIH
+            Support for Research Excellence (SuRE) R16 award administered by the
+            National Library of Medicine.
             <a
               href="https://www.morgan.edu/news/nih-awards-morgan-grant-to-advance-biomedical-ai-research"
               target="_blank"
               rel="noopener"
-              >Read more &rarr;</a
+              >Read the announcement &rarr;</a
             >
           </p>
         </div>
@@ -125,21 +162,36 @@
         <div class="section-divider"></div>
         <div class="three-cols">
           <div class="card">
-            <h4>Cardiac Stability Theory & Longitudinal Monitoring</h4>
+            <p class="card-kicker">Foundations</p>
+            <h3 class="card-title">Representation &amp; Information</h3>
             <p>
-              Axiomatically grounded framework defining health as dynamical stability on a bounded cardiac attractor. Extends via <strong>Physiologic Trajectory Theory (PTT)</strong> to define per-individual admissible corridors for non-invasive PPG monitoring and detection of meaningful cardiac drift.
+              How learned representations capture, preserve, and combine
+              information. Topics include feature complementarity and
+              redundancy across signal domains, information-theoretic measures
+              of multimodal fusion, and dynamical-systems descriptions of
+              physiological signals.
             </p>
           </div>
           <div class="card">
-            <h4>Fairness & Demographic Equity in Signal Processing</h4>
+            <p class="card-kicker">Foundations</p>
+            <h3 class="card-title">Trustworthy Machine Learning</h3>
             <p>
-              Smartphone PPG processing across diverse skin tones (Fitzpatrick 1-6). IRB-submitted study collecting first public longitudinal PPG dataset. Addresses demographic bias in optical biomarkers through principled signal characterization, not post-hoc corrections.
+              When a model's prediction should and should not change. Topics
+              include robustness to benign physiological variability, concept
+              drift, the faithfulness of explanations, and evaluation practice
+              that avoids inflated performance estimates.
             </p>
           </div>
           <div class="card">
-            <h4>Theoretical Foundations for Trustworthy AI</h4>
+            <p class="card-kicker">Application</p>
+            <h3 class="card-title">Cardiovascular Health</h3>
             <p>
-              Nine interconnected theories (CST, CFD, EAT, PIT, PECT, CPGT, ADT, AVCT, PTT) grounding explainability, robustness, and physiologic validity. Each theory extends the last, creating a coherent ecosystem for high-stakes healthcare AI applications.
+              ECG and PPG analysis, cardiovascular stability assessment,
+              cuffless blood pressure estimation, and performance across skin
+              tones and demographic groups. Clinical and wearable-device
+              validation are ongoing; see the
+              <a href="research.html">Research</a> page for the status of each
+              line of work.
             </p>
           </div>
         </div>
@@ -148,26 +200,30 @@
 
     <section class="alt-bg">
       <div class="container">
-        <h2>Key Statistics</h2>
+        <h2>At a Glance</h2>
         <div class="section-divider"></div>
         <div class="stats-grid">
           <div class="stat">
-            <h3>30+</h3>
-            <p>Research Publications</p>
+            <h3>12</h3>
+            <p>Peer-reviewed journal articles</p>
           </div>
           <div class="stat">
-            <h3>20+</h3>
-            <p>Multimodal AI Systems</p>
+            <h3>13</h3>
+            <p>Peer-reviewed conference papers</p>
           </div>
           <div class="stat">
-            <h3>2M+</h3>
-            <p>ECG & Physiologic Samples</p>
+            <h3>7</h3>
+            <p>Preprints (2025&ndash;2026)</p>
           </div>
           <div class="stat">
-            <h3>10+</h3>
-            <p>Years</p>
+            <h3>9</h3>
+            <p>Theoretical research frameworks</p>
           </div>
         </div>
+        <p class="stats-note">
+          Counts reflect the <a href="publications.html">Publications</a> page.
+          Preprints have not completed peer review.
+        </p>
       </div>
     </section>
 
@@ -178,13 +234,33 @@
         <div>
           <h3 class="text-accent mt-0">Research Vision</h3>
           <p>
-            My research centers on a simple but profound question: <em>What does it mean for a heart to be stable?</em> The answer is <strong>Cardiac Stability Theory (CST)</strong>—a framework that defines cardiovascular health as maintenance of moderate dynamical complexity on a bounded attractor, measurable through Lyapunov exponents, recurrence structure, and entropy from any cardiac signal: ECG, PPG, or beyond.
+            A recurring question in my work is how much information a learning
+            system actually gains when it combines several views of the same
+            phenomenon, and how stable that information remains when the
+            input changes. Multimodal physiological signals are a demanding
+            setting for this question: the same heartbeat can be represented
+            in the time domain, the frequency domain, or as a reconstructed
+            dynamical attractor, and real signals vary continually without any
+            change in the underlying condition.
           </p>
           <p>
-            From CST, I derive eight additional theories that address progressively harder questions: How do we preserve diagnostic information across signal domains (CFD)? When should models trust themselves (PIT)? How do we detect true drift from noise (PECT)? How do we synthesize data without losing structure (CPGT)? How does cardiac geometry predict blood pressure (AVCT)? And how do we track longitudinal wellness equitably across all demographic groups (PTT)?
+            My group develops nine related but distinct theoretical frameworks
+            that address separate parts of this problem, including
+            complementarity across signal domains (CFD), explanation
+            trustworthiness (EAT), physiologic invariance and concept drift
+            (PIT, PECT), cardiovascular stability (CST), attractor geometry
+            (ADT, AVCT), structure-preserving data generation (CPGT), and
+            longitudinal trajectories (PTT). Each is stated with its own
+            assumptions and is evaluated on its own evidence. Several are
+            published in peer-reviewed venues; others are available as
+            preprints or remain under investigation, as noted on the
+            <a href="research.html">Research</a> page.
           </p>
           <p>
-            This ecosystem—nine interconnected theories grounded in axiomatically sound mathematics—provides a principled, trustworthy foundation for high-stakes healthcare AI, where decisions must be transparent, robust to physiologic variation, and equitable across all human populations.
+            Across this work, the aim is a principled basis for machine
+            learning in biomedical settings, where predictions must be
+            interpretable, robust to physiological variation, and reliable
+            across individuals and demographic groups.
           </p>
         </div>
         <div>
@@ -194,8 +270,8 @@
             engagement leads to deeper learning. I design learning experiences
             that emphasize practical application, analytical reasoning, and
             hands-on problem solving. By connecting technical concepts to real
-            organizational and industry contexts and helping students to develop
-            both competence and confidence. I continuously work to enhance the
+            organizational and industry contexts, I help students develop both
+            competence and confidence. I continuously work to enhance the
             learning environment through thoughtful curriculum improvement and
             evidence-based instructional practices. I also champion computer
             science for all and strive to ensure that every student has
@@ -205,16 +281,22 @@
       </div>
     </section>
 
+    </main>
+
     <footer>
       <div class="container">
-        <p>&copy; 2026 Dr. Timothy Oladunni.</p>
+        <div>
+          <p>&copy; 2026 Dr. Timothy Oladunni</p>
+          <p class="footer-affil">Department of Computer Science, Morgan State University, Baltimore, Maryland</p>
+        </div>
         <div class="footer-links">
           <a href="index.html">Home</a>
           <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
-          <a href="nlp.html">NLP</a>
+          <a href="nlp.html">NLP &amp; Health AI</a>
           <a href="lab.html">Lab</a>
-          <a href="professional.html">Professional</a>
+          <a href="professional.html">Profile</a>
+          <a href="sitemap.html">Site Map</a>
         </div>
       </div>
     </footer>

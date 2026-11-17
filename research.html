@@ -16,7 +16,16 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research - Dr. Timothy Oladunni</title>
+    <title>Research | Dr. Timothy Oladunni</title>
+    <meta name="description" content="Nine theoretical frameworks on representation, complementarity, robustness, and interpretability in machine learning, studied with ECG and PPG signals, with the status of each line of work." />
+    <link rel="canonical" href="https://timothyoladunni.com/research.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dr. Timothy Oladunni" />
+    <meta property="og:title" content="Research | Dr. Timothy Oladunni" />
+    <meta property="og:description" content="Nine theoretical frameworks on representation, complementarity, robustness, and interpretability in machine learning, studied with ECG and PPG signals, with the status of each line of work." />
+    <meta property="og:url" content="https://timothyoladunni.com/research.html" />
+    <meta property="og:image" content="https://timothyoladunni.com/assets/images/professional-pic.jpeg" />
+    <meta name="twitter:card" content="summary" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,296 +38,410 @@
   </head>
 
   <body>
-    <nav>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main">
       <div class="container">
-        <div class="logo">Dr. Timothy <span>Oladunni</span></div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
+        <a class="logo" href="index.html">Dr. Timothy <span>Oladunni</span></a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <ul>
+        <ul id="site-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="research.html" class="active">Research</a></li>
+          <li><a href="research.html" class="active" aria-current="page">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
-          <li><a href="nlp.html">NLP & Health AI</a></li>
+          <li><a href="nlp.html">NLP &amp; Health AI</a></li>
           <li><a href="lab.html">Lab</a></li>
-          <li><a href="professional.html">Professional</a></li>
+          <li><a href="professional.html">Profile</a></li>
         </ul>
       </div>
     </nav>
 
+    <main id="main">
+
     <section class="hero-page">
       <div class="container">
-        <h1>Research Frameworks & Systems</h1>
+        <h1>Research</h1>
         <p>
-          Theoretical foundations and practical architectures for trustworthy AI
-          in healthcare
+          Theoretical frameworks for representation, robustness, and
+          interpretability in machine learning, studied with cardiovascular
+          signals
         </p>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h2>Theoretical Frameworks</h2>
+        <h2>Research Program</h2>
         <div class="section-divider"></div>
-
-        <div class="research-framework">
-          <div>
-            <img
-              src="assets/images/cst-three-zone-model.png"
-              alt="Cardiac Stability Theory Three-Zone Model"
-            />
-          </div>
-          <div class="research-text">
-            <h3>
-              <a
-                href="https://arxiv.org/abs/2604.23876"
-                target="_blank"
-                >Cardiac Stability Theory (CST)</a
-              >
-            </h3>
-            <p>
-              <strong>Foundational framework</strong> that axiomatically grounds cardiovascular health as maintenance of moderate dynamical complexity on a bounded quasi-periodic cardiac attractor. CST derives the <strong>Cardiac Stability Index (CSI)</strong> from three complementary geometric properties: largest Lyapunov exponent, recurrence determinism, and signal entropy.
-            </p>
-            <p>
-              CSI powers the <strong>HeartSpan Score</strong> in HeartVibe AI and enables longitudinal cardiac wellness monitoring via smartphone photoplethysmography (PPG). All subsequent theories extend and operationalize CST for specific applications.
-            </p>
-          </div>
+        <div class="section-content" style="max-width: 900px; margin: 0">
+          <p>
+            The group&rsquo;s research is organized around nine theoretical
+            frameworks. They are related, sharing questions about how
+            information is represented, preserved, and integrated by learning
+            systems, but each is a distinct contribution with its own
+            assumptions, claims, and evidence. They are not presented as a
+            single hierarchy, and progress on one does not establish another.
+          </p>
+          <p>
+            Each entry below separates what has been reported, what is
+            hypothesized, and what is still under investigation.
+          </p>
         </div>
-
-        <div class="research-framework reverse">
-          <div>
-            <img
-              src="assets/images/cfd-theory-800.png"
-              alt="Complementary Feature Domain Theory"
-            />
-          </div>
-          <div class="research-text">
-            <h3>
-              <a
-                href="https://ieeexplore.ieee.org/document/11146762"
-                target="_blank"
-                >Complementary Feature Domain (CFD) Theory</a
-              >
-            </h3>
-            <p>
-              CFD theory formalizes how time-, frequency-, and time-frequency
-              ECG representations carry
-              <strong>complementary rather than redundant</strong> diagnostic
-              information. This theory reveals that these three domains capture
-              different physiological patterns and that multimodal models
-              perform best when they preserve and balance this complementarity.
-            </p>
-            <p>
-              Our work shows that fusion architectures that explicitly respect
-              domain-specific information improve accuracy, robustness to noise,
-              and data efficiency compared to simple feature stacking.
-            </p>
-          </div>
-        </div>
-
-        <div class="research-framework reverse">
-          <div>
-            <img
-              src="assets/images/pit2-800.png"
-              alt="Physiologic Invariance Theory"
-            />
-          </div>
-          <div class="research-text">
-            <h3>
-              <a
-                href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.176704506.67677087"
-                target="_blank"
-                >Physiologic Invariance Theory (PIT)</a
-              >
-            </h3>
-            <p>
-              <strong>When should a model change its mind?</strong> PIT answers
-              this fundamental question in trustworthy AI by defining robustness
-              in terms of physiologic drift—the natural variability in rhythm,
-              amplitude, and morphology that should not flip a model's
-              prediction.
-            </p>
-            <p>
-              We develop metrics and training strategies that keep latent
-              representations stable under benign perturbations while remaining
-              sensitive to truly pathological changes. This framework ensures AI
-              systems are robust in real clinical environments.
-            </p>
-          </div>
-        </div>
-
-        <div class="research-framework">
-          <div>
-            <img
-              src="assets/images/explainable-ai-trustworthiness-800.png"
-              alt="Explainable AI Trustworthiness Framework"
-            />
-          </div>
-          <div class="research-text">
-            <h3>
-              <a
-                href="https://ieeexplore.ieee.org/abstract/document/11239065"
-                target="_blank"
-                >Explainable AI Trustworthiness (EAT)</a
-              >
-            </h3>
-            <p>
-              The EAT framework integrates saliency maps, stability analysis,
-              and clinician-aligned explanations to rigorously evaluate whether
-              model predictions are medically plausible. Rather than optimizing
-              for black-box accuracy alone, EAT emphasizes interpretability as a
-              first-class design objective.
-            </p>
-            <p>
-              We study how explanations change under noise and domain shifts,
-              design visualization tools that highlight which parts of the ECG
-              models truly rely on, and ensure clinicians can interrogate and
-              refine model decisions in practice.
-            </p>
-          </div>
-        </div>
-
-        <div class="research-framework reverse">
-          <div>
-            <img
-              src="assets/images/cpgt-ecg-generation.png"
-              alt="CPGT ECG Generation Comparison"
-            />
-          </div>
-          <div class="research-text">
-            <h3>
-              <a
-                href="https://arxiv.org/abs/2603.26695"
-                target="_blank"
-                >Complementarity-Preserving Generative Theory (CPGT)</a
-              >
-            </h3>
-            <p>
-              CPGT introduces a <strong>quantum-inspired generative model (Q-CFD-GAN)</strong> for multimodal ECG synthesis. Unlike traditional GANs that may collapse domain-specific information, CPGT enforces explicit complementarity constraints during generation.
-            </p>
-            <p>
-              The result is synthetic ECG data that preserves the time-frequency-frequency domain structure discovered by CFD Theory, enabling data augmentation that strengthens downstream model robustness without sacrificing diagnostic information fidelity.
-            </p>
-          </div>
-        </div>
-
-        <div class="research-framework">
-          <div>
-            <img
-              src="assets/images/adt-csi-validation.png"
-              alt="ADT Cardiac Stability Index Validation"
-            />
-          </div>
-          <div class="research-text">
-            <h3>
-              <a
-                href="https://arxiv.org/abs/2605.18802"
-                target="_blank"
-                >Attractor Domain Theory (ADT)</a
-              >
-            </h3>
-            <p>
-              ADT formalizes how cardiac signal information partitions across geometric domains of the cardiac attractor. The <strong>Domain Sufficiency Theorem</strong> establishes which attractor properties are necessary and sufficient for specific clinical predictions.
-            </p>
-            <p>
-              Validated on 176,742 PPG segments across 4 datasets with AUC = 0.757 and NPV = 0.966. ADT serves as the theoretical foundation for AVCT (cuffless blood pressure estimation) and provides a principled framework for extending CSI-based monitoring to multimodal biomarkers.
-            </p>
-          </div>
-        </div>
-
-        <div class="research-framework reverse">
-          <div>
-            <img
-              src="assets/images/avct-bp-calibration.png"
-              alt="AVCT Blood Pressure Calibration Validation"
-            />
-          </div>
-          <div class="research-text">
-            <h3>
-              <a
-                href="https://github.com/TOOLAD/TOO71.github.io"
-                target="_blank"
-                >Attractor-Vascular Coupling Theory (AVCT)</a
-              >
-            </h3>
-            <p>
-              AVCT extends ADT to link <strong>cardiac attractor geometry directly to blood pressure</strong>. The theory formalizes how vascular mechanics couple to cardiac dynamics, enabling <strong>single-calibration cuffless BP estimation</strong> from smartphone PPG.
-            </p>
-            <p>
-              <strong>Patent status:</strong> USPTO provisional patent application submitted to Morgan State University Office of Technology Transfer (2026). AVCT demonstrates that accurate BP monitoring requires only one initial calibration measurement and knowledge of the patient's attractor geometry—transforming continuous cardiac monitoring into continuous hemodynamic assessment.
-            </p>
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
-          <div class="research-text">
-            <h3>Physiologic Trajectory Theory (PTT)</h3>
-            <p>
-              PTT is the <strong>temporal extension of PECT</strong>, answering a fundamental question: <em>What constitutes a valid physiologic trajectory versus a meaningful departure from one?</em> Using Kalman state-space modeling, PTT defines per-individual <strong>admissible corridors</strong> for the Cardiac Stability Index.
-            </p>
-            <p>
-              Instead of comparing individuals against population norms, PTT classifies CSI departures using CUSUM sequential detection into three classes: Stable, Benign Excursion, or True Drift. Grounded in the <strong>Cardiac Asymmetry Principle</strong>, PTT powers longitudinal wellness tracking and validates against data from an IRB-submitted study collecting the first public longitudinal smartphone PPG dataset (500 participants, diverse Fitzpatrick skin tones).
-            </p>
-          </div>
-
-          <div class="research-text">
-            <h3>
-              <a
-                href="https://arxiv.org/abs/2605.18802"
-                target="_blank"
-                >Physiologic Energy Conservation Theory (PECT)</a
-              >
-            </h3>
-            <p>
-              PECT establishes an <strong>energy-based criterion for concept drift detection</strong>, extending CST's temporal framework. The theory predicts that meaningful drift in a model's latent representation should scale proportionally with changes in the physiologic signal's energy.
-            </p>
-            <p>
-              This provides a principled, energy-constrained approach to distinguishing benign measurement noise from true physiologic change—critical for reliable longitudinal cardiac monitoring and the foundation for Physiologic Trajectory Theory.
-            </p>
-          </div>
+        <div class="info-box accent" style="margin-top: 1.5rem">
+          <h3>Funded project: ORBIL-AI (NIH R16 SuRE)</h3>
+          <p>
+            ORBIL-AI investigates orthogonality-regularized,
+            information-theoretic approaches to biomedical machine learning.
+            The project is supported by a four-year NIH Support for Research
+            Excellence (SuRE) R16 award administered by the National Library of
+            Medicine, with Dr. Oladunni as Principal Investigator.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="alt-bg">
       <div class="container">
-        <h2>Research Applications</h2>
+        <h2>Theoretical Frameworks</h2>
+        <div class="section-divider"></div>
+        <div class="status-legend" aria-label="Status labels">
+          <div><span class="status status-peer">Peer-reviewed</span> Published in a peer-reviewed venue</div>
+          <div><span class="status status-preprint">Preprint</span> Publicly available; not yet peer reviewed</div>
+          <div><span class="status status-ongoing">Ongoing investigation</span> Formulated; results not yet reported</div>
+        </div>
+        <div class="framework-index" role="navigation" aria-label="Frameworks on this page">
+          <a href="#cfd">CFD</a><a href="#eat">EAT</a><a href="#pit">PIT</a><a href="#pect">PECT</a><a href="#cpgt">CPGT</a><a href="#cst">CST</a><a href="#adt">ADT</a><a href="#avct">AVCT</a><a href="#ptt">PTT</a>
+        </div>
+
+        <h3 class="framework-group">Representation, Complementarity &amp; Trustworthy Learning</h3>
+        <article class="research-framework reverse" id="cfd">
+          <figure>
+            <img src="assets/images/cfd-theory-800.png" alt="Diagram of time, frequency, and time-frequency ECG representations and their fusion" loading="lazy" />
+          </figure>
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Complementary Feature Domain (CFD) Theory</h3>
+              <span class="status status-peer">Peer-reviewed</span>
+            </div>
+            <p class="framework-question">When do several representations of the same signal add information, rather than repeat it?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>Time-domain, frequency-domain, and time&ndash;frequency representations of an ECG can carry complementary or redundant information. CFD holds that the benefit of multimodal fusion depends on the complementarity of the fused domains, not on the number of domains combined.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>In a peer-reviewed study (IEEE Access, 2025), a model fusing time and time&ndash;frequency representations outperformed the time&ndash;frequency baseline across evaluation metrics under bootstrap and Bayesian analysis, while adding the frequency domain produced no further improvement. A targeted ablation supported the interpretation of representational redundancy.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>How far the complementarity pattern generalizes beyond the ECG datasets and architectures studied, and how complementarity can be measured information-theoretically and enforced during training. The latter is a focus of the NIH-funded ORBIL-AI project.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li><a href="https://ieeexplore.ieee.org/document/11146762" target="_blank" rel="noopener">Oladunni &amp; Wong, &ldquo;Rethinking Multimodality,&rdquo; IEEE Access, 2025</a></li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#eat">EAT</a>, <a href="#pect">PECT</a>, <a href="#cpgt">CPGT</a></p>
+          </div>
+        </article>
+        <article class="research-framework" id="eat">
+          <figure>
+            <img src="assets/images/explainable-ai-trustworthiness-800.png" alt="Diagram of the Explainable-AI Trustworthiness framework" loading="lazy" />
+          </figure>
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Explainable-AI Trustworthiness (EAT)</h3>
+              <span class="status status-peer">Peer-reviewed basis</span>
+            </div>
+            <p class="framework-question">When is an explanation of a model&rsquo;s prediction trustworthy?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>Explanations are treated as objects to be evaluated, not as illustrations. EAT sets out criteria for trustworthy ECG model explanations, including whether attributions are grounded in clinically meaningful signal segments and whether they remain stable under perturbation.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>A peer-reviewed comparison of intermediate and late fusion for multimodal ECG (IEEE Access, 2025) analyzes model explanations with saliency methods. The accompanying preprint describes testable criteria, including informational grounding to the ST&ndash;T segment quantified with adjusted and normalized mutual information, and perturbation tests.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>How the criteria transfer across architectures, datasets, and signal types, and how explanation quality relates to clinical judgment.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li><a href="https://ieeexplore.ieee.org/abstract/document/11239065" target="_blank" rel="noopener">Oladunni &amp; Aneni, &ldquo;Explainable Deep Neural Network for Multimodal ECG Signals: Intermediate Versus Late Fusion,&rdquo; IEEE Access, 2025</a></li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#cfd">CFD</a>, <a href="#pit">PIT</a></p>
+          </div>
+        </article>
+        <article class="research-framework reverse" id="pit">
+          <figure>
+            <img src="assets/images/pit2-800.png" alt="Diagram of Physiologic Invariance Theory" loading="lazy" />
+          </figure>
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Physiologic Invariance Theory (PIT)</h3>
+              <span class="status status-preprint">Preprint</span>
+            </div>
+            <p class="framework-question">Which changes to the input should leave a model&rsquo;s prediction unchanged?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>Robustness is defined relative to physiologic drift: natural variation in rhythm, amplitude, and morphology that does not reflect a change in condition and should not change a prediction. PIT proposes metrics and training strategies that keep latent representations stable under such benign variation while remaining sensitive to pathological change.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>Formulated in a 2025 preprint (TechRxiv). The work has not yet completed peer review.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>Whether invariance learned on benchmark ECG data holds in clinical and wearable recording conditions, and how to separate benign variation from early pathological change.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li><a href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.176704506.67677087" target="_blank" rel="noopener">&ldquo;When Should a Model NOT Change Its Mind? A Physiologic Perspective on Concept Drift in Multimodal ECG Deep Learning,&rdquo; TechRxiv preprint, 2025</a></li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#pect">PECT</a>, <a href="#eat">EAT</a>, <a href="#ptt">PTT</a></p>
+          </div>
+        </article>
+        <article class="research-framework single" id="pect">
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Physiologic Energy Conservation Theory (PECT)</h3>
+              <span class="status status-preprint">Preprint</span>
+            </div>
+            <p class="framework-question">How far may a model&rsquo;s internal representation move when the signal&rsquo;s energy changes?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>An energy-based criterion for concept drift. Under label-preserving variation, the magnitude of latent-representation drift should scale with the normalized change in signal energy; persistent violations of this proportionality indicate real concept drift. The criterion is operationalized as an energy-constrained regularizer (ECRL).</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>A 2026 preprint evaluates the criterion on multimodal ECG across seven unimodal and hybrid models and reports reduced representation drift under physiologic perturbations. The work has not yet completed peer review.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>Extension beyond ECG is stated as future work. A CFD-guided extension combining ECG, PPG, and respiration for drift detection (PECS) has been explored by lab members.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li><a href="https://arxiv.org/abs/2602.22294" target="_blank" rel="noopener">Oladunni, Ojeme, Maclin &amp; Baidoo, &ldquo;When Should a Model Change Its Mind? An Energy-Based Theory and Regularizer for Concept Drift in Electrocardiogram (ECG) Signals,&rdquo; arXiv:2602.22294, 2026</a></li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#pit">PIT</a>, <a href="#cfd">CFD</a>, <a href="#ptt">PTT</a></p>
+          </div>
+        </article>
+        <article class="research-framework" id="cpgt">
+          <figure>
+            <img src="assets/images/cpgt-ecg-generation.png" alt="Comparison of real and generated ECG signals" loading="lazy" />
+          </figure>
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Complementarity-Preserving Generative Theory (CPGT)</h3>
+              <span class="status status-preprint">Preprint</span>
+            </div>
+            <p class="framework-question">Can synthetic signals preserve the cross-domain structure of real ones?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>Generative models can collapse domain-specific information. CPGT imposes explicit complementarity constraints during generation, implemented in a quantum-inspired generative adversarial model (Q-CFD-GAN) for multimodal ECG synthesis.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>A 2026 preprint reports synthetic ECG that preserves time, frequency, and time&ndash;frequency structure and examines its use for data augmentation. The work has not yet completed peer review.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>Whether complementarity-preserving augmentation improves downstream robustness across datasets and tasks, and how to assess the fidelity of synthetic physiological signals.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li><a href="https://arxiv.org/abs/2603.26695" target="_blank" rel="noopener">Oladunni, Ganiyu-Adewumi, Baidoo &amp; Maclin, &ldquo;Complementarity-Preserving Generative Theory for Multimodal ECG Synthesis: A Quantum-Inspired Approach,&rdquo; arXiv:2603.26695, 2026</a></li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#cfd">CFD</a></p>
+          </div>
+        </article>
+
+        <h3 class="framework-group">Dynamical-Systems Analysis of Cardiovascular Signals</h3>
+        <article class="research-framework reverse" id="cst">
+          <figure>
+            <img src="assets/images/cst-three-zone-model.png" alt="Diagram of the Cardiac Stability Theory three-zone model" loading="lazy" />
+          </figure>
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Cardiac Stability Theory (CST)</h3>
+              <span class="status status-preprint">Preprint</span>
+            </div>
+            <p class="framework-question">Can cardiovascular stability be defined from the geometry of a reconstructed cardiac attractor?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>An axiomatic framework that defines cardiovascular health as the maintenance of moderate dynamical complexity on a bounded, quasi-periodic cardiac attractor. CST defines a Cardiac Stability Index (CSI) from three geometric properties: the largest Lyapunov exponent, recurrence determinism, and signal entropy.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>Formulated in a 2026 preprint. A related 2026 preprint evaluates a stabilized index (SCSI) on 176,742 segments from four PPG datasets, identifies three evaluation artifacts that inflated a heuristic AUC from 0.573 to 0.752, and reports a pooled AUC of 0.757 (95% CI 0.686&ndash;0.828) and NPV of 0.966 for tachypnea screening on 18 held-out records; per-record AUC was 0.497 &plusmn; 0.207. Neither preprint has yet completed peer review.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>Whether the index tracks clinically meaningful change within individuals, given the variability in per-record performance. The index is used in a lab prototype application (HeartSpan Score) for research purposes.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li><a href="https://arxiv.org/abs/2604.23876" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;Cardiac Stability Theory,&rdquo; arXiv:2604.23876, 2026</a></li>
+                <li><a href="https://arxiv.org/abs/2605.18802" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;A Nonlinear Complexity Index for Wearable PPG Cardiovascular Stability,&rdquo; arXiv:2605.18802, 2026</a></li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#adt">ADT</a>, <a href="#avct">AVCT</a>, <a href="#ptt">PTT</a></p>
+          </div>
+        </article>
+        <article class="research-framework" id="adt">
+          <figure>
+            <img src="assets/images/adt-csi-validation.png" alt="Bar chart of AUC values before and after correcting evaluation artifacts, with per-record results" loading="lazy" />
+              <figcaption>Effect of correcting evaluation artifacts on AUC, with per-record results.</figcaption>
+          </figure>
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Attractor Domain Theory (ADT)</h3>
+              <span class="status status-preprint">Preprint</span>
+            </div>
+            <p class="framework-question">Which properties of a reconstructed attractor carry which cardiovascular information, and why?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>ADT proposes that the information in a reconstructed cardiac attractor partitions into three mutually non-redundant domains: a Geometry Domain (delay embedding; artifact rejection), an Ergodic Domain (asymptotic statistical invariants; stability estimation), and a Variational Domain (finite-time Lyapunov exponent field; hemodynamic inference). A Domain Sufficiency Theorem states that the three domains are necessary and sufficient.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>A 2026 preprint reports Geometry Domain validation through the SCSI index on 176,742 PPG segments from four datasets (AUC 0.757, 95% CI 0.686&ndash;0.828; NPV 0.966 for tachypnea screening on held-out records, after correcting three evaluation artifacts). The work has not yet completed peer review.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>Empirical validation of the Ergodic and Variational domains, and independent review of the Domain Sufficiency Theorem.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li><a href="https://arxiv.org/abs/2606.22039" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;Attractor Domain Theory: A Mathematical Framework for Cardiovascular Attractor Analysis with Wearable Photoplethysmography (PPG) Validation,&rdquo; arXiv:2606.22039, 2026</a></li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#cst">CST</a>, <a href="#avct">AVCT</a></p>
+          </div>
+        </article>
+        <article class="research-framework reverse" id="avct">
+          <figure>
+            <img src="assets/images/avct-bp-calibration.png" alt="Scatter and Bland-Altman plots of estimated versus reference systolic and diastolic blood pressure" loading="lazy" />
+              <figcaption>Calibrated leave-one-subject-out analysis. See the preprint for the evaluation cohort and reported results.</figcaption>
+          </figure>
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Attractor-Vascular Coupling Theory (AVCT)</h3>
+              <span class="status status-preprint">Preprint</span>
+            </div>
+            <p class="framework-question">Can the attractor geometry of a PPG signal support calibrated, cuffless blood pressure estimation?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>AVCT formalizes a coupling between vascular mechanics and the geometry of the cardiac attractor, operationalized with Takens delay embedding and attractor morphology features. The preprint gives two theorems, a proposition, and a corollary.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>A 2026 preprint reports leave-one-subject-out evaluation on 46 subjects from retrospective intensive-care (BIDMC, n = 9) and surgical (VitalDB, n = 37) recordings, comprising 29,684 windows, with single-point calibration: systolic MAE 2.05 mmHg and diastolic MAE 1.67 mmHg, within the AAMI/IEEE mean-error criterion. A PPG-only ablation using nine attractor features suitable for smartphone computation performed within 0.05 mmHg of the ECG + PPG model. The work has not yet completed peer review.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>Performance on PPG acquired by smartphone cameras, in ambulatory settings, and across skin tones has not yet been established. The method is a research result, not a validated medical device.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li><a href="https://arxiv.org/abs/2605.10871" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;Attractor-Vascular Coupling Theory,&rdquo; arXiv:2605.10871, 2026</a></li>
+                <li>Invention disclosure submitted to the Morgan State University Office of Technology Transfer (2026).</li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#adt">ADT</a>, <a href="#cst">CST</a></p>
+          </div>
+        </article>
+        <article class="research-framework single" id="ptt">
+          <div class="research-text">
+            <div class="framework-head">
+              <h3>Physiologic Trajectory Theory (PTT)</h3>
+              <span class="status status-ongoing">Ongoing investigation</span>
+            </div>
+            <p class="framework-question">What constitutes a valid physiologic trajectory, as opposed to a meaningful departure from one?</p>
+            <div class="framework-block">
+              <h4>Core idea</h4>
+              <p>PTT proposes per-individual admissible corridors for a stability index, estimated with Kalman state-space models, in place of comparison against population norms. Departures are classified with CUSUM sequential detection as Stable, Benign Excursion, or True Drift, guided by a proposed Cardiac Asymmetry Principle.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Reported evidence</h4>
+              <p>No results have been reported yet. PTT is a working framework.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Hypotheses &amp; open questions</h4>
+              <p>Evaluation is planned on longitudinal smartphone PPG data under an IRB protocol that has been submitted (target enrollment 500 participants across Fitzpatrick skin types I&ndash;VI). The dataset is intended for public release, subject to IRB approval and participant consent.</p>
+            </div>
+            <div class="framework-block">
+              <h4>Outputs</h4>
+              <ul>
+                <li>Manuscript in preparation.</li></ul>
+            </div>
+            <p class="framework-related">Related directions: <a href="#cst">CST</a>, <a href="#pect">PECT</a>, <a href="#pit">PIT</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Application Areas</h2>
         <div class="section-divider"></div>
         <div class="three-cols">
           <div class="card">
-            <h4>Cardiovascular Disease & Wellness</h4>
+            <h3 class="card-title">Cardiovascular Signal Analysis</h3>
             <p>
-              ECG and PPG-based prediction of cardiac abnormalities, arrhythmias, and hypertrophy with high sensitivity and specificity. Longitudinal trajectory analysis for early detection of cardiac drift before clinical manifestation.
+              ECG and PPG analysis for cardiac abnormality detection, including
+              earlier work on suspected hypertrophic cardiomyopathy from
+              single-lead wearable ECG (IEEE Sensors Letters, 2021) and
+              multimodal ECG classification (IEEE Access, 2025). Longitudinal
+              monitoring (PTT) is under investigation.
             </p>
           </div>
           <div class="card">
-            <h4>Cuffless Blood Pressure Estimation</h4>
+            <h3 class="card-title">Cuffless Blood Pressure Estimation</h3>
             <p>
-              AVCT-based framework linking cardiac attractor geometry to blood pressure. Single-calibration BP monitoring from photoplethysmography. USPTO provisional patent submitted to Morgan State University Office of Technology Transfer.
+              Calibrated blood pressure estimation from attractor features of
+              PPG (AVCT). Results to date come from retrospective intensive-care
+              and surgical recordings and are reported in a preprint;
+              smartphone and ambulatory validation are future work.
             </p>
           </div>
           <div class="card">
-            <h4>Fairness & Demographic Equity</h4>
+            <h3 class="card-title">Equity Across Skin Tones</h3>
             <p>
-              Addressing demographic bias in PPG-based monitoring across Fitzpatrick skin tones (types 1-6). IRB-submitted study collecting longitudinal smartphone PPG data to ensure equitable risk stratification across all populations.
+              Optical PPG signals can vary with skin pigmentation. A longitudinal
+              smartphone PPG study spanning Fitzpatrick skin types I&ndash;VI
+              has been submitted for IRB review, to support evaluation of
+              performance across demographic groups.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    </main>
+
     <footer>
       <div class="container">
-        <p>&copy; 2026 Dr. Timothy Oladunni.</p>
+        <div>
+          <p>&copy; 2026 Dr. Timothy Oladunni</p>
+          <p class="footer-affil">Department of Computer Science, Morgan State University, Baltimore, Maryland</p>
+        </div>
         <div class="footer-links">
           <a href="index.html">Home</a>
           <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
-          <a href="nlp.html">NLP</a>
+          <a href="nlp.html">NLP &amp; Health AI</a>
           <a href="lab.html">Lab</a>
-          <a href="professional.html">Professional</a>
+          <a href="professional.html">Profile</a>
+          <a href="sitemap.html">Site Map</a>
         </div>
       </div>
     </footer>

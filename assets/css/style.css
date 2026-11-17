@@ -1388,3 +1388,471 @@ footer a:hover {
     text-align: left;
   }
 }
+
+/* ============================================
+   Site-wide refinements (2026 audit)
+   ============================================ */
+
+.hero-credentials {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.hero-credentials li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.97rem;
+  font-weight: 500;
+}
+
+.hero-credentials li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.card-kicker {
+  margin: 0 0 0.35rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent) !important;
+}
+
+.card-title,
+.news-title {
+  font-size: 1.05rem;
+  margin: 0 0 0.75rem 0;
+  color: var(--color-text);
+}
+
+.news-title {
+  margin-bottom: 0.5rem;
+}
+
+.stats-note {
+  margin: 1.25rem 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Status labels */
+.status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.status-peer {
+  background: #e6f2ea;
+  color: #1f6b3a;
+}
+
+.status-preprint {
+  background: #fdf3dc;
+  color: #7a5a0c;
+}
+
+.status-ongoing {
+  background: #e8eef7;
+  color: #24456e;
+}
+
+.status-submitted {
+  background: #eeeeee;
+  color: #555;
+}
+
+.status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin: 0 0 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.status-legend div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Research framework detail */
+.framework-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.framework-head h3 {
+  margin: 0;
+}
+
+.framework-question {
+  font-style: italic;
+  color: var(--color-text) !important;
+}
+
+.framework-block {
+  margin: 0 0 1rem;
+}
+
+.framework-block h4 {
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.framework-block p,
+.framework-block li {
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+
+.framework-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.framework-block p {
+  margin: 0;
+}
+
+.framework-related {
+  font-size: 0.88rem !important;
+  color: var(--color-text-muted) !important;
+}
+
+.framework-related a {
+  font-weight: 600;
+}
+
+.research-framework figure {
+  margin: 0;
+}
+
+.research-framework figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.framework-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 2rem;
+}
+
+.framework-index a {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary-light);
+  text-decoration: none;
+  background: var(--color-bg);
+}
+
+.framework-index a:hover {
+  border-color: var(--color-accent);
+}
+
+/* Publications */
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: pub;
+}
+
+.pub-list > li {
+  position: relative;
+  padding: 1rem 0 1rem 2.6rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.pub-list > li:last-child {
+  border-bottom: none;
+}
+
+.pub-list > li::before {
+  counter-increment: pub;
+  content: counter(pub);
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 1.9rem;
+  text-align: right;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.pub-title {
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+a.pub-title {
+  color: var(--color-primary-light);
+}
+
+.pub-authors,
+.pub-venue {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-top: 0.2rem;
+  color: var(--color-text-secondary);
+}
+
+.pub-venue em {
+  color: var(--color-text);
+}
+
+.pub-note {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.pub-section-intro {
+  margin: -0.5rem 0 1.25rem;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.pub-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.pub-toc a {
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pub-toc a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
+}
+
+/* Projects */
+.project-item {
+  padding: 1.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+}
+
+.project-item h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.project-item .project-meta {
+  margin: 0 0 0.6rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.project-item p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Footer note */
+.footer-affil {
+  margin-top: 0.25rem !important;
+  font-size: 0.82rem;
+  opacity: 0.75;
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  padding: 0.6rem 1rem;
+  background: var(--color-accent);
+  color: #111;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+button.modal-close {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .status-legend {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-clockwise {
+    animation: none !important;
+  }
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+.framework-group {
+  margin: 1rem 0 2rem;
+  padding-bottom: 0.6rem;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.research-framework.single {
+  grid-template-columns: 1fr;
+}
+
+.research-framework.single .research-text {
+  max-width: 900px;
+}
+
+.research-framework {
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .research-framework,
+  .research-framework.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 1.5rem;
+  }
+}
+
+[id] {
+  scroll-margin-top: 90px;
+}
+
+.pub-count {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.alumni-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.sitemap-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.card-title a {
+  color: var(--color-primary-light);
+}
+
+nav a.logo {
+  padding: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+nav a.logo:hover {
+  color: #fff;
+}
+
+nav a.logo::after {
+  display: none;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+footer .footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 900px) {
+  .hero-credentials li {
+    padding-left: 0;
+  }
+  .hero-credentials li::before {
+    display: none;
+  }
+}
