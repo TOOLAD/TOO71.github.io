@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Mark current page link as active
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  // Pages that belong under a top-level section
+  const sectionOf = { "orbil-ai.html": "research.html" };
+  const activePage = sectionOf[currentPage] || currentPage;
   const navLinks = document.querySelectorAll("nav ul a");
   navLinks.forEach(function (link) {
     var href = link.getAttribute("href");
-    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+    if (href === activePage || (activePage === "" && href === "index.html")) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     } else {
