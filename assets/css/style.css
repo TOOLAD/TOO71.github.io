@@ -3155,3 +3155,6 @@ main p a:not(.btn):hover {
 .profile-links{margin-top:1.1rem;font-size:.95rem;color:rgba(255,255,255,.8);}
 .profile-links a{color:#fff !important;text-decoration:underline;text-underline-offset:3px;}
 .profile-links a:hover{color:var(--color-accent) !important;}
+
+.profile-title a{color:#fff !important;text-decoration:underline;text-decoration-color:var(--color-accent);text-underline-offset:3px;}
+.profile-title a:hover{color:var(--color-accent) !important;}
