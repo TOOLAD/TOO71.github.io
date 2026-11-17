@@ -149,7 +149,7 @@
             </div>
             <div class="framework-block">
               <h4>Reported evidence</h4>
-              <p>In a peer-reviewed study (IEEE Access, 2025), a model fusing time and time&ndash;frequency representations outperformed the time&ndash;frequency baseline across evaluation metrics under bootstrap and Bayesian analysis, while adding the frequency domain produced no further improvement. A targeted ablation supported the interpretation of representational redundancy.</p>
+              <p>In a peer-reviewed study (IEEE Access, 2025), a model fusing time and time&ndash;frequency representations outperformed the time&ndash;frequency baseline across evaluation metrics under bootstrap and Bayesian analysis, while adding the frequency domain produced no further improvement. A targeted ablation supported the interpretation of representational redundancy. A 2026 preprint formalizes CFD&rsquo;s notion of predictive contribution and argues that preserving Shannon information in a representation does not by itself preserve how that representation contributes to prediction; this result has not yet completed peer review.</p>
             </div>
             <div class="framework-block">
               <h4>Hypotheses &amp; open questions</h4>
@@ -158,7 +158,8 @@
             <div class="framework-block">
               <h4>Outputs</h4>
               <ul>
-                <li><a href="https://ieeexplore.ieee.org/document/11146762" target="_blank" rel="noopener">Oladunni &amp; Wong, &ldquo;Rethinking Multimodality,&rdquo; IEEE Access, 2025</a></li></ul>
+                <li><a href="https://ieeexplore.ieee.org/document/11146762" target="_blank" rel="noopener">Oladunni &amp; Wong, &ldquo;Rethinking Multimodality,&rdquo; IEEE Access, 2025</a></li>
+                <li><a href="https://arxiv.org/abs/2610.07565" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;Complementary Feature Domains: Information Preservation Does Not Imply Predictive-Contribution Preservation,&rdquo; arXiv:2610.07565, 2026</a></li></ul>
             </div>
             <p class="framework-related">Related directions: <a href="#eat">EAT</a>, <a href="#pect">PECT</a>, <a href="#cpgt">CPGT</a></p>
           </div>
@@ -240,12 +241,13 @@
             </div>
             <div class="framework-block">
               <h4>Hypotheses &amp; open questions</h4>
-              <p>Extension beyond ECG is stated as future work. A CFD-guided extension combining ECG, PPG, and respiration for drift detection (PECS) has been explored by lab members.</p>
+              <p>A related 2026 preprint presents a CFD-guided framework (PECS) for deciding when a model should hold, update, or flag its prediction under physiologic drift in ECG, PPG, and respiration. It reports improved drift classification over the baselines evaluated and the largest benefit from combined ECG and PPG when the two signals disagree, and it notes limits: the best-performing domain pair changed across datasets, and respiration helped only when treated as a selective trust signal. Larger validation with clinically adjudicated drift labels remains future work.</p>
             </div>
             <div class="framework-block">
               <h4>Outputs</h4>
               <ul>
-                <li><a href="https://arxiv.org/abs/2602.22294" target="_blank" rel="noopener">Oladunni, Ojeme, Maclin &amp; Baidoo, &ldquo;When Should a Model Change Its Mind? An Energy-Based Theory and Regularizer for Concept Drift in Electrocardiogram (ECG) Signals,&rdquo; arXiv:2602.22294, 2026</a></li></ul>
+                <li><a href="https://arxiv.org/abs/2602.22294" target="_blank" rel="noopener">Oladunni, Ojeme, Maclin &amp; Baidoo, &ldquo;When Should a Model Change Its Mind? An Energy-Based Theory and Regularizer for Concept Drift in Electrocardiogram (ECG) Signals,&rdquo; arXiv:2602.22294, 2026</a></li>
+                <li><a href="https://arxiv.org/abs/2608.07759" target="_blank" rel="noopener">Ganiyu Adewumi, Oladunni, Ghimire, Ogbuanya, Reeves &amp; Akoy, &ldquo;CFD-Guided Detection of Concept Drift in Multimodal Physiologic Signals,&rdquo; arXiv:2608.07759, 2026</a></li></ul>
             </div>
             <p class="framework-related">Related directions: <a href="#pit">PIT</a>, <a href="#cfd">CFD</a>, <a href="#ptt">PTT</a></p>
           </div>
@@ -302,13 +304,14 @@
             </div>
             <div class="framework-block">
               <h4>Hypotheses &amp; open questions</h4>
-              <p>Whether the index tracks clinically meaningful change within individuals, given the variability in per-record performance. The index is used in a lab prototype application (HeartSpan Score) for research purposes.</p>
+              <p>Whether the index tracks clinically meaningful change within individuals, given the variability in per-record performance. A 2026 preprint on 655 recordings found that maximal Lyapunov exponents showed essentially no recording-specific correspondence between contact PPG and camera-based rPPG, so attractor properties measured with contact sensors may not carry over to camera-acquired signals. The index is used in a lab prototype application (HeartSpan Score) for research purposes.</p>
             </div>
             <div class="framework-block">
               <h4>Outputs</h4>
               <ul>
                 <li><a href="https://arxiv.org/abs/2604.23876" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;Cardiac Stability Theory,&rdquo; arXiv:2604.23876, 2026</a></li>
-                <li><a href="https://arxiv.org/abs/2605.18802" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;A Nonlinear Complexity Index for Wearable PPG Cardiovascular Stability,&rdquo; arXiv:2605.18802, 2026</a></li></ul>
+                <li><a href="https://arxiv.org/abs/2605.18802" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;A Nonlinear Complexity Index for Wearable PPG Cardiovascular Stability,&rdquo; arXiv:2605.18802, 2026</a></li>
+                <li><a href="https://arxiv.org/abs/2608.27392" target="_blank" rel="noopener">Oladunni &amp; Ganiyu-Adewumi, &ldquo;Property-Specific Recoverability from Contact PPG to Camera rPPG under Heterogeneous Observation Conditions,&rdquo; arXiv:2608.27392, 2026</a></li></ul>
             </div>
             <p class="framework-related">Related directions: <a href="#adt">ADT</a>, <a href="#avct">AVCT</a>, <a href="#ptt">PTT</a></p>
           </div>
@@ -365,7 +368,7 @@
             </div>
             <div class="framework-block">
               <h4>Hypotheses &amp; open questions</h4>
-              <p>Performance on PPG acquired by smartphone cameras, in ambulatory settings, and across skin tones has not yet been established. The method is a research result, not a validated medical device.</p>
+              <p>Performance on PPG acquired by smartphone cameras, in ambulatory settings, and across skin tones has not yet been established; related work on contact-to-camera PPG recoverability (<a href="#cst">CST</a>) suggests that some attractor properties may not transfer to camera signals. The method is a research result, not a validated medical device.</p>
             </div>
             <div class="framework-block">
               <h4>Outputs</h4>
@@ -427,7 +430,7 @@
               Calibrated blood pressure estimation from attractor features of
               PPG (AVCT). Results to date come from retrospective intensive-care
               and surgical recordings and are reported in a preprint;
-              smartphone and ambulatory validation are future work.
+              smartphone and ambulatory validation are future work. A related 2026 preprint studies context-augmented, session-calibrated blood pressure tracking from PPG (<a href="https://arxiv.org/abs/2610.29091" target="_blank" rel="noopener">arXiv:2610.29091</a>).
             </p>
           </div>
           <div class="card">
