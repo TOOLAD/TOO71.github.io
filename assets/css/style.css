@@ -3174,3 +3174,6 @@ main p a:not(.btn):hover {
   .lab-hero .lab-logo{width:132px;height:132px;}
   .lab-hero-text p:not(.lab-hero-kicker){margin:0 auto;}
 }
+
+.focus-areas .section-intro{max-width:720px;margin:0 0 1.5rem;color:var(--color-text-muted);}
+.focus-areas .card p a{text-decoration:underline;}
