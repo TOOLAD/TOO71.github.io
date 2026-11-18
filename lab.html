@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css?v=20261117d" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20261117e" />
     <link rel="stylesheet" href="assets/css/shared.css" />
       <script type="application/ld+json">
 {
@@ -96,7 +96,18 @@
       </div>
     </section>
 
-    <section class="focus-areas">
+    <div class="lab-quicknav-wrap">
+      <div role="navigation" aria-label="On this page" class="container lab-quicknav">
+        <a href="#focus">Focus Areas</a>
+        <a href="#mission">Mission</a>
+        <a href="#projects">Projects</a>
+        <a href="#members">Members</a>
+        <a href="#join">Join the Lab</a>
+        <a href="#values">Values</a>
+      </div>
+    </div>
+
+    <section class="focus-areas" id="focus">
       <div class="container">
         <h2>Focus Areas</h2>
         <div class="section-divider"></div>
@@ -140,10 +151,11 @@
       </div>
     </section>
 
-    <section>
+    <section class="alt-bg" id="mission">
       <div class="container">
         <h2>Lab Mission & Vision</h2>
         <div class="section-divider"></div>
+        <div class="mission-grid">
         <div class="info-box accent">
           <h3>Lab Mission</h3>
           <p>
@@ -174,7 +186,7 @@
             generation of leaders in computing and artificial intelligence.
           </p>
         </div>
-        <div class="info-box" style="margin-top: 1.5rem">
+        <div class="info-box">
           <h3>Lab Overview</h3>
           <p>
             The Oladunni Lab at Morgan State University conducts foundational,
@@ -215,6 +227,50 @@
             and data security.
           </p>
         </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Current Research Projects</h2>
+        <div class="section-divider"></div>
+        <div class="project-item">
+          <h3><a href="orbil-ai.html">ORBIL-AI: Orthogonality-Regularized Biomedical Information-theoretic Learning</a></h3>
+          <p class="project-meta">NIH R16 SuRE (National Library of Medicine), award 1R16LM015384-01 &middot; PI: Dr. Timothy Oladunni &middot; Students: Farouk Ganiyu Adewumi, Raymond Mbam, Oluwafemi Ifesanmi, Daniel Owolabi, Obaloluwa Arulogun, Aditya Raj Poudel</p>
+          <p>
+            Investigates how learning systems represent the information shared
+            across multiple biomedical observations and the information
+            distinct to each. Current student work examines whether models that
+            combine time, frequency, and time&ndash;frequency ECG
+            representations learn complementary or largely redundant
+            information, using the PTB-XL and Mendeley ECG datasets and a
+            research plan specified in advance.
+            <a href="orbil-ai.html">Project page &rarr;</a>
+          </p>
+        </div>
+        <div class="project-item">
+          <h3>Attractor-Based Analysis of Cardiovascular Signals</h3>
+          <p class="project-meta">Frameworks: <a href="research.html#cst">CST</a>, <a href="research.html#adt">ADT</a>, <a href="research.html#avct">AVCT</a> &middot; Student: Farouk Ganiyu Adewumi</p>
+          <p>
+            Develops and tests dynamical-systems descriptions of PPG and ECG
+            signals, including stability indices, the partition of attractor
+            information into domains, and calibrated cuffless blood pressure
+            estimation. Results to date are reported in 2026 preprints; see the
+            <a href="research.html">Research</a> page for the status of each.
+          </p>
+        </div>
+        <div class="project-item">
+          <h3>Concept Drift and Stability in Multimodal Physiological Signals</h3>
+          <p class="project-meta">Frameworks: <a href="research.html#pect">PECT</a>, <a href="research.html#pit">PIT</a> &middot; Student: Farouk Ganiyu Adewumi</p>
+          <p>
+            Studies when a model&rsquo;s prediction should change under
+            physiological variation, using energy-based drift criteria and
+            explainability methods such as SHAP and LIME. Work in 2026 developed
+            a CFD-guided framework combining ECG, PPG, and respiration (PECS),
+            reported in a <a href="https://arxiv.org/abs/2608.07759" target="_blank" rel="noopener">2026 preprint</a>.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -229,7 +285,7 @@
             <img src="assets/images/professional-pic.jpeg" alt="Dr. Timothy Oladunni" width="400" height="400" />
             <h4>Dr. Timothy Oladunni</h4>
             <p class="member-role">Assistant Professor, Computer Science</p>
-            <p class="member-focus">Interpretable AI for cardiac wellness &amp; equitable healthcare</p>
+            <p class="member-focus">Foundations of pattern recognition &amp; trustworthy machine learning</p>
             <span class="member-link">View profile &rarr;</span>
           </a>
         </div>
@@ -347,50 +403,7 @@
       </div>
     </section>
 
-    <section id="projects">
-      <div class="container">
-        <h2>Current Research Projects</h2>
-        <div class="section-divider"></div>
-        <div class="project-item">
-          <h3><a href="orbil-ai.html">ORBIL-AI: Orthogonality-Regularized Biomedical Information-theoretic Learning</a></h3>
-          <p class="project-meta">NIH R16 SuRE (National Library of Medicine), award 1R16LM015384-01 &middot; PI: Dr. Timothy Oladunni &middot; Students: Farouk Ganiyu Adewumi, Raymond Mbam, Oluwafemi Ifesanmi, Daniel Owolabi, Obaloluwa Arulogun, Aditya Raj Poudel</p>
-          <p>
-            Investigates how learning systems represent the information shared
-            across multiple biomedical observations and the information
-            distinct to each. Current student work examines whether models that
-            combine time, frequency, and time&ndash;frequency ECG
-            representations learn complementary or largely redundant
-            information, using the PTB-XL and Mendeley ECG datasets and a
-            research plan specified in advance.
-            <a href="orbil-ai.html">Project page &rarr;</a>
-          </p>
-        </div>
-        <div class="project-item">
-          <h3>Attractor-Based Analysis of Cardiovascular Signals</h3>
-          <p class="project-meta">Frameworks: <a href="research.html#cst">CST</a>, <a href="research.html#adt">ADT</a>, <a href="research.html#avct">AVCT</a> &middot; Student: Farouk Ganiyu Adewumi</p>
-          <p>
-            Develops and tests dynamical-systems descriptions of PPG and ECG
-            signals, including stability indices, the partition of attractor
-            information into domains, and calibrated cuffless blood pressure
-            estimation. Results to date are reported in 2026 preprints; see the
-            <a href="research.html">Research</a> page for the status of each.
-          </p>
-        </div>
-        <div class="project-item">
-          <h3>Concept Drift and Stability in Multimodal Physiological Signals</h3>
-          <p class="project-meta">Frameworks: <a href="research.html#pect">PECT</a>, <a href="research.html#pit">PIT</a> &middot; Student: Farouk Ganiyu Adewumi</p>
-          <p>
-            Studies when a model&rsquo;s prediction should change under
-            physiological variation, using energy-based drift criteria and
-            explainability methods such as SHAP and LIME. Work in 2026 developed
-            a CFD-guided framework combining ECG, PPG, and respiration (PECS),
-            reported in a <a href="https://arxiv.org/abs/2608.07759" target="_blank" rel="noopener">2026 preprint</a>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="alt-bg">
+    <section id="join">
       <div class="container">
         <h2>Student Opportunities</h2>
         <div class="section-divider"></div>
@@ -398,12 +411,12 @@
           <h3 class="mt-0">Join Our Lab</h3>
           <p>
             The Oladunni Lab provides hands-on research experiences in machine learning,
-            biomedical AI, and applied data science. Students work on real datasets, contribute to ongoing
+            biomedical AI, epidemiology, data security, and applied data science. Students work on real datasets, contribute to ongoing
             publications, and build practical skills that prepare them for graduate study and industry careers.
           </p>
         </div>
 
-        <div class="two-cols" style="max-width: 900px; margin: 2rem auto 0;">
+        <div class="two-cols join-cols">
           <div>
             <h4>What We Look For</h4>
             <div class="criteria-item">
@@ -444,13 +457,13 @@
           </div>
         </div>
 
-        <p class="text-center" style="margin-top: 2rem;">
+        <p class="join-cta">
           <strong>Interested?</strong> Contact Dr. Oladunni with your resume, CV, and a statement of research interests.
         </p>
       </div>
     </section>
 
-    <section>
+    <section class="alt-bg" id="student-areas">
       <div class="container">
         <h2>Research Areas for Students</h2>
         <div class="section-divider"></div>
@@ -521,8 +534,7 @@
       </div>
     </section>
 
-
-    <section class="alt-bg">
+    <section id="values">
       <div class="container">
         <h2>Lab Values & Working Philosophy</h2>
         <div class="section-divider"></div>
