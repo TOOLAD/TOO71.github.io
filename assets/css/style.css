@@ -3177,3 +3177,12 @@ main p a:not(.btn):hover {
 
 .focus-areas .section-intro{max-width:720px;margin:0 0 1.5rem;color:var(--color-text-muted);}
 .focus-areas .card p a{text-decoration:underline;}
+
+/* Justified body text (wider screens only; narrow phone columns stay left-aligned) */
+@media (min-width: 700px) {
+  main p:not(.hero-page *):not(.hero *):not(.lab-hero *):not(.stat *):not(.member-card *):not(.text-center):not(.stats-note):not(.section-subtitle) {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+}
